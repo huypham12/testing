@@ -1,0 +1,2906 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\playwright.config.ts",
+    "rootDir": "C:/Users/ThinkPad T14s/Downloads/nam4/ki2/dot2/kiemthu/giuaky/code/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 3
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/ThinkPad T14s/Downloads/nam4/ki2/dot2/kiemthu/giuaky/code/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/ThinkPad T14s/Downloads/nam4/ki2/dot2/kiemthu/giuaky/code/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/ThinkPad T14s/Downloads/nam4/ki2/dot2/kiemthu/giuaky/code/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/ThinkPad T14s/Downloads/nam4/ki2/dot2/kiemthu/giuaky/code/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/ThinkPad T14s/Downloads/nam4/ki2/dot2/kiemthu/giuaky/code/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/Users/ThinkPad T14s/Downloads/nam4/ki2/dot2/kiemthu/giuaky/code/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "results.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.60.0",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "search.spec.ts",
+      "file": "search.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Tìm kiếm (Fahasa)",
+          "file": "search.spec.ts",
+          "line": 12,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-S1-01 (FT-01) — từ khóa chính xác phải hiển thị tiêu đề mong đợi trong top 5",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5076,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.193Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-a88721a9852bf2ca1ccc",
+              "file": "search.spec.ts",
+              "line": 49,
+              "column": 7
+            },
+            {
+              "title": "TC-S1-02 (FT-02) — từ khóa một phần phải trả về kết quả",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5399,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:38.876Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-5de3cc067f47eafe7348",
+              "file": "search.spec.ts",
+              "line": 61,
+              "column": 7
+            },
+            {
+              "title": "TC-S1-03 (FT-04) — từ khóa có dấu và không dấu đều phải hoạt động",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7523,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:44.303Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-8f9e917d207b08bc54b8",
+              "file": "search.spec.ts",
+              "line": 68,
+              "column": 7
+            },
+            {
+              "title": "TC-S1-04 (FT-07) — tìm kiếm theo mã sản phẩm sau đó xác minh mã trên trang chi tiết sản phẩm",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7592,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:51.844Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-d1a368aa9518640e5261",
+              "file": "search.spec.ts",
+              "line": 80,
+              "column": 7
+            },
+            {
+              "title": "TC-S1-05 (FT-09) — tìm kiếm nhiều từ khóa phải trả về các kết quả liên quan",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5487,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:59.455Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-1b68e23410c1ab469c58",
+              "file": "search.spec.ts",
+              "line": 90,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-01 (VT-01) — tìm kiếm rỗng phải hiển thị trang gợi ý/kết quả mặc định",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5390,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:57:04.969Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-e344e7d9c7b70408e46b",
+              "file": "search.spec.ts",
+              "line": 104,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-02 (VT-02) — tìm kiếm chỉ có khoảng trắng phải được cắt rỉa (trim)/xử lý an toàn",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5297,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:57:10.379Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-f24b805458fcbda61ba6",
+              "file": "search.spec.ts",
+              "line": 116,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-03 (VT-03) — tìm kiếm ký tự đặc biệt không được gây sập (crash)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4636,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:57:15.693Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-43ae19dfbcc3dae06ab5",
+              "file": "search.spec.ts",
+              "line": 128,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-04 (VT-04) — mã độc XSS không được thực thi (không có hộp thoại)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Fahasa được bảo vệ bởi Cloudflare WAF; việc gửi các payload dạng XSS có thể chặn phiên làm việc và làm hỏng các bài kiểm tra tiếp theo. Đặt RUN_WAF_XSS=1 để cố ý chạy bài kiểm tra này.",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 144,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 3149,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:57:20.350Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Fahasa được bảo vệ bởi Cloudflare WAF; việc gửi các payload dạng XSS có thể chặn phiên làm việc và làm hỏng các bài kiểm tra tiếp theo. Đặt RUN_WAF_XSS=1 để cố ý chạy bài kiểm tra này.",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 144,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-a3882f656bc84e5978f5",
+              "file": "search.spec.ts",
+              "line": 141,
+              "column": 7
+            },
+            {
+              "title": "TC-S3-01 (BT-01) — từ khóa rất dài không được gây sập",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4578,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:57:23.520Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-25b8e099e4cf32838f65",
+              "file": "search.spec.ts",
+              "line": 174,
+              "column": 7
+            },
+            {
+              "title": "TC-S3-02 (BT-02) — từ khóa tối thiểu phải trả về phản hồi hợp lệ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4666,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:57:28.116Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-7ecfe7214b0d849d80b0",
+              "file": "search.spec.ts",
+              "line": 186,
+              "column": 7
+            },
+            {
+              "title": "TC-S4-01 (UX-01) — Nhấn Enter so với click biểu tượng phải tạo ra kết quả tương đương (trùng lặp trong top 5)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7874,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:57:32.804Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-50c2961c1b51b90ca69b",
+              "file": "search.spec.ts",
+              "line": 193,
+              "column": 7
+            },
+            {
+              "title": "TC-S4-02 (UX-02) — gõ tiền tố phải hiển thị danh sách thả xuống gợi ý",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Danh sách thả xuống gợi ý không xuất hiện (hành vi của trang web bên ngoài có thể thay đổi theo phiên / kiểm tra A-B).",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 226,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 19111,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:57:40.704Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Danh sách thả xuống gợi ý không xuất hiện (hành vi của trang web bên ngoài có thể thay đổi theo phiên / kiểm tra A-B).",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 226,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-5255f4f69653c52994db",
+              "file": "search.spec.ts",
+              "line": 209,
+              "column": 7
+            },
+            {
+              "title": "TC-S4-03 (UX-03) — nhấp vào một gợi ý sẽ điều hướng hoặc điền từ khóa và tìm kiếm hoạt động",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Danh sách thả xuống gợi ý không xuất hiện (hành vi của trang web bên ngoài có thể thay đổi theo phiên / kiểm tra A-B).",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 249,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 18894,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:57:59.834Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Danh sách thả xuống gợi ý không xuất hiện (hành vi của trang web bên ngoài có thể thay đổi theo phiên / kiểm tra A-B).",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 249,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-5a627debdbd53f14b053",
+              "file": "search.spec.ts",
+              "line": 232,
+              "column": 7
+            },
+            {
+              "title": "TC-S4-04 (UX-04) — từ khóa phải được giữ lại trong ô nhập sau khi tìm kiếm",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4350,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:58:18.746Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-e48752984fdedf0e424c",
+              "file": "search.spec.ts",
+              "line": 275,
+              "column": 7
+            },
+            {
+              "title": "TC-S5-01 (PF-01) — gửi liên tục (spam) 20 lần không được kích hoạt chặn",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Trang web bên ngoài có thể giới hạn tốc độ/chặn các tìm kiếm lặp lại; đặt RUN_STRESS=1 để cố ý chạy kiểm tra dạng chịu tải này.",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 287,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 2834,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:58:23.113Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Trang web bên ngoài có thể giới hạn tốc độ/chặn các tìm kiếm lặp lại; đặt RUN_STRESS=1 để cố ý chạy kiểm tra dạng chịu tải này.",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 287,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-8dfc9f372c61126b2503",
+              "file": "search.spec.ts",
+              "line": 284,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-05 (EC-01) — từ khóa không tồn tại phải hiển thị trạng thái không có kết quả",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4167,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:58:25.965Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-8fae665a6dfbd7a5c678",
+              "file": "search.spec.ts",
+              "line": 306,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-07 (EC-03) — khoảng trắng ở đầu/cuối phải được cắt rỉa và kết quả tương đương với TC-S1-01",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4983,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:58:30.149Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-7a492ed625b5e6af73a4",
+              "file": "search.spec.ts",
+              "line": 319,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-06 (EC-02) — từ khóa tiếng Việt có đ/Đ không được làm hỏng bảng mã (encoding)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5470,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:58:35.154Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-7632f0d81fcf873c7f6c",
+              "file": "search.spec.ts",
+              "line": 331,
+              "column": 7
+            },
+            {
+              "title": "TC-S1-01 (FT-01) — từ khóa chính xác phải hiển thị tiêu đề mong đợi trong top 5",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.238Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-61bf86c16cff200b9f32",
+              "file": "search.spec.ts",
+              "line": 49,
+              "column": 7
+            },
+            {
+              "title": "TC-S1-02 (FT-02) — từ khóa một phần phải trả về kết quả",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.292Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-b319689e368234a99949",
+              "file": "search.spec.ts",
+              "line": 61,
+              "column": 7
+            },
+            {
+              "title": "TC-S1-03 (FT-04) — từ khóa có dấu và không dấu đều phải hoạt động",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.293Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-4861980b0bf7e9ceea30",
+              "file": "search.spec.ts",
+              "line": 68,
+              "column": 7
+            },
+            {
+              "title": "TC-S1-04 (FT-07) — tìm kiếm theo mã sản phẩm sau đó xác minh mã trên trang chi tiết sản phẩm",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.293Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-eb287df5658efa3f52cf",
+              "file": "search.spec.ts",
+              "line": 80,
+              "column": 7
+            },
+            {
+              "title": "TC-S1-05 (FT-09) — tìm kiếm nhiều từ khóa phải trả về các kết quả liên quan",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.293Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-c020470035a7940c614d",
+              "file": "search.spec.ts",
+              "line": 90,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-01 (VT-01) — tìm kiếm rỗng phải hiển thị trang gợi ý/kết quả mặc định",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.293Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-9fb23566268e9da198c5",
+              "file": "search.spec.ts",
+              "line": 104,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-02 (VT-02) — tìm kiếm chỉ có khoảng trắng phải được cắt rỉa (trim)/xử lý an toàn",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.294Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-95487525c7d736d500c4",
+              "file": "search.spec.ts",
+              "line": 116,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-03 (VT-03) — tìm kiếm ký tự đặc biệt không được gây sập (crash)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.294Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-8a8cf48c61ef6bdbf7f7",
+              "file": "search.spec.ts",
+              "line": 128,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-04 (VT-04) — mã độc XSS không được thực thi (không có hộp thoại)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.294Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-6cc473815f6c2d147d33",
+              "file": "search.spec.ts",
+              "line": 141,
+              "column": 7
+            },
+            {
+              "title": "TC-S3-01 (BT-01) — từ khóa rất dài không được gây sập",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.294Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-18653eeedb032f1c02f2",
+              "file": "search.spec.ts",
+              "line": 174,
+              "column": 7
+            },
+            {
+              "title": "TC-S3-02 (BT-02) — từ khóa tối thiểu phải trả về phản hồi hợp lệ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.295Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-50693152f949ffa231e7",
+              "file": "search.spec.ts",
+              "line": 186,
+              "column": 7
+            },
+            {
+              "title": "TC-S4-01 (UX-01) — Nhấn Enter so với click biểu tượng phải tạo ra kết quả tương đương (trùng lặp trong top 5)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.295Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-3d10819be69431d5a6cf",
+              "file": "search.spec.ts",
+              "line": 193,
+              "column": 7
+            },
+            {
+              "title": "TC-S4-02 (UX-02) — gõ tiền tố phải hiển thị danh sách thả xuống gợi ý",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.295Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-42de010b57982ef714a1",
+              "file": "search.spec.ts",
+              "line": 209,
+              "column": 7
+            },
+            {
+              "title": "TC-S4-03 (UX-03) — nhấp vào một gợi ý sẽ điều hướng hoặc điền từ khóa và tìm kiếm hoạt động",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.295Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-b9b6236c9ab1f5d1c351",
+              "file": "search.spec.ts",
+              "line": 232,
+              "column": 7
+            },
+            {
+              "title": "TC-S4-04 (UX-04) — từ khóa phải được giữ lại trong ô nhập sau khi tìm kiếm",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.295Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-2cb466f37c1659cf88b6",
+              "file": "search.spec.ts",
+              "line": 275,
+              "column": 7
+            },
+            {
+              "title": "TC-S5-01 (PF-01) — gửi liên tục (spam) 20 lần không được kích hoạt chặn",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.295Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-6bb2f5ab12bbd5c4b4cd",
+              "file": "search.spec.ts",
+              "line": 284,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-05 (EC-01) — từ khóa không tồn tại phải hiển thị trạng thái không có kết quả",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.296Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-edbb7fc58014b99f2d0a",
+              "file": "search.spec.ts",
+              "line": 306,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-07 (EC-03) — khoảng trắng ở đầu/cuối phải được cắt rỉa và kết quả tương đương với TC-S1-01",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.296Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-62c30ba137ae258d8dbe",
+              "file": "search.spec.ts",
+              "line": 319,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-06 (EC-02) — từ khóa tiếng Việt có đ/Đ không được làm hỏng bảng mã (encoding)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.296Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-c8797a61e54475b8a882",
+              "file": "search.spec.ts",
+              "line": 331,
+              "column": 7
+            },
+            {
+              "title": "TC-S1-01 (FT-01) — từ khóa chính xác phải hiển thị tiêu đề mong đợi trong top 5",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.240Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-1b7bd6a15a90d593c762",
+              "file": "search.spec.ts",
+              "line": 49,
+              "column": 7
+            },
+            {
+              "title": "TC-S1-02 (FT-02) — từ khóa một phần phải trả về kết quả",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.293Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-70330d5e1c506c13d55e",
+              "file": "search.spec.ts",
+              "line": 61,
+              "column": 7
+            },
+            {
+              "title": "TC-S1-03 (FT-04) — từ khóa có dấu và không dấu đều phải hoạt động",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.293Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-5af46cce2bb55b64c95f",
+              "file": "search.spec.ts",
+              "line": 68,
+              "column": 7
+            },
+            {
+              "title": "TC-S1-04 (FT-07) — tìm kiếm theo mã sản phẩm sau đó xác minh mã trên trang chi tiết sản phẩm",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.294Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-f089e4f7c0f5216b8d69",
+              "file": "search.spec.ts",
+              "line": 80,
+              "column": 7
+            },
+            {
+              "title": "TC-S1-05 (FT-09) — tìm kiếm nhiều từ khóa phải trả về các kết quả liên quan",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.294Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-bfff8a3fc678fd7fd1ad",
+              "file": "search.spec.ts",
+              "line": 90,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-01 (VT-01) — tìm kiếm rỗng phải hiển thị trang gợi ý/kết quả mặc định",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.294Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-a71a58aabf4d4ceed9d6",
+              "file": "search.spec.ts",
+              "line": 104,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-02 (VT-02) — tìm kiếm chỉ có khoảng trắng phải được cắt rỉa (trim)/xử lý an toàn",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.294Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-c0bfa4fbfdcd84a8c757",
+              "file": "search.spec.ts",
+              "line": 116,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-03 (VT-03) — tìm kiếm ký tự đặc biệt không được gây sập (crash)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.294Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-670a7e93ee4c939ff1b5",
+              "file": "search.spec.ts",
+              "line": 128,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-04 (VT-04) — mã độc XSS không được thực thi (không có hộp thoại)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.294Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-08184680d4756af11931",
+              "file": "search.spec.ts",
+              "line": 141,
+              "column": 7
+            },
+            {
+              "title": "TC-S3-01 (BT-01) — từ khóa rất dài không được gây sập",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.294Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-42277ac0d0ef884e6fe7",
+              "file": "search.spec.ts",
+              "line": 174,
+              "column": 7
+            },
+            {
+              "title": "TC-S3-02 (BT-02) — từ khóa tối thiểu phải trả về phản hồi hợp lệ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.294Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-fdfef825e833c7543cf7",
+              "file": "search.spec.ts",
+              "line": 186,
+              "column": 7
+            },
+            {
+              "title": "TC-S4-01 (UX-01) — Nhấn Enter so với click biểu tượng phải tạo ra kết quả tương đương (trùng lặp trong top 5)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.295Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-021d23cccac5669de6b7",
+              "file": "search.spec.ts",
+              "line": 193,
+              "column": 7
+            },
+            {
+              "title": "TC-S4-02 (UX-02) — gõ tiền tố phải hiển thị danh sách thả xuống gợi ý",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.295Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-b2f21a814f82f00327cf",
+              "file": "search.spec.ts",
+              "line": 209,
+              "column": 7
+            },
+            {
+              "title": "TC-S4-03 (UX-03) — nhấp vào một gợi ý sẽ điều hướng hoặc điền từ khóa và tìm kiếm hoạt động",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.295Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-b75a20a67eebb80c8c08",
+              "file": "search.spec.ts",
+              "line": 232,
+              "column": 7
+            },
+            {
+              "title": "TC-S4-04 (UX-04) — từ khóa phải được giữ lại trong ô nhập sau khi tìm kiếm",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.295Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-29438bb5e45482026802",
+              "file": "search.spec.ts",
+              "line": 275,
+              "column": 7
+            },
+            {
+              "title": "TC-S5-01 (PF-01) — gửi liên tục (spam) 20 lần không được kích hoạt chặn",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.295Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-28433894ea8d2f8e0315",
+              "file": "search.spec.ts",
+              "line": 284,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-05 (EC-01) — từ khóa không tồn tại phải hiển thị trạng thái không có kết quả",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.295Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-4c5626d541709e6331b4",
+              "file": "search.spec.ts",
+              "line": 306,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-07 (EC-03) — khoảng trắng ở đầu/cuối phải được cắt rỉa và kết quả tương đương với TC-S1-01",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.295Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-5caad9a232ad1472f012",
+              "file": "search.spec.ts",
+              "line": 319,
+              "column": 7
+            },
+            {
+              "title": "TC-S2-06 (EC-02) — từ khóa tiếng Việt có đ/Đ không được làm hỏng bảng mã (encoding)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                      "location": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "line": 15,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-22T02:56:33.295Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Chỉ nhắm mục tiêu Desktop Chrome",
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "line": 15,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-0381ca50c1a7ac36eafb",
+              "file": "search.spec.ts",
+              "line": 331,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-05-22T02:56:32.524Z",
+    "duration": 128627.017,
+    "expected": 15,
+    "skipped": 42,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

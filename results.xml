@@ -1,0 +1,374 @@
+<testsuites id="" name="" tests="57" failures="0" skipped="42" errors="0" time="128.627017">
+<testsuite name="search.spec.ts" timestamp="2026-05-22T02:56:32.551Z" hostname="chromium" tests="19" failures="0" skipped="4" time="126.476" errors="0">
+<testcase name="Tìm kiếm (Fahasa) › TC-S1-01 (FT-01) — từ khóa chính xác phải hiển thị tiêu đề mong đợi trong top 5" classname="search.spec.ts" time="5.076">
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S1-02 (FT-02) — từ khóa một phần phải trả về kết quả" classname="search.spec.ts" time="5.399">
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S1-03 (FT-04) — từ khóa có dấu và không dấu đều phải hoạt động" classname="search.spec.ts" time="7.523">
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S1-04 (FT-07) — tìm kiếm theo mã sản phẩm sau đó xác minh mã trên trang chi tiết sản phẩm" classname="search.spec.ts" time="7.592">
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S1-05 (FT-09) — tìm kiếm nhiều từ khóa phải trả về các kết quả liên quan" classname="search.spec.ts" time="5.487">
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-01 (VT-01) — tìm kiếm rỗng phải hiển thị trang gợi ý/kết quả mặc định" classname="search.spec.ts" time="5.39">
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-02 (VT-02) — tìm kiếm chỉ có khoảng trắng phải được cắt rỉa (trim)/xử lý an toàn" classname="search.spec.ts" time="5.297">
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-03 (VT-03) — tìm kiếm ký tự đặc biệt không được gây sập (crash)" classname="search.spec.ts" time="4.636">
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-04 (VT-04) — mã độc XSS không được thực thi (không có hộp thoại)" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Fahasa được bảo vệ bởi Cloudflare WAF; việc gửi các payload dạng XSS có thể chặn phiên làm việc và làm hỏng các bài kiểm tra tiếp theo. Đặt RUN_WAF_XSS=1 để cố ý chạy bài kiểm tra này.">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S3-01 (BT-01) — từ khóa rất dài không được gây sập" classname="search.spec.ts" time="4.578">
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S3-02 (BT-02) — từ khóa tối thiểu phải trả về phản hồi hợp lệ" classname="search.spec.ts" time="4.666">
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S4-01 (UX-01) — Nhấn Enter so với click biểu tượng phải tạo ra kết quả tương đương (trùng lặp trong top 5)" classname="search.spec.ts" time="7.874">
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S4-02 (UX-02) — gõ tiền tố phải hiển thị danh sách thả xuống gợi ý" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Danh sách thả xuống gợi ý không xuất hiện (hành vi của trang web bên ngoài có thể thay đổi theo phiên / kiểm tra A-B).">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S4-03 (UX-03) — nhấp vào một gợi ý sẽ điều hướng hoặc điền từ khóa và tìm kiếm hoạt động" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Danh sách thả xuống gợi ý không xuất hiện (hành vi của trang web bên ngoài có thể thay đổi theo phiên / kiểm tra A-B).">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S4-04 (UX-04) — từ khóa phải được giữ lại trong ô nhập sau khi tìm kiếm" classname="search.spec.ts" time="4.35">
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S5-01 (PF-01) — gửi liên tục (spam) 20 lần không được kích hoạt chặn" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Trang web bên ngoài có thể giới hạn tốc độ/chặn các tìm kiếm lặp lại; đặt RUN_STRESS=1 để cố ý chạy kiểm tra dạng chịu tải này.">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-05 (EC-01) — từ khóa không tồn tại phải hiển thị trạng thái không có kết quả" classname="search.spec.ts" time="4.167">
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-07 (EC-03) — khoảng trắng ở đầu/cuối phải được cắt rỉa và kết quả tương đương với TC-S1-01" classname="search.spec.ts" time="4.983">
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-06 (EC-02) — từ khóa tiếng Việt có đ/Đ không được làm hỏng bảng mã (encoding)" classname="search.spec.ts" time="5.47">
+</testcase>
+</testsuite>
+<testsuite name="search.spec.ts" timestamp="2026-05-22T02:56:32.551Z" hostname="firefox" tests="19" failures="0" skipped="19" time="0" errors="0">
+<testcase name="Tìm kiếm (Fahasa) › TC-S1-01 (FT-01) — từ khóa chính xác phải hiển thị tiêu đề mong đợi trong top 5" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S1-02 (FT-02) — từ khóa một phần phải trả về kết quả" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S1-03 (FT-04) — từ khóa có dấu và không dấu đều phải hoạt động" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S1-04 (FT-07) — tìm kiếm theo mã sản phẩm sau đó xác minh mã trên trang chi tiết sản phẩm" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S1-05 (FT-09) — tìm kiếm nhiều từ khóa phải trả về các kết quả liên quan" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-01 (VT-01) — tìm kiếm rỗng phải hiển thị trang gợi ý/kết quả mặc định" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-02 (VT-02) — tìm kiếm chỉ có khoảng trắng phải được cắt rỉa (trim)/xử lý an toàn" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-03 (VT-03) — tìm kiếm ký tự đặc biệt không được gây sập (crash)" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-04 (VT-04) — mã độc XSS không được thực thi (không có hộp thoại)" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S3-01 (BT-01) — từ khóa rất dài không được gây sập" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S3-02 (BT-02) — từ khóa tối thiểu phải trả về phản hồi hợp lệ" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S4-01 (UX-01) — Nhấn Enter so với click biểu tượng phải tạo ra kết quả tương đương (trùng lặp trong top 5)" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S4-02 (UX-02) — gõ tiền tố phải hiển thị danh sách thả xuống gợi ý" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S4-03 (UX-03) — nhấp vào một gợi ý sẽ điều hướng hoặc điền từ khóa và tìm kiếm hoạt động" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S4-04 (UX-04) — từ khóa phải được giữ lại trong ô nhập sau khi tìm kiếm" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S5-01 (PF-01) — gửi liên tục (spam) 20 lần không được kích hoạt chặn" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-05 (EC-01) — từ khóa không tồn tại phải hiển thị trạng thái không có kết quả" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-07 (EC-03) — khoảng trắng ở đầu/cuối phải được cắt rỉa và kết quả tương đương với TC-S1-01" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-06 (EC-02) — từ khóa tiếng Việt có đ/Đ không được làm hỏng bảng mã (encoding)" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="search.spec.ts" timestamp="2026-05-22T02:56:32.551Z" hostname="webkit" tests="19" failures="0" skipped="19" time="0" errors="0">
+<testcase name="Tìm kiếm (Fahasa) › TC-S1-01 (FT-01) — từ khóa chính xác phải hiển thị tiêu đề mong đợi trong top 5" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S1-02 (FT-02) — từ khóa một phần phải trả về kết quả" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S1-03 (FT-04) — từ khóa có dấu và không dấu đều phải hoạt động" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S1-04 (FT-07) — tìm kiếm theo mã sản phẩm sau đó xác minh mã trên trang chi tiết sản phẩm" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S1-05 (FT-09) — tìm kiếm nhiều từ khóa phải trả về các kết quả liên quan" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-01 (VT-01) — tìm kiếm rỗng phải hiển thị trang gợi ý/kết quả mặc định" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-02 (VT-02) — tìm kiếm chỉ có khoảng trắng phải được cắt rỉa (trim)/xử lý an toàn" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-03 (VT-03) — tìm kiếm ký tự đặc biệt không được gây sập (crash)" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-04 (VT-04) — mã độc XSS không được thực thi (không có hộp thoại)" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S3-01 (BT-01) — từ khóa rất dài không được gây sập" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S3-02 (BT-02) — từ khóa tối thiểu phải trả về phản hồi hợp lệ" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S4-01 (UX-01) — Nhấn Enter so với click biểu tượng phải tạo ra kết quả tương đương (trùng lặp trong top 5)" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S4-02 (UX-02) — gõ tiền tố phải hiển thị danh sách thả xuống gợi ý" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S4-03 (UX-03) — nhấp vào một gợi ý sẽ điều hướng hoặc điền từ khóa và tìm kiếm hoạt động" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S4-04 (UX-04) — từ khóa phải được giữ lại trong ô nhập sau khi tìm kiếm" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S5-01 (PF-01) — gửi liên tục (spam) 20 lần không được kích hoạt chặn" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-05 (EC-01) — từ khóa không tồn tại phải hiển thị trạng thái không có kết quả" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-07 (EC-03) — khoảng trắng ở đầu/cuối phải được cắt rỉa và kết quả tương đương với TC-S1-01" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tìm kiếm (Fahasa) › TC-S2-06 (EC-02) — từ khóa tiếng Việt có đ/Đ không được làm hỏng bảng mã (encoding)" classname="search.spec.ts">
+<properties>
+<property name="skip" value="Chỉ nhắm mục tiêu Desktop Chrome">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>

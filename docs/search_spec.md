@@ -1,10 +1,14 @@
 ````md
-- Functional
-- Validation
-- State
-- Boundary
-- UX
-- Performance nhẹ
+Scenario lớn (nhóm hành vi cần kiểm thử):
+
+- S1 — Search keyword hợp lệ
+- S2 — Search input không hợp lệ / bất thường
+- S3 — Boundary input
+- S4 — UI/UX behavior khi search
+- S5 — Stability nhẹ khi thao tác nhanh
+
+Ghi chú: Phần bên dưới vẫn liệt kê theo nhóm kỹ thuật (Functional/Validation/Boundary/UX/Performance)
+để tiện tham chiếu, nhưng khi viết báo cáo nên trình bày theo Scenario lớn → Test case.
 
 ---
 
@@ -73,27 +77,24 @@ Expected:
 
 ---
 
-### FT-05 — Search theo tác giả
-
-Kĩ thuật sử dụng: Phân hoạch tương đương (Equivalence Partitioning)
-
----
-
-### FT-06 — Search theo nhà xuất bản
-
-Kĩ thuật sử dụng: Phân hoạch tương đương (Equivalence Partitioning)
-
----
-
 ### FT-07 — Search theo ISBN / mã sản phẩm
 
 Kĩ thuật sử dụng: Phân hoạch tương đương (Equivalence Partitioning)
+
+Ghi chú scope (để dễ automate):
+
+- Ưu tiên cover **mã hàng/SKU** (chuỗi số) vì ổn định và đối chiếu được ở trang chi tiết.
+- ISBN có thể cover nếu bạn có test data + expected ổn định.
 
 ---
 
 ### FT-08 — Search theo thể loại
 
 Kĩ thuật sử dụng: Phân hoạch tương đương (Equivalence Partitioning)
+
+Ghi chú scope:
+
+- Nếu search box không hỗ trợ tìm theo thể loại (hoặc kết quả không ổn định), có thể **đưa case này ra ngoài scope automation**.
 
 ---
 
@@ -126,9 +127,13 @@ Input:
 
 Expected:
 
-- Không search
-  hoặc
-- Hiển thị default suggestion
+- Hành vi có thể theo 2 hướng tùy hệ thống:
+  - (A) Không submit/search khi input rỗng
+  - (B) Điều hướng sang trang kết quả và hiển thị default suggestion
+
+Ghi chú automation:
+
+- Nếu automate trên website thật, nên **chốt 1 hành vi** để pass/fail rõ ràng (thường là (B)).
 
 ---
 
@@ -144,6 +149,11 @@ Expected:
 
 - Trim input
 - Không gửi request vô nghĩa
+
+Ghi chú automation:
+
+- Có thể kiểm chứng bằng UI: sau khi submit, ô search hiển thị rỗng (đã trim).
+- Kiểm chứng “không gửi request” cần theo dõi network (có thể flaky), nên coi là bonus.
 
 ---
 
@@ -197,7 +207,7 @@ Ví dụ:
 Expected:
 
 - Không crash
-- Không vỡ layout
+- Không vỡ layout nghiêm trọng (header/ô search vẫn thao tác được)
 - Có xử lý hợp lý
 
 ---
@@ -216,29 +226,7 @@ Expected:
 
 ---
 
-# 4. State Testing
-
-## ST-01 — Search khi chưa login
-
-Kĩ thuật sử dụng: Đồ thị chuyển trạng thái (State Transition)
-
----
-
-## ST-02 — Search khi đã login
-
-Kĩ thuật sử dụng: Đồ thị chuyển trạng thái (State Transition)
-
----
-
-## ST-03 — Search sau khi logout
-
-Kĩ thuật sử dụng: Đồ thị chuyển trạng thái (State Transition)
-
-Nhiều hệ thống cache sai state.
-
----
-
-# 5. UI / UX Testing
+# 4. UI / UX Testing
 
 ## UX-01 — Enter và click icon cho kết quả giống nhau
 
@@ -282,7 +270,7 @@ Expected:
 
 ---
 
-# 6. Performance / Stability nhẹ
+# 5. Performance / Stability nhẹ
 
 ## PF-01 — Spam search liên tục
 
@@ -298,11 +286,16 @@ Expected:
 - Không rate-limit bất thường
 - Không duplicate request lỗi
 
+Ghi chú automation:
+
+- “Không freeze UI” có thể đo bằng việc vẫn click/fill được ô search sau khi spam.
+- “Không duplicate request lỗi” nếu cần đo chính xác thì theo dõi network (bonus).
+
 Playwright làm case này khá ổn.
 
 ---
 
-# 7. Case rất đáng thêm (điểm cộng mạnh)
+# 6. Case rất đáng thêm (điểm cộng mạnh)
 
 ## EC-01 — Search keyword không tồn tại
 
@@ -357,7 +350,7 @@ Bạn hoàn toàn có thể ghi trong báo cáo:
 | ----------------------- | ----------------------------- |
 | Phân hoạch tương đương  | keyword hợp lệ / không hợp lệ |
 | Boundary Value Analysis | keyword cực ngắn / cực dài    |
-| State Transition        | login / logout                |
+| State Transition        | keyword giữ lại sau search    |
 | Error Guessing          | XSS, spam search              |
 | Decision-based behavior | enter vs click                |
 

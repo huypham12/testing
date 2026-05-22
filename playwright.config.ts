@@ -29,7 +29,7 @@ export default defineConfig({
 
   use: {
     /* Base URL (bắt buộc nên set cho đồ án web) */
-    baseURL: "https://your-target-site.com",
+    baseURL: "https://www.fahasa.com/",
 
     /* Evidence (bằng chứng test) */
     screenshot: "only-on-failure", // fail mới chụp
