@@ -45,6 +45,13 @@ npm run test:search
 
 ```
 
+- **Chạy riêng file test giỏ hàng (Cart) trên Chromium:**
+
+```bash
+npm run test:cart
+
+```
+
 ### 2. Chạy có giao diện trực quan (Headed / UI Mode)
 
 - **Chạy với giao diện trình duyệt bật lên (Headed mode):** Giúp bạn nhìn thấy rõ các thao tác click, gõ phím đang diễn ra.
