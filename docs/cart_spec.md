@@ -1,4 +1,4 @@
-# TÀI LIỆU ĐẶC TẢ KIỂM THỬ (TEST SPECIFICATION) - TÍNH NĂNG GIỎ HÀNG (CART)
+# TÀI LIỆU ĐẶC TẢ KIỂM THỬ (TEST SPECIFICATION) - CART TEST SUITE
 
 ---
 
@@ -6,21 +6,23 @@
 
 ## Thuộc phạm vi kiểm thử (In-scope)
 
-- Thêm sản phẩm vào giỏ hàng (Guest & User).
-- Quản lý trạng thái chọn/bỏ chọn sản phẩm (Checkbox).
-- Cập nhật số lượng sản phẩm và xử lý các giá trị biên của tồn kho.
-- Xóa sản phẩm đơn lẻ và toàn bộ.
-- Tính toán tổng tiền tạm tính dựa trên logic Checkbox.
-- Khuyến mãi cơ bản (Tiến trình Freeship, Áp dụng mã giảm giá) liên kết với tổng tiền.
-- Quản lý phiên làm việc (Session), đồng bộ dữ liệu khi đăng nhập và xử lý lỗi tương tranh (Concurrency/Backend sync).
+- Thêm sản phẩm vào giỏ hàng với các trạng thái tồn kho và trạng thái giỏ khác nhau.
+- Gộp dòng sản phẩm trùng SKU/variant thay vì tạo record mới.
+- Chọn / bỏ chọn item và cập nhật subtotal theo trạng thái checkbox.
+- Số lượng hợp lệ, invalid input, giá trị biên, và thay đổi tồn kho trong lúc đang thao tác.
+- Xóa item, xóa item cuối cùng và chuyển sang empty state.
+- Freeship / voucher theo ngưỡng subtotal, đặc biệt các mốc sát biên.
+- Đồng bộ guest cart, merge khi đăng nhập, và xử lý session stale / concurrency.
 
 ---
 
 ## Không thuộc phạm vi kiểm thử (Out-of-scope)
 
-- Luồng thanh toán (Checkout Process / Payment Gateway).
-- Quản lý và điều chỉnh kho hàng (Inventory Management) phía Admin.
-- Tích hợp và cấu hình chiến dịch khuyến mãi (Promotion Setup).
+- Luồng thanh toán và cổng thanh toán.
+- Cấu hình chiến dịch promotion ở phía admin.
+- Nghiệp vụ quản trị kho hàng.
+- Thay đổi giá, tồn kho hoặc trạng thái sản phẩm từ phía server/admin.
+- Can thiệp Local Storage/Cookie để giả lập dữ liệu giỏ hàng.
 
 ---
 
@@ -28,11 +30,11 @@
 
 ---
 
-# SCENARIO 1: Thêm sản phẩm vào giỏ hàng và Xử lý tương tranh
+# SCENARIO 1: Thêm sản phẩm vào giỏ hàng và xử lý lỗi đồng thời
 
 ## Mục tiêu kiểm thử
 
-Đảm bảo người dùng có thể thêm các sản phẩm với trạng thái tồn kho khác nhau vào giỏ hàng, đồng thời hệ thống xử lý chính xác các trường hợp ngoại lệ từ máy chủ.
+Phát hiện lỗi ở luồng add-to-cart, đặc biệt tại điểm giao giữa trạng thái giỏ, tồn kho, idempotency và lỗi backend.
 
 ---
 
@@ -40,14 +42,16 @@
 
 - Equivalence Partitioning (EP)
 - Error Guessing
+- State Transition
 
 ---
 
 ## Giả định nghiệp vụ (Business Rule)
 
-- Nút "Thêm vào giỏ" ở trang danh sách/chi tiết mặc định thêm `Quantity = 1`.
-- Sản phẩm thêm thành công sẽ hiển thị thông báo và mặc định được tick chọn (Checkbox = true).
-- Sản phẩm hết hàng không được phép thêm (Nút bị disable).
+- Mỗi SKU/variant chỉ có một dòng trong giỏ; add trùng thì tăng số lượng.
+- Khi thêm thành công, item được tick chọn mặc định nếu giỏ đang có ít nhất một item được chọn.
+- Sản phẩm hết hàng phải disable nút thêm.
+- Nút Add-to-cart phải có cơ chế Idempotency hoặc Debounce để chống spam request sinh rác dữ liệu.
 
 ---
 
@@ -55,96 +59,71 @@
 
 ---
 
-### TC_001 — Thêm 1 sản phẩm mới vào giỏ trống
+### TC-CART-S1-001 — Thêm mới một sản phẩm hợp lệ vào giỏ rỗng
 
-| Thuộc tính        | Nội dung                                                  |
-| ----------------- | --------------------------------------------------------- |
-| **Pre-condition** | Giỏ hàng hiện tại đang trống. Sản phẩm A có tồn kho = 10. |
-| **Test Data**     | Sản phẩm A (Giá: 43.000đ)                                 |
-| **Steps**         | 1. Nhấn nút "Thêm giỏ hàng" tại Sản phẩm A.<br>           |
-
-<br>2. Truy cập vào trang Giỏ hàng để kiểm tra. |
-| **Expected Result** | - Hiển thị popup/toast: "Sản phẩm đã được thêm vào giỏ hàng".<br>
-
-<br>- Sản phẩm A xuất hiện trong giỏ với Số lượng = 1.<br>
-
-<br>- Checkbox của Sản phẩm A tự động được tick.<br>
-
-<br>- Dòng "Thành tiền" cập nhật đúng 43.000đ. |
+| Thuộc tính          | Nội dung                                                                                                                                        |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pre-condition**   | Giỏ hàng rỗng. SP A còn hàng, tồn kho = 10.                                                                                                     |
+| **Test Data**       | SP A, giá 43.000đ                                                                                                                               |
+| **Steps**           | 1. Nhấn nút thêm giỏ tại SP A.<br>2. Mở trang giỏ hàng.                                                                                         |
+| **Expected Result** | - Item SP A xuất hiện đúng 1 dòng.<br>- Số lượng = 1.<br>- Item được tick chọn mặc định.<br>- Subtotal = 43.000đ.<br>- Không tạo bản ghi trùng. |
 
 ---
 
-### TC_002 — Thêm sản phẩm đã tồn tại trong giỏ
+### TC-CART-S1-002 — Add trùng SKU phải tăng số lượng, không tạo dòng mới
 
-| Thuộc tính        | Nội dung                                                |
-| ----------------- | ------------------------------------------------------- |
-| **Pre-condition** | Giỏ hàng đã có Sản phẩm A (Số lượng = 1). Tồn kho = 10. |
-| **Test Data**     | Sản phẩm A                                              |
-| **Steps**         | 1. Quay lại trang chi tiết Sản phẩm A.<br>              |
-
-<br>2. Nhấn nút "Thêm giỏ hàng" lần 2.<br>
-
-<br>3. Truy cập vào trang Giỏ hàng. |
-| **Expected Result** | - Hệ thống không tạo dòng record sản phẩm mới.<br>
-
-<br>- Số lượng của Sản phẩm A trong giỏ tự động tăng từ 1 lên 2.<br>
-
-<br>- "Thành tiền" cập nhật thành 86.000đ (43.000đ \* 2). |
+| Thuộc tính          | Nội dung                                                                                                                                                         |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pre-condition**   | Trong giỏ đã có SP A, số lượng = 1.                                                                                                                              |
+| **Test Data**       | Click thêm lại SP A từ trang chi tiết hoặc danh sách.                                                                                                            |
+| **Steps**           | 1. Thêm lại SP A lần 2.<br>2. Vào giỏ kiểm tra số lượng.                                                                                                         |
+| **Expected Result** | - Không sinh thêm dòng mới cho SP A.<br>- Số lượng tăng từ 1 lên 2.<br>- Subtotal của SP A = 86.000đ.<br>- Nếu UI có badge/count tổng item, badge cập nhật đúng. |
 
 ---
 
-### TC_003 — Thêm sản phẩm ở trạng thái Hết hàng
+### TC-CART-S1-003 — Thêm sản phẩm hết hàng phải bị chặn ở UI và API
 
-| Thuộc tính        | Nội dung                                   |
-| ----------------- | ------------------------------------------ |
-| **Pre-condition** | Sản phẩm B có tồn kho = 0 trên hệ thống.   |
-| **Test Data**     | Sản phẩm B                                 |
-| **Steps**         | 1. Truy cập trang chi tiết Sản phẩm B.<br> |
-
-<br>2. Quan sát trạng thái nút thêm vào giỏ. |
-| **Expected Result** | - Nút mua hàng bị vô hiệu hóa (Disabled), màu sắc chuyển xám.<br>
-
-<br>- Text trên nút thay đổi thành "Hết hàng".<br>
-
-<br>- Không thể click để gọi API thêm. |
+| Thuộc tính          | Nội dung                                                                                                                                                                  |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pre-condition**   | SP B có tồn kho = 0.                                                                                                                                                      |
+| **Test Data**       | SP B                                                                                                                                                                      |
+| **Steps**           | 1. Mở trang chi tiết SP B.<br>2. Quan sát và thử thao tác nút thêm.                                                                                                       |
+| **Expected Result** | - Nút thêm bị disable.<br>- Text trạng thái là "Hết hàng".<br>- Không gửi request add-to-cart khi click/tap.<br>- Nếu cố call API trực tiếp, backend phải từ chối hợp lệ. |
 
 ---
 
-### TC_004 — Xử lý ngoại lệ Server Timeout khi thêm sản phẩm
+### TC-CART-S1-004 — Mạng chậm / timeout khi add không làm nhân đôi item (Idempotency)
 
-| Thuộc tính        | Nội dung                                                                           |
-| ----------------- | ---------------------------------------------------------------------------------- |
-| **Pre-condition** | Mạng hoặc Server Backend xử lý chậm/mất kết nối (Mô phỏng ngắt mạng khi call API). |
-| **Test Data**     | Sản phẩm C                                                                         |
-| **Steps**         | 1. Nhấn "Thêm giỏ hàng" tại Sản phẩm C.<br>                                        |
-
-<br>2. Hệ thống frontend gửi request nhưng backend không phản hồi trong 30s. |
-| **Expected Result** | - Giao diện hiển thị loading spinner trong thời gian chờ.<br>
-
-<br>- Sau 30s, hiển thị thông báo lỗi màu đỏ: "Kết nối máy chủ bị gián đoạn, vui lòng thử lại sau". |
+| Thuộc tính          | Nội dung                                                                                                                                                                                                                                                                 |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Pre-condition**   | SP A chưa có trong giỏ hàng.                                                                                                                                                                                                                                             |
+| **Test Data**       | SP A; DevTools Network (Slow 3G / Offline).                                                                                                                                                                                                                              |
+| **Steps**           | **Phần A — Spam click khi mạng chậm:**<br>1. Mở DevTools → Network → Slow 3G.<br>2. Bấm liên tiếp 5 lần "Thêm vào giỏ" trước khi có response đầu tiên.<br>3. Tắt throttle, vào giỏ kiểm tra.<br><br>**Phần B — Timeout / retry:**<br>4. Làm mới context, mô phỏng offline hoặc mạng không phản hồi.<br>5. Nhấn thêm giỏ, đợi timeout.<br>6. Bấm lại sau lỗi (kể cả khi request cũ có thể vẫn chạy nền), kiểm tra giỏ. |
+| **Expected Result** | - UI: Nút disable hoặc loading ngay sau click đầu tiên (Phần A).<br>- Không sinh duplicate dòng; nếu lọt nhiều request thì phải cộng dồn SL hoặc chỉ nhận 1 action.<br>- Phần B: Có loading state; khi timeout hiển thị lỗi rõ ràng.<br>- Retry sau lỗi không tạo thêm item trùng. |
 
 ---
 
-# SCENARIO 2: Chọn / Bỏ chọn sản phẩm (Checkbox) và Tính toán
+# SCENARIO 2: Chọn / bỏ chọn và tính subtotal theo trạng thái
 
 ## Mục tiêu kiểm thử
 
-Đảm bảo tổng tiền chỉ được tính toán chính xác dựa trên các sản phẩm có trạng thái Checkbox được tick chọn.
+Phát hiện lỗi đồng bộ checkbox tổng, checkbox con, và subtotal khi người dùng thay đổi lựa chọn liên tục.
 
 ---
 
 ## Kỹ thuật áp dụng
 
-- Use Case Testing
 - Decision Table Testing
+- Use Case Testing
+- State Transition
 
 ---
 
 ## Giả định nghiệp vụ (Business Rule)
 
-- Tiền "Tạm tính" = Tổng `(Giá bán * Số lượng)` của các sản phẩm có Checkbox = Ticked.
-- Bỏ tick sản phẩm sẽ loại trừ giá trị của sản phẩm đó khỏi Tổng tiền.
-- Chức năng "Chọn tất cả" sẽ tick đồng loạt các sản phẩm có trong giỏ.
+- Chỉ item được tick mới tính vào subtotal.
+- Checkbox tổng phản ánh đúng trạng thái của tất cả item con.
+- Bỏ tick một item trong nhóm đã chọn phải làm checkbox tổng về trạng thái trung gian hoặc bỏ chọn.
 
 ---
 
@@ -152,51 +131,33 @@
 
 ---
 
-### TC_005 — Tính tổng tiền khi chọn toàn bộ sản phẩm
+### TC-CART-S2-001 — Chọn / bỏ chọn / chọn lại item phải cập nhật subtotal chính xác
 
-| Thuộc tính        | Nội dung                                                          |
-| ----------------- | ----------------------------------------------------------------- |
-| **Pre-condition** | Giỏ hàng có 3 sản phẩm đều đang ở trạng thái KHÔNG được chọn:<br> |
-
-<br>- SP A (194.600đ, SL: 5)<br>
-
-<br>- SP B (60.000đ, SL: 2)<br>
-
-<br>- SP C (43.000đ, SL: 1) |
-| **Test Data** | Checkbox "Chọn tất cả" |
-| **Steps** | 1. Tick vào ô Checkbox "Chọn tất cả (3 sản phẩm)" ở trên cùng danh sách.<br>
-
-<br>2. Kiểm tra trạng thái các item và số tiền. |
-| **Expected Result** | - Checkbox của SP A, B, C đồng loạt chuyển sang trạng thái đã chọn.<br>
-
-<br>- Dòng "Thành tiền" = `(194.600 * 5) + (60.000 * 2) + (43.000 * 1) = 1.136.000đ`.<br>
-
-<br>- Nút "Mua hàng" sáng lên. |
+| Thuộc tính          | Nội dung                                                                                                                                                                                                                                                                    |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pre-condition**   | Giỏ có SP A, SP B, SP C đều đang uncheck.                                                                                                                                                                                                                                   |
+| **Test Data**       | Checkbox "Chọn tất cả"                                                                                                                                                                                                                                                      |
+| **Steps**           | 1. Tick chọn tất cả.<br>2. Bỏ chọn SP C, quan sát subtotal và checkbox tổng.<br>3. Tick lại SP C, quan sát trạng thái checkbox tổng và subtotal.                                                                                                                             |
+| **Expected Result** | - Sau bước 2: Checkbox tổng không còn all-selected; SP C bị loại khỏi subtotal; subtotal giảm đúng giá trị SP C.<br>- Sau bước 3: Checkbox tổng quay lại all-selected; subtotal tăng lại đúng giá trị SP C.<br>- Không mismatch giữa checkbox tổng và item con; không cộng/trừ hai lần do event handler bắn trùng. |
 
 ---
 
-### TC_006 — Tính tổng tiền khi bỏ chọn một sản phẩm
+### TC-CART-S2-002 — Reload trang phải giữ trạng thái chọn / bỏ chọn nếu nghiệp vụ yêu cầu persist
 
-| Thuộc tính        | Nội dung                                                                 |
-| ----------------- | ------------------------------------------------------------------------ |
-| **Pre-condition** | Giỏ hàng đang được tick "Chọn tất cả" với SP A, B, C (Tổng: 1.136.000đ). |
-| **Test Data**     | Bỏ tick Sản phẩm C (43.000đ)                                             |
-| **Steps**         | 1. Click vào Checkbox của SP C để bỏ chọn.<br>                           |
-
-<br>2. Kiểm tra trạng thái UI. |
-| **Expected Result** | - Checkbox "Chọn tất cả" ở phía trên tự động chuyển sang trạng thái bỏ chọn (Unticked).<br>
-
-<br>- SP C bị loại khỏi phép tính.<br>
-
-<br>- Dòng "Thành tiền" giảm trừ 43.000đ, hiển thị = `1.093.000đ`. |
+| Thuộc tính          | Nội dung                                                                                                                                                                                                    |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pre-condition**   | Một phần item đang được tick, phần còn lại uncheck.                                                                                                                                                         |
+| **Test Data**       | F5 / reload trang                                                                                                                                                                                           |
+| **Steps**           | 1. Reload trang giỏ.<br>2. So sánh trạng thái checkbox và subtotal trước/sau reload.                                                                                                                        |
+| **Expected Result** | - Trạng thái sau reload khớp với dữ liệu đã lưu.<br>- Không reset toàn bộ item về cùng một trạng thái nếu hệ thống thiết kế có persist.<br>- Nếu hệ thống không persist, phải có spec rõ ràng và nhất quán. |
 
 ---
 
-# SCENARIO 3: Cập nhật số lượng sản phẩm (Phân tích giá trị biên)
+# SCENARIO 3: Cập nhật số lượng sản phẩm và biên tồn kho
 
 ## Mục tiêu kiểm thử
 
-Kiểm tra giới hạn số lượng sản phẩm thông qua input hợp lệ và không hợp lệ dựa trên quy tắc phân tích biên.
+Tìm lỗi ở input validation, giới hạn min/max, paste dữ liệu bẩn, và thay đổi tồn kho trong quá trình người dùng chỉnh số lượng.
 
 ---
 
@@ -204,14 +165,16 @@ Kiểm tra giới hạn số lượng sản phẩm thông qua input hợp lệ v
 
 - Boundary Value Analysis (BVA)
 - Equivalence Partitioning (EP)
+- Error Guessing
 
 ---
 
 ## Giả định nghiệp vụ (Business Rule)
 
-- Tồn kho thực tế (Stock) giả định trong kịch bản = 5.
-- Giá trị biên hợp lệ (Valid Boundaries): `1` (Cận dưới), `5` (Cận trên).
-- Giá trị biên không hợp lệ (Invalid Boundaries): `0` (Dưới cận dưới), `6` (Trên cận trên).
+- Stock giả định = 5.
+- Số lượng hợp lệ nằm trong [1..5].
+- Input chỉ nhận số nguyên dương.
+- Khi số lượng vượt stock, hệ thống phải chặn và giải thích được nguyên nhân.
 
 ---
 
@@ -219,95 +182,83 @@ Kiểm tra giới hạn số lượng sản phẩm thông qua input hợp lệ v
 
 ---
 
-### TC_008 — Nhập số lượng bằng Giá trị biên trên hợp lệ (Qty = 5)
+### TC-CART-S3-001 — Nhập đúng cận dưới hợp lệ
 
-| Thuộc tính        | Nội dung                                          |
-| ----------------- | ------------------------------------------------- |
-| **Pre-condition** | SP A trong giỏ, Stock = 5, Số lượng hiện tại = 1. |
-| **Test Data**     | Input = `5`                                       |
-| **Steps**         | 1. Click vào ô số lượng của SP A.<br>             |
-
-<br>2. Xóa số hiện tại, nhập số `5`.<br>
-
-<br>3. Click chuột ra ngoài khoảng trống (blur) để áp dụng. |
-| **Expected Result** | - Giao diện chấp nhận số 5.<br>
-
-<br>- Tổng tiền cập nhật chính xác (Giá \* 5).<br>
-
-<br>- Nút cộng (+) bị vô hiệu hóa (disable) do đã đạt tối đa tồn kho. |
+| Thuộc tính          | Nội dung                                                                                             |
+| ------------------- | ---------------------------------------------------------------------------------------------------- |
+| **Pre-condition**   | SP A đang có số lượng = 2, stock = 5.                                                                |
+| **Test Data**       | Input = 1                                                                                            |
+| **Steps**           | 1. Xóa giá trị hiện tại.<br>2. Nhập 1 và blur khỏi ô.                                                |
+| **Expected Result** | - Input chấp nhận 1.<br>- Nút trừ bị disable ở mức 1.<br>- Subtotal cập nhật đúng theo số lượng mới. |
 
 ---
 
-### TC_009 — Nhập số lượng vượt Giá trị biên trên (Qty = 6)
+### TC-CART-S3-002 — Nhập đúng cận trên hợp lệ
 
-| Thuộc tính        | Nội dung                                                                  |
-| ----------------- | ------------------------------------------------------------------------- |
-| **Pre-condition** | SP A trong giỏ, Stock = 5, Số lượng hiện tại = 5.                         |
-| **Test Data**     | Input = `6`                                                               |
-| **Steps**         | 1. Cố ý nhập số `6` vào ô input (hoặc gọi API trực tiếp nếu UI chặn).<br> |
-
-<br>2. Click chuột ra ngoài để áp dụng. |
-| **Expected Result** | - Hệ thống không tính tiền cho giá trị dư.<br>
-
-<br>- Hiển thị dòng chữ màu đỏ báo lỗi ngay dưới giá SP A: `* Số lượng yêu cầu cho 6 không có sẵn.`<br>
-
-<br>- Ô input tự động reset lại giá trị `5` (giá trị Max hợp lệ) sau khi reload. |
+| Thuộc tính          | Nội dung                                                                                    |
+| ------------------- | ------------------------------------------------------------------------------------------- |
+| **Pre-condition**   | SP A đang có số lượng = 1, stock = 5.                                                       |
+| **Test Data**       | Input = 5                                                                                   |
+| **Steps**           | 1. Nhập 5.<br>2. Blur để áp dụng.                                                           |
+| **Expected Result** | - Input chấp nhận 5.<br>- Nút cộng bị disable ở mức stock tối đa.<br>- Subtotal = giá \* 5. |
 
 ---
 
-### TC_010 — Nhập số lượng bằng Giá trị biên dưới không hợp lệ (Qty = 0)
+### TC-CART-S3-003 — Nhập vượt cận trên phải bị chặn bằng thông báo nghiệp vụ
 
-| Thuộc tính        | Nội dung                                     |
-| ----------------- | -------------------------------------------- |
-| **Pre-condition** | SP A trong giỏ, Số lượng hiện tại = 1.       |
-| **Test Data**     | Input = `0`                                  |
-| **Steps**         | 1. Xóa số 1, nhập số `0` vào ô số lượng.<br> |
-
-<br>2. Bấm ra ngoài khoảng trống. |
-| **Expected Result** | - Hệ thống từ chối giá trị 0.<br>
-
-<br>- Input tự động thiết lập lại giá trị thành `1` (giá trị Min hợp lệ).<br>
-
-<br>- Nút trừ (-) bị vô hiệu hóa hoàn toàn khi giá trị đang là 1. |
+| Thuộc tính          | Nội dung                                                                                                                                                                            |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pre-condition**   | SP A hiện số lượng = 5, stock = 5.                                                                                                                                                  |
+| **Test Data**       | Input = 6                                                                                                                                                                           |
+| **Steps**           | 1. Thử nhập 6 bằng UI hoặc paste.<br>2. Blur để xác nhận.                                                                                                                           |
+| **Expected Result** | - Không chấp nhận số vượt stock.<br>- Có thông báo lỗi rõ ràng dưới item.<br>- Giá trị input quay về 5 hoặc về giá trị hợp lệ gần nhất theo spec.<br>- Không làm subtotal tăng sai. |
 
 ---
 
-### TC_011 — Nhập ký tự không hợp lệ (Chữ, Ký tự đặc biệt)
+### TC-CART-S3-004 — Nhập biên dưới không hợp lệ và giá trị rỗng
 
-| Thuộc tính        | Nội dung                               |
-| ----------------- | -------------------------------------- |
-| **Pre-condition** | SP A trong giỏ, Số lượng hiện tại = 2. |
-| **Test Data**     | Input = `abc`, `@#$`, `-5`             |
-| **Steps**         | 1. Focus vào ô Số lượng.<br>           |
-
-<br>2. Nhập các ký tự chữ, ký tự đặc biệt hoặc số âm. |
-| **Expected Result** | - Form input sử dụng regex chặn trực tiếp, không cho nhập ký tự chữ/kí hiệu.<br>
-
-<br>- Nếu paste data vào, hệ thống tự động xóa ký tự sai và trả về giá trị cũ là `2`. |
+| Thuộc tính          | Nội dung                                                                                                                                               |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Pre-condition**   | SP A đang có số lượng = 2.                                                                                                                             |
+| **Test Data**       | Input = 0, rỗng, -1                                                                                                                                    |
+| **Steps**           | 1. Thay lần lượt các giá trị invalid vào ô số lượng.<br>2. Blur.                                                                                       |
+| **Expected Result** | - 0, rỗng, số âm đều bị từ chối.<br>- Không được phép để input ở trạng thái không xác định sau blur.<br>- Giá trị phải rollback về số hợp lệ gần nhất. |
 
 ---
 
-# SCENARIO 4: Áp dụng Khuyến mãi (Bảng quyết định - Decision Table)
+### TC-CART-S3-005 — Paste ký tự bẩn phải không làm vỡ state
+
+| Thuộc tính          | Nội dung                                                                                                                                             |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pre-condition**   | SP A đang có số lượng = 2.                                                                                                                           |
+| **Test Data**       | Paste `abc`, `@#$`, `2e3`, `1.5`, khoảng trắng đầu/cuối                                                                                              |
+| **Steps**           | 1. Paste dữ liệu bẩn vào ô số lượng.<br>2. Blur khỏi ô.                                                                                              |
+| **Expected Result** | - Chỉ cho phép dữ liệu hợp lệ đi qua.<br>- Không biến input thành NaN, Infinity, hoặc chuỗi rác.<br>- State cũ không bị phá hỏng nếu paste thất bại. |
+
+---
+
+# SCENARIO 4: Khuyến mãi và freeship theo ngưỡng subtotal
 
 ## Mục tiêu kiểm thử
 
-Đảm bảo module khuyến mãi (Freeship Bar và Mã Giảm Giá) xuất hiện và được tính toán đúng dựa trên điều kiện của TỔNG TIỀN.
+Phát hiện lỗi ở logic tính ngưỡng sát biên, gộp voucher (stacking), và recalculation khi subtotal thay đổi (bỏ tick, xóa item, giảm số lượng) sau khi voucher đã được chọn.
 
 ---
 
 ## Kỹ thuật áp dụng
 
 - Decision Table Testing
+- Boundary Value Analysis
 
 ---
 
 ## Giả định nghiệp vụ (Business Rule)
 
-Xây dựng Bảng quyết định dựa trên mốc Tổng tiền Tạm tính:
-
-- Mốc 1: Đơn < 500k -> Không có gì.
-- Mốc 2: 500k <= Đơn < 999k -> Kích hoạt trạng thái Miễn phí giao hàng.
-- Mốc 3: Đơn >= 999k -> Miễn phí giao hàng VÀ đủ điều kiện áp dụng Voucher "Giảm 70k Toàn sàn".
+- Freeship bắt đầu từ 500.000đ.
+- Voucher 70k bắt đầu từ 999.000đ.
+- Ngưỡng phải tính trên subtotal của các item đang được tick, trước khi giảm giá.
+- Khi subtotal giảm xuống dưới ngưỡng, voucher đang áp dụng phải tự hủy hoặc báo không đủ điều kiện.
+- Cho phép áp dụng 1 mã Freeship và 1 mã Giảm giá cùng lúc; ngưỡng từng mã hoạt động độc lập trên Subtotal.
 
 ---
 
@@ -315,79 +266,70 @@ Xây dựng Bảng quyết định dựa trên mốc Tổng tiền Tạm tính:
 
 ---
 
-### TC_012 — Tổng tiền chưa đủ điều kiện khuyến mãi (Đơn < 500k)
+### TC-CART-S4-001 — Dưới ngưỡng freeship sát 1đ
 
-| Thuộc tính        | Nội dung                                                      |
-| ----------------- | ------------------------------------------------------------- |
-| **Pre-condition** | Giỏ hàng đang tick chọn các SP có Tổng thành tiền = 400.000đ. |
-| **Test Data**     | Đơn = 400.000đ                                                |
-| **Steps**         | 1. Mở xem thanh tiến trình Freeship bên phải.<br>             |
-
-<br>2. Mở popup danh sách Mã Khuyến Mãi. |
-| **Expected Result** | - Thanh Freeship hiển thị chưa đầy (thông báo cần mua thêm 100.000đ để được freeship).<br>
-
-<br>- Voucher 70k (cho đơn 999k) bị làm mờ, hiển thị trạng thái "Chưa đủ điều kiện".<br>
-
-<br>- Nút "Áp dụng" mã bị disable. |
+| Thuộc tính          | Nội dung                                                                                                         |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Pre-condition**   | Subtotal của item được tick = 499.999đ.                                                                          |
+| **Test Data**       | Đơn = 499.999đ                                                                                                   |
+| **Steps**           | 1. Mở thanh freeship.<br>2. Mở danh sách voucher.                                                                |
+| **Expected Result** | - Chưa đạt freeship.<br>- UI phải hiển thị số tiền cần thêm chính xác là 1đ.<br>- Voucher 70k vẫn chưa khả dụng. |
 
 ---
 
-### TC_013 — Tổng tiền chỉ đạt điều kiện Freeship (500k <= Đơn < 999k)
+### TC-CART-S4-002 — Đúng ngưỡng freeship nhưng chưa đạt voucher
 
-| Thuộc tính        | Nội dung                                                      |
-| ----------------- | ------------------------------------------------------------- |
-| **Pre-condition** | Giỏ hàng đang tick chọn các SP có Tổng thành tiền = 600.000đ. |
-| **Test Data**     | Đơn = 600.000đ                                                |
-| **Steps**         | 1. Quan sát thanh tiến trình Freeship.<br>                    |
-
-<br>2. Mở popup danh sách Mã Khuyến Mãi. |
-| **Expected Result** | - Thanh Freeship đạt 100%, đổi màu xanh lác cây kèm text: "Miễn phí giao hàng cho đơn từ 500k trở lên!".<br>
-
-<br>- Phí giao hàng trừ 0đ.<br>
-
-<br>- Voucher 70k (cho đơn 999k) vẫn bị làm mờ và không thể áp dụng (thiếu 399k nữa). |
+| Thuộc tính          | Nội dung                                                                                                                                                                   |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pre-condition**   | Subtotal = 500.000đ.                                                                                                                                                       |
+| **Test Data**       | Đơn = 500.000đ                                                                                                                                                             |
+| **Steps**           | 1. Quan sát thanh freeship.<br>2. Kiểm tra voucher.                                                                                                                        |
+| **Expected Result** | - Freeship đạt ngưỡng.<br>- Phí ship về 0đ.<br>- Voucher 70k vẫn chưa được kích hoạt nếu chưa đạt 999k.<br>- Không được hiển thị ngưỡng sai lệch làm người dùng hiểu nhầm. |
 
 ---
 
-### TC_014 — Tổng tiền đạt toàn bộ điều kiện (Đơn >= 999k)
+### TC-CART-S4-003 — Sát ngưỡng voucher nhưng chưa đủ
 
-| Thuộc tính        | Nội dung                                                        |
-| ----------------- | --------------------------------------------------------------- |
-| **Pre-condition** | Giỏ hàng đang tick chọn các SP có Tổng thành tiền = 1.136.000đ. |
-| **Test Data**     | Đơn = 1.136.000đ, thao tác Áp dụng mã 70k.                      |
-| **Steps**         | 1. Quan sát thanh Freeship.<br>                                 |
-
-<br>2. Mở popup danh sách mã, tìm mã "Giảm 70k Toàn sàn" (điều kiện 999k).<br>
-
-<br>3. Bấm "Áp dụng". |
-| **Expected Result** | - Thanh Freeship đạt 100%.<br>
-
-<br>- Mã 70k hiển thị sáng màu, nút "Áp dụng" hoạt động.<br>
-
-<br>- Sau khi bấm, popup đóng, phần tính tiền xuất hiện thêm dòng "Giảm giá" với giá trị `-70.000đ`.<br>
-
-<br>- Tổng số tiền (gồm VAT) = `1.136.000đ - 70.000đ = 1.066.000đ`. |
+| Thuộc tính          | Nội dung                                                                                                                                   |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Pre-condition**   | Subtotal = 998.999đ.                                                                                                                       |
+| **Test Data**       | Đơn = 998.999đ                                                                                                                             |
+| **Steps**           | 1. Mở voucher 70k.<br>2. Quan sát trạng thái áp dụng.                                                                                      |
+| **Expected Result** | - Freeship vẫn đạt.<br>- Voucher 70k phải bị khóa vì thiếu 1đ.<br>- Message đủ điều kiện phải rõ ràng, không được làm tròn sai thành 999k. |
 
 ---
 
-# SCENARIO 5: Xóa sản phẩm khỏi giỏ hàng
+### TC-CART-S4-004 — Giảm subtotal phải recalculation voucher (bỏ tick, xóa item, gộp voucher)
+
+| Thuộc tính          | Nội dung                                                                                                                                                                                                                                                                                                                                                                                          |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pre-condition**   | Có thể dựng giỏ đạt các mức subtotal 999.000đ và 500.000đ.                                                                                                                                                                                                                                                                                                                                        |
+| **Test Data**       | Voucher 70k (ngưỡng 999k); Voucher Freeship (ngưỡng 300k); Voucher Discount (ngưỡng 500k).                                                                                                                                                                                                                                                                                                        |
+| **Steps**           | **Phần A — Bỏ tick làm mất điều kiện:**<br>1. Subtotal ≥ 999k, áp dụng voucher 70k.<br>2. Bỏ tick một item để subtotal < 999k, quan sát tổng tiền.<br><br>**Phần B — Xóa item làm mất điều kiện:**<br>3. Dựng lại giỏ ≥ 999k, áp dụng voucher 70k.<br>4. Xóa item làm subtotal tụt dưới ngưỡng, quan sát voucher và tổng tiền.<br><br>**Phần C — Stacking hai voucher:**<br>5. Subtotal = 500k, áp dụng Freeship + Discount.<br>6. Giảm SL hoặc bỏ tick để subtotal = 400k, quan sát khu vực mã khuyến mãi. |
+| **Expected Result** | - Phần A & B: Voucher 70k bị gỡ khi subtotal không còn đủ ngưỡng; tổng tiền recalculation ngay; không giữ trạng thái "đã áp dụng" sai điều kiện.<br>- Phần C: Voucher Discount bị gỡ (400k < 500k); Voucher Freeship vẫn áp dụng (400k > 300k).<br>- Tổng tiền cuối cùng tính lại chính xác theo voucher còn hiệu lực.                                                                                    |
+
+---
+
+# SCENARIO 5: Xóa sản phẩm và chuyển trạng thái giao diện
 
 ## Mục tiêu kiểm thử
 
-Kiểm tra sự thay đổi trạng thái của Giỏ hàng khi xóa phần tử đơn lẻ và khi giỏ rơi vào trạng thái rỗng hoàn toàn.
+Bắt lỗi state transition khi xóa item, đặc biệt khi item đó ảnh hưởng subtotal, checkbox tổng, hoặc là item cuối cùng của giỏ.
 
 ---
 
 ## Kỹ thuật áp dụng
 
 - State Transition
+- Decision Table Testing
 
 ---
 
 ## Giả định nghiệp vụ (Business Rule)
 
-- Bấm nút Thùng rác xóa trực tiếp sản phẩm (Không hỏi lại).
-- Nếu giỏ hàng không còn sản phẩm nào, tự động chuyển về giao diện Empty State.
+- Xóa là hành động trực tiếp, không confirm.
+- Xóa item đang được tick phải trừ khỏi subtotal ngay.
+- Nếu giỏ trống hoàn toàn, chuyển sang empty state.
 
 ---
 
@@ -395,41 +337,33 @@ Kiểm tra sự thay đổi trạng thái của Giỏ hàng khi xóa phần tử
 
 ---
 
-### TC_015 — Xóa 1 sản phẩm trong giỏ nhiều sản phẩm
+### TC-CART-S5-001 — Xóa item đang được tick nhưng giỏ vẫn còn item khác
 
-| Thuộc tính          | Nội dung                                                      |
-| ------------------- | ------------------------------------------------------------- |
-| **Pre-condition**   | Giỏ hàng đang có SP A và SP B (Cả 2 đều đang được tick chọn). |
-| **Test Data**       | Icon thùng rác của SP A                                       |
-| **Steps**           | 1. Click vào icon Thùng rác (Delete) tại dòng Sản phẩm A.     |
-| **Expected Result** | - Dòng Sản phẩm A bị xóa ngay lập tức khỏi giao diện.<br>     |
-
-<br>- Sản phẩm B giữ nguyên vị trí, số lượng và trạng thái tick chọn.<br>
-
-<br>- Tổng tiền tự động tính lại chỉ bao gồm tiền của Sản phẩm B. |
+| Thuộc tính          | Nội dung                                                                                                                                               |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Pre-condition**   | Giỏ có SP A và SP B, cả hai đang tick chọn.                                                                                                            |
+| **Test Data**       | Xóa SP A                                                                                                                                               |
+| **Steps**           | 1. Nhấn xóa SP A.<br>2. Quan sát subtotal và checkbox tổng.                                                                                            |
+| **Expected Result** | - SP A biến mất ngay.<br>- SP B vẫn giữ nguyên trạng thái.<br>- Subtotal chỉ còn phần của SP B.<br>- Checkbox tổng phải cập nhật theo số item còn lại. |
 
 ---
 
-### TC_016 — Xóa sản phẩm cuối cùng (Empty State)
+### TC-CART-S5-002 — Xóa item cuối cùng phải chuyển sang empty state đúng chuẩn
 
-| Thuộc tính          | Nội dung                                         |
-| ------------------- | ------------------------------------------------ |
-| **Pre-condition**   | Giỏ hàng chỉ có duy nhất Sản phẩm B.             |
-| **Test Data**       | Icon thùng rác                                   |
-| **Steps**           | 1. Click vào icon Thùng rác tại dòng Sản phẩm B. |
-| **Expected Result** | - Sản phẩm B bị xóa hoàn toàn.<br>               |
-
-<br>- Giao diện giỏ hàng thay đổi sang trạng thái Empty State: hiển thị icon/hình minh họa giỏ rỗng.<br>
-
-<br>- Hiển thị text "Chưa có sản phẩm nào" và nút "Tiếp tục mua sắm". |
+| Thuộc tính          | Nội dung                                                                                                                                                                                  |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pre-condition**   | Giỏ chỉ còn 1 item duy nhất.                                                                                                                                                              |
+| **Test Data**       | Xóa item cuối cùng                                                                                                                                                                        |
+| **Steps**           | 1. Nhấn xóa item duy nhất.<br>2. Quan sát màn hình sau xóa.                                                                                                                               |
+| **Expected Result** | - Danh sách giỏ rỗng.<br>- Empty state hiển thị rõ ràng.<br>- Có text rỗng giỏ và CTA tiếp tục mua sắm.<br>- Không còn các control liên quan tới subtotal/voucher nếu giỏ không còn item. |
 
 ---
 
-# SCENARIO 6: Quản lý Session, Đồng bộ và Biến động tồn kho (Concurrency)
+# SCENARIO 6: Session, merge giỏ và concurrency tồn kho
 
 ## Mục tiêu kiểm thử
 
-Đảm bảo tính toàn vẹn của dữ liệu giỏ hàng qua các thao tác đăng nhập, hết hạn phiên và biến động tồn kho do user khác tác động.
+Săn lỗi ở các điểm rất dễ hỏng: merge guest cart, trùng SKU và stale session.
 
 ---
 
@@ -437,14 +371,16 @@ Kiểm tra sự thay đổi trạng thái của Giỏ hàng khi xóa phần tử
 
 - Use Case Testing
 - Error Guessing
+- State Transition
 
 ---
 
 ## Giả định nghiệp vụ (Business Rule)
 
-- Giỏ hàng của Khách (Guest) lưu qua Cookie/LocalStorage.
-- Khi đăng nhập, giỏ của Guest sẽ gộp (merge) với giỏ hiện tại của Account trên Database.
-- Khi reload, nếu tồn kho thực tế ở kho hệ thống < Số lượng đang chọn trong giỏ, tự động cập nhật cảnh báo.
+- Guest cart được lưu local.
+- Khi login, guest cart được merge vào account cart.
+- Nếu cùng SKU xuất hiện ở cả hai giỏ, số lượng phải cộng dồn theo quy tắc hệ thống.
+- Khi tồn kho thực tế giảm thấp hơn số lượng đang giữ, hệ thống phải cảnh báo và co về mức hợp lệ.
 
 ---
 
@@ -452,51 +388,81 @@ Kiểm tra sự thay đổi trạng thái của Giỏ hàng khi xóa phần tử
 
 ---
 
-### TC_017 — Đồng bộ (Merge) giỏ hàng khi Đăng nhập tài khoản
+### TC-CART-S6-001 — Merge giỏ khi login với cùng SKU phải cộng dồn đúng quy tắc và không vượt tồn kho
 
-| Thuộc tính        | Nội dung                                                         |
-| ----------------- | ---------------------------------------------------------------- |
-| **Pre-condition** | - User đang duyệt web dạng Khách (Guest), có SP A trong giỏ.<br> |
-
-<br>- Account X trên Database trước đó đã lưu sẵn SP B trong giỏ. |
-| **Test Data** | Đăng nhập Account X |
-| **Steps** | 1. Từ trang Giỏ hàng có SP A, ấn Đăng nhập ở góc trên bên phải.<br>
-
-<br>2. Nhập username/password cho Account X thành công.<br>
-
-<br>3. Kiểm tra lại Giỏ hàng. |
-| **Expected Result** | - Hệ thống đồng bộ thành công, không mất data của Guest.<br>
-
-<br>- Giỏ hàng hiện tại chứa cả SP A và SP B.<br>
-
-<br>- Nếu SP A và SP B trùng nhau, cộng dồn số lượng. |
+| Thuộc tính          | Nội dung                                                                                                                                                                                                                                      |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pre-condition**   | Guest có SP A (SL=3); Account X cũng có SP A (SL=4). Tồn kho thực tế tối đa của SP A = 5.                                                                                                                                                    |
+| **Test Data**       | Đăng nhập account X                                                                                                                                                                                                                           |
+| **Steps**           | 1. Login account X.<br>2. Vào lại giỏ hàng kiểm tra số lượng SP A.                                                                                                                                                                          |
+| **Expected Result** | - Hai giỏ được merge thành công, không tạo ra 2 dòng SP A riêng biệt.<br>- Số lượng SP A được cộng dồn nhưng phải bị giới hạn ở mức 5 (tồn kho tối đa), không được là 7 gây lỗi logic.<br>- Có thông báo: Số lượng sản phẩm đã được cập nhật do giới hạn tồn kho. |
 
 ---
 
-### TC_018 — Tồn kho thực tế bị hụt do User khác mua hết
+### TC-CART-S6-002 — Merge giỏ khi login với SKU khác nhau phải giữ đủ cả hai phía
 
-| Thuộc tính        | Nội dung                                                                              |
-| ----------------- | ------------------------------------------------------------------------------------- |
-| **Pre-condition** | User X đang có SP A (Số lượng = 3) trong giỏ. Tồn kho hệ thống hiện tại = 5.          |
-| **Test Data**     | User Y mua hết hàng                                                                   |
-| **Steps**         | 1. Ở một thiết bị khác, User Y chốt đơn và mua thành công 4 SP A (Tồn kho còn 1).<br> |
+| Thuộc tính          | Nội dung                                                                                                                                                |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pre-condition**   | Guest có SP A; account X có SP B.                                                                                                                       |
+| **Test Data**       | Đăng nhập account X                                                                                                                                     |
+| **Steps**           | 1. Login account X.<br>2. Kiểm tra giỏ sau merge.                                                                                                       |
+| **Expected Result** | - Giỏ cuối cùng chứa cả SP A và SP B.<br>- Trạng thái chọn/bỏ chọn không bị reset sai nếu hệ thống có persist selection.<br>- Không mất item của guest. |
 
-<br>2. Ở thiết bị của User X, F5 reload lại trang Giỏ hàng (Hoặc bấm Check-out). |
-| **Expected Result** | - Hệ thống phát hiện sự chênh lệch (3 > 1).<br>
+---
 
-<br>- Tự động reset số lượng của User X về 1.<br>
+### TC-CART-S6-003 — Session stale / expired không được làm mất guest cart
 
-<br>- Hiển thị thông báo đỏ dưới SP A: "Sản phẩm vừa có thay đổi về tồn kho, số lượng hiện tại chỉ còn 1". |
+| Thuộc tính          | Nội dung                                                                                                                                          |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pre-condition**   | User đang có guest cart hợp lệ, session đăng nhập hết hạn hoặc 401.                                                                               |
+| **Test Data**       | Refresh hoặc thao tác sau khi session expire                                                                                                      |
+| **Steps**           | 1. Để session hết hạn.<br>2. Thao tác tiếp trên giỏ hoặc login lại.                                                                               |
+| **Expected Result** | - Hệ thống xử lý expired session đúng cách.<br>- Guest cart không bị xóa mất.<br>- Nếu phải redirect login, dữ liệu giỏ vẫn còn sau khi quay lại. |
+
+---
+
+# SCENARIO 7: Xử lý giới hạn khối lượng Giỏ hàng (Cart Limits)
+
+## Mục tiêu kiểm thử
+
+Xác minh hệ thống không bị crash hoặc dính lỗi payload quá tải khi người dùng thêm số lượng lớn các "dòng" sản phẩm khác biệt vào giỏ.
+
+---
+
+## Kỹ thuật áp dụng
+
+- Boundary Value Analysis (BVA)
+
+---
+
+## Giả định nghiệp vụ (Business Rule)
+
+- Hệ thống có giới hạn số lượng đầu sản phẩm tối đa (unique items) trong một giỏ (ví dụ: 100 loại khác nhau) để tối ưu hiệu năng.
+
+---
+
+## Test Cases
+
+---
+
+### TC-CART-S7-001 — Thêm vượt quá giới hạn "Dòng sản phẩm" (Unique Items) tối đa
+
+| Thuộc tính          | Nội dung                                                                                                                                                                                                                |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pre-condition**   | Giỏ hàng đang chứa đúng giới hạn tối đa các loại sản phẩm khác nhau (ví dụ: 100 SKU khác nhau).                                                                                                                        |
+| **Test Data**       | SP Z (là SKU thứ 101)                                                                                                                                                                                                   |
+| **Steps**           | 1. Tại trang chi tiết SP Z, bấm "Thêm vào giỏ".<br>2. Quan sát phản hồi của UI và Network.                                                                                                                              |
+| **Expected Result** | - Hệ thống từ chối thêm SP Z.<br>- Hiển thị thông báo (Toast/Popup): "Giỏ hàng đã đầy, vui lòng thanh toán bớt" hoặc tương tự.<br>- Không gây crash UI, không có lỗi 500 từ server.                                    |
 
 ---
 
 # 3. Ma trận theo dõi Kỹ thuật kiểm thử (Testing Techniques Matrix)
 
-| Kỹ thuật Thiết kế (ISTQB)         | Kịch bản áp dụng | Mục đích sử dụng                                                                                                          |
-| --------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| **Equivalence Partitioning (EP)** | Scenario 1, 3    | Phân chia vùng dữ liệu đầu vào (số lượng hợp lệ, chuỗi không hợp lệ, thao tác hàng còn/hết) để hạn chế thừa test case.    |
-| **Boundary Value Analysis (BVA)** | Scenario 3       | Xác định hành vi của hệ thống ở đúng điểm giới hạn tồn kho (Tồn kho Min=1, Max=5, Lỗi=0, 6) tránh tràn viền logic.        |
-| **Decision Table Testing**        | Scenario 2, 4    | Quản lý các tổ hợp điều kiện logic phức tạp (Tích/Bỏ tích checkbox kết hợp với việc đạt các mốc freeship/khuyến mãi lớn). |
-| **State Transition**              | Scenario 5       | Kiểm tra sự thay đổi trạng thái UI của Giỏ hàng từ Có chứa Item -> Xóa phần tử -> Trạng thái Rỗng (Empty State).          |
-| **Use Case Testing**              | Scenario 2, 6    | Mô phỏng luồng hành vi của người dùng từ Guest đến khi Login và đồng bộ dữ liệu thực tế.                                  |
-| **Error Guessing**                | Scenario 1, 6    | Vận dụng kinh nghiệm để dự đoán các lỗi Timeout kết nối mạng và biến động tồn kho tương tranh (Concurrency) giữa DB.      |
+| Kỹ thuật Thiết kế (ISTQB)         | Kịch bản áp dụng         | Mục đích sử dụng                                                                                                      |
+| --------------------------------- | ------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| **Equivalence Partitioning (EP)** | Scenario 1, 3            | Phân lớp dữ liệu hợp lệ/không hợp lệ để bắt lỗi input, tồn kho và add-to-cart.                                        |
+| **Boundary Value Analysis (BVA)** | Scenario 3, 4, 7         | Đánh vào các mốc 1, 5, 499.999, 500.000, 998.999, 999.000 là nơi dễ sai nhất. Bổ sung: Đánh vào giới hạn số lượng loại sản phẩm tối đa (Max items in cart). |
+| **Decision Table Testing**        | Scenario 2, 4, 5         | Kiểm tra tổ hợp checkbox, subtotal, freeship, voucher stacking và recalculation khi trạng thái thay đổi.               |
+| **State Transition**              | Scenario 1, 2, 5, 6      | Bắt lỗi chuyển trạng thái: add, chọn, xóa, merge, reload, hết session.                                                |
+| **Use Case Testing**              | Scenario 2, 6            | Mô phỏng luồng thực của người dùng nhưng vẫn tập trung vào điểm dễ phát sinh bug.                                      |
+| **Error Guessing**                | Scenario 1, 3, 6         | Đánh vào timeout, stale state, paste bẩn, concurrency, merge conflict và race condition khi add-cart trong điều kiện lag mạng. |

@@ -11,8 +11,8 @@ export default defineConfig({
   // fail CI nếu còn test.only (tránh quên debug code)
   forbidOnly: !!process.env.CI,
 
-  // retry khi fail (CI: 2 lần, local: 0)
-  retries: process.env.CI ? 2 : 1,
+  // Tắt hoàn toàn retry để chỉ chạy 1 lần duy nhất
+  retries: 0,
 
   // CI chạy 1 worker để ổn định, local thì auto
   workers: process.env.CI ? 1 : undefined,
@@ -34,7 +34,10 @@ export default defineConfig({
     /* Evidence (bằng chứng test) */
     screenshot: "only-on-failure", // fail mới chụp
     video: "retain-on-failure", // fail mới lưu video
-    trace: "on-first-retry", // debug chi tiết khi retry
+
+    // Đổi thành retain-on-failure vì test không còn retry nữa
+    // Nếu fail sẽ lưu lại file trace để xem chi tiết network/DOM
+    trace: "retain-on-failure",
 
     /* UX ổn định hơn */
     actionTimeout: 15000,
@@ -48,17 +51,21 @@ export default defineConfig({
       use: { ...devices["Desktop Chrome"] },
     },
 
-    // Firefox: giữ để đa browser testing (điểm cộng)
+    // Đã comment Firefox lại để chỉ chạy Chrome lúc debug
+    /*
     {
       name: "firefox",
       use: { ...devices["Desktop Firefox"] },
     },
+    */
 
-    // Webkit: optional nhưng vẫn nên giữ để “đủ chuẩn”
+    // Đã comment Webkit lại để chỉ chạy Chrome lúc debug
+    /*
     {
       name: "webkit",
       use: { ...devices["Desktop Safari"] },
     },
+    */
   ],
 
   /* ===== OPTIONAL LOCAL SERVER (nếu có frontend local) ===== */

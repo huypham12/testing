@@ -1,3 +1,9 @@
+PLAYWRIGHT_HTML_REPORT=report/search-report npx playwright test search.spec.ts --reporter=html
+
+PLAYWRIGHT_HTML_REPORT=report/search-report npx playwright test search.spec.ts --last-failed
+
+setTimeout(() => { debugger; }, 3000);
+
 Dưới đây là nội dung `README.md` ngắn gọn, tập trung trực tiếp vào việc hướng dẫn cài đặt và các lệnh thực thi kiểm thử theo đúng yêu cầu của bạn.
 
 ````markdown

@@ -11,51 +11,19 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 3
     },
     "preserveOutput": "always",
     "projects": [
       {
         "outputDir": "C:/Users/ThinkPad T14s/Downloads/nam4/ki2/dot2/kiemthu/giuaky/code/test-results",
         "repeatEach": 1,
-        "retries": 1,
+        "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 3
         },
         "id": "chromium",
         "name": "chromium",
-        "testDir": "C:/Users/ThinkPad T14s/Downloads/nam4/ki2/dot2/kiemthu/giuaky/code/tests",
-        "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
-        "timeout": 30000
-      },
-      {
-        "outputDir": "C:/Users/ThinkPad T14s/Downloads/nam4/ki2/dot2/kiemthu/giuaky/code/test-results",
-        "repeatEach": 1,
-        "retries": 1,
-        "metadata": {
-          "actualWorkers": 1
-        },
-        "id": "firefox",
-        "name": "firefox",
-        "testDir": "C:/Users/ThinkPad T14s/Downloads/nam4/ki2/dot2/kiemthu/giuaky/code/tests",
-        "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
-        "timeout": 30000
-      },
-      {
-        "outputDir": "C:/Users/ThinkPad T14s/Downloads/nam4/ki2/dot2/kiemthu/giuaky/code/test-results",
-        "repeatEach": 1,
-        "retries": 1,
-        "metadata": {
-          "actualWorkers": 1
-        },
-        "id": "webkit",
-        "name": "webkit",
         "testDir": "C:/Users/ThinkPad T14s/Downloads/nam4/ki2/dot2/kiemthu/giuaky/code/tests",
         "testIgnore": [],
         "testMatch": [
@@ -99,232 +67,234 @@
   },
   "suites": [
     {
-      "title": "cart.spec.ts",
-      "file": "cart.spec.ts",
+      "title": "search.spec.ts",
+      "file": "search.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Giỏ hàng (Cart) — Fahasa",
-          "file": "cart.spec.ts",
-          "line": 3,
+          "title": "Tính năng Tìm kiếm (Search)",
+          "file": "search.spec.ts",
+          "line": 5,
           "column": 6,
           "specs": [
             {
-              "title": "TC-CART-001 — Thêm 1 sản phẩm vào giỏ (guest)",
+              "title": "TC-SEARCH-S2-002: Tìm kiếm chứa ký tự đặc biệt & mã độc (XSS)",
               "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Không tìm thấy nút 'Thêm vào giỏ' trên trang, bỏ qua test này.",
-                      "location": {
-                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                        "line": 42,
-                        "column": 10
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "skipped",
-                      "duration": 4429,
+                      "status": "passed",
+                      "duration": 32321,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-30T04:16:35.332Z",
-                      "annotations": [
+                      "steps": [
                         {
-                          "type": "skip",
-                          "description": "Không tìm thấy nút 'Thêm vào giỏ' trên trang, bỏ qua test này.",
-                          "location": {
-                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                            "line": 42,
-                            "column": 10
-                          }
+                          "title": "Thử nghiệm XSS: [Ký tự đặc biệt thuần]",
+                          "duration": 12835
+                        },
+                        {
+                          "title": "Thử nghiệm XSS: [Ký tự Emoji]",
+                          "duration": 6595
                         }
                       ],
+                      "startTime": "2026-06-04T07:04:51.835Z",
+                      "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
-              "id": "1981448f0b79506fb670-37f4330b48a9304cb0af",
-              "file": "cart.spec.ts",
-              "line": 30,
+              "id": "a088064de9fe351eef5f-b828d74724791d0f772b",
+              "file": "search.spec.ts",
+              "line": 125,
               "column": 7
             },
             {
-              "title": "TC-CART-004 — Đồng bộ giỏ hàng khi đăng nhập (guest -> login)",
-              "ok": true,
+              "title": "TC-SEARCH-S5-001: Nhận diện dung sai lỗi chính tả (Typo Tolerance)",
+              "ok": false,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Không có sản phẩm trong giỏ — bỏ qua kiểm tra đồng bộ login",
-                      "location": {
-                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                        "line": 114,
-                        "column": 10
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "timeout": 300000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "skipped",
-                      "duration": 3280,
-                      "errors": [],
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 34764,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\n    at SearchPage.getTopProductTitles (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:126:16)\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:279:44\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:276:7",
+                        "location": {
+                          "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                          "column": 50,
+                          "line": 120
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                            "column": 50,
+                            "line": 120
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m\n\u001b[2m    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\u001b[22m\n\u001b[2m    at SearchPage.getTopProductTitles (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:126:16)\u001b[22m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:279:44\u001b[22m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:276:7\u001b[22m"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-30T04:16:40.207Z",
-                      "annotations": [
+                      "steps": [
                         {
-                          "type": "skip",
-                          "description": "Không có sản phẩm trong giỏ — bỏ qua kiểm tra đồng bộ login",
-                          "location": {
-                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                            "line": 114,
-                            "column": 10
+                          "title": "[Thiếu ký tự] Nhập \"hry potter\", kỳ vọng ra \"harry potter\"",
+                          "duration": 20399,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\n    at SearchPage.getTopProductTitles (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:126:16)\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:279:44\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:276:7",
+                            "location": {
+                              "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                              "column": 50,
+                              "line": 120
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m"
                           }
                         }
                       ],
-                      "attachments": []
+                      "startTime": "2026-06-04T07:04:51.851Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--11ee3-ỗi-chính-tả-Typo-Tolerance--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--11ee3-ỗi-chính-tả-Typo-Tolerance--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--11ee3-ỗi-chính-tả-Typo-Tolerance--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--11ee3-ỗi-chính-tả-Typo-Tolerance--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                        "column": 50,
+                        "line": 120
+                      }
                     }
                   ],
-                  "status": "skipped"
+                  "status": "unexpected"
                 }
               ],
-              "id": "1981448f0b79506fb670-6a25476211fe9fcebd74",
-              "file": "cart.spec.ts",
-              "line": 86,
+              "id": "a088064de9fe351eef5f-99b1dcdc1be1ddc34d16",
+              "file": "search.spec.ts",
+              "line": 273,
               "column": 7
             },
             {
-              "title": "TC-CART-002 — Ràng buộc số lượng (biên trên và thông báo lỗi)",
-              "ok": true,
+              "title": "TC-SEARCH-S5-003: Kiểm tra hiệu năng phản hồi cơ bản (Search Performance)",
+              "ok": false,
               "tags": [],
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Không có sản phẩm trong giỏ — bỏ qua kiểm tra số lượng",
-                      "location": {
-                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                        "line": 231,
-                        "column": 10
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "skipped",
-                      "duration": 3238,
-                      "errors": [],
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 29371,
+                      "error": {
+                        "message": "Error: Lỗi Hiệu năng: Tìm kiếm \"harry potter\" tốn 8856ms (Vượt quá 5000ms)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m5000\u001b[39m\nReceived:    \u001b[31m8856\u001b[39m",
+                        "stack": "Error: Lỗi Hiệu năng: Tìm kiếm \"harry potter\" tốn 8856ms (Vượt quá 5000ms)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m5000\u001b[39m\nReceived:    \u001b[31m8856\u001b[39m\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:326:7",
+                        "location": {
+                          "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                          "column": 7,
+                          "line": 326
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 324 |\u001b[39m       loadTime\u001b[33m,\u001b[39m\n \u001b[90m 325 |\u001b[39m       \u001b[32m`Lỗi Hiệu năng: Tìm kiếm \"${keyword}\" tốn ${loadTime}ms (Vượt quá ${maxAcceptableTimeMs}ms)`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 326 |\u001b[39m     )\u001b[33m.\u001b[39mtoBeLessThanOrEqual(maxAcceptableTimeMs)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 327 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 328 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 329 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "column": 7,
+                            "line": 326
+                          },
+                          "message": "Error: Lỗi Hiệu năng: Tìm kiếm \"harry potter\" tốn 8856ms (Vượt quá 5000ms)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m5000\u001b[39m\nReceived:    \u001b[31m8856\u001b[39m\n\n\u001b[0m \u001b[90m 324 |\u001b[39m       loadTime\u001b[33m,\u001b[39m\n \u001b[90m 325 |\u001b[39m       \u001b[32m`Lỗi Hiệu năng: Tìm kiếm \"${keyword}\" tốn ${loadTime}ms (Vượt quá ${maxAcceptableTimeMs}ms)`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 326 |\u001b[39m     )\u001b[33m.\u001b[39mtoBeLessThanOrEqual(maxAcceptableTimeMs)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 327 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 328 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 329 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:326:7\u001b[22m"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-30T04:16:43.510Z",
-                      "annotations": [
+                      "startTime": "2026-06-04T07:04:51.863Z",
+                      "annotations": [],
+                      "attachments": [
                         {
-                          "type": "skip",
-                          "description": "Không có sản phẩm trong giỏ — bỏ qua kiểm tra số lượng",
-                          "location": {
-                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                            "line": 231,
-                            "column": 10
-                          }
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--6698d--cơ-bản-Search-Performance--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--6698d--cơ-bản-Search-Performance--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--6698d--cơ-bản-Search-Performance--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--6698d--cơ-bản-Search-Performance--chromium\\trace.zip"
                         }
                       ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "1981448f0b79506fb670-9946211f82b5777dcd04",
-              "file": "cart.spec.ts",
-              "line": 222,
-              "column": 7
-            },
-            {
-              "title": "TC-CART-003 — Checkbox chọn/bổ chọn ảnh hưởng tới tổng tiền tạm tính",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Không tìm thấy vùng tổng tiền — bỏ qua kiểm tra subtotal",
-                      "location": {
-                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                        "line": 303,
-                        "column": 10
+                      "errorLocation": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "column": 7,
+                        "line": 326
                       }
                     }
                   ],
-                  "expectedStatus": "skipped",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "skipped",
-                      "duration": 3402,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-30T04:16:46.789Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Không tìm thấy vùng tổng tiền — bỏ qua kiểm tra subtotal",
-                          "location": {
-                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                            "line": 303,
-                            "column": 10
-                          }
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
+                  "status": "unexpected"
                 }
               ],
-              "id": "1981448f0b79506fb670-cff94c59d4d4433e68dc",
-              "file": "cart.spec.ts",
-              "line": 296,
+              "id": "a088064de9fe351eef5f-baacb8d5a841113bdddb",
+              "file": "search.spec.ts",
+              "line": 308,
               "column": 7
             }
           ]
@@ -334,11 +304,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-05-30T04:16:34.566Z",
-    "duration": 16121.288999999999,
-    "expected": 0,
-    "skipped": 4,
-    "unexpected": 0,
+    "startTime": "2026-06-04T07:04:50.898Z",
+    "duration": 37832.576,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 2,
     "flaky": 0
   }
 }
