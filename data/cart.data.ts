@@ -49,3 +49,32 @@ export const cartData = [
 export const testAccounts = {
   accountX: { phone: "0339469831", pass: "123456" },
 };
+
+export type CartProduct = (typeof cartData)[number];
+
+export function getProduct(id: string): CartProduct {
+  const product = cartData.find((p) => p.id === id);
+  if (!product) {
+    throw new Error(`Không tìm thấy sản phẩm với id: ${id}`);
+  }
+  return product;
+}
+
+// Ngưỡng khuyến mãi theo cart_spec.md
+export const FREESHIP_THRESHOLD = 500_000;
+export const VOUCHER_70K_THRESHOLD = 999_000;
+
+// DATA CHO SCENARIO 3: Số lượng không hợp lệ / paste dữ liệu bẩn
+export const s3_invalidQtyData = [
+  { value: "0", desc: "Số lượng bằng 0" },
+  { value: "", desc: "Ô rỗng" },
+  { value: "-1", desc: "Số âm" },
+];
+
+export const s3_dirtyPasteData = [
+  { value: "abc", desc: "Chữ cái" },
+  { value: "@#$", desc: "Ký tự đặc biệt" },
+  { value: "2e3", desc: "Ký hiệu khoa học" },
+  { value: "1.5", desc: "Số thập phân" },
+  { value: "  2  ", desc: "Khoảng trắng đầu/cuối" },
+];

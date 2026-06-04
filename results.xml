@@ -1,118 +1,197 @@
-<testsuites id="" name="" tests="3" failures="2" skipped="0" errors="0" time="37.832576">
-<testsuite name="search.spec.ts" timestamp="2026-06-04T07:04:50.946Z" hostname="chromium" tests="3" failures="2" skipped="0" time="96.456" errors="0">
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S2-002: Tìm kiếm chứa ký tự đặc biệt &amp; mã độc (XSS)" classname="search.spec.ts" time="32.321">
+<testsuites id="" name="" tests="21" failures="2" skipped="8" errors="0" time="144.64064100000002">
+<testsuite name="cart.spec.ts" timestamp="2026-06-04T09:09:32.145Z" hostname="chromium" tests="21" failures="2" skipped="8" time="536.562" errors="0">
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S1-001: Thêm mới một sản phẩm hợp lệ vào giỏ rỗng" classname="cart.spec.ts" time="46.346">
 </testcase>
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S5-001: Nhận diện dung sai lỗi chính tả (Typo Tolerance)" classname="search.spec.ts" time="34.764">
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S1-002: Add trùng SKU phải tăng số lượng, không tạo dòng mới" classname="cart.spec.ts" time="33.519">
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S1-003: Thêm sản phẩm hết hàng phải bị chặn ở UI" classname="cart.spec.ts">
+<properties>
+<property name="skip" value="Chưa có SP hết hàng trong cart.data.ts — cần bổ sung URL sản phẩm out-of-stock">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S1-004: Spam click khi mạng chậm không nhân đôi dòng sản phẩm" classname="cart.spec.ts">
+<properties>
+<property name="skip" value="Bật RUN_CART_NETWORK=1 để chạy test mô phỏng mạng chậm">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S2-001: Chọn / bỏ chọn item phải cập nhật subtotal chính xác" classname="cart.spec.ts" time="88.678">
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S2-002: Reload trang phải giữ trạng thái chọn / bỏ chọn" classname="cart.spec.ts" time="73.812">
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S3-001: Nhập đúng cận dưới hợp lệ (qty = 1)" classname="cart.spec.ts" time="25.711">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--11ee3-ỗi-chính-tả-Typo-Tolerance--chromium\test-failed-1.png]]
+[[ATTACHMENT|test-results\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\test-failed-1.png]]
 
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--11ee3-ỗi-chính-tả-Typo-Tolerance--chromium\video.webm]]
+[[ATTACHMENT|test-results\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\video.webm]]
 
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--11ee3-ỗi-chính-tả-Typo-Tolerance--chromium\error-context.md]]
+[[ATTACHMENT|test-results\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\error-context.md]]
 
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--11ee3-ỗi-chính-tả-Typo-Tolerance--chromium\trace.zip]]
+[[ATTACHMENT|test-results\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\trace.zip]]
+]]>
+</system-out>
+<failure message="expect(received).toBe(expected) // Object.is equality" type="expect.toBe">
+<![CDATA[  [chromium] › cart.spec.ts:162:7 › Tính năng Giỏ hàng (Cart) › TC-CART-S3-001: Nhập đúng cận dưới hợp lệ (qty = 1) 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      170 |
+      171 |     expect(await cartPage.getQuantity(product.name)).toBe(1);
+    > 172 |     expect(await cartPage.isDecreaseQtyDisabled(product.name)).toBe(true);
+          |                                                                ^
+      173 |     expect(await cartPage.getLineTotal(product.name)).toBe(product.price);
+      174 |   });
+      175 |
+        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\cart.spec.ts:172:64
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S3-002: Nhập đúng cận trên hợp lệ (qty = stock max)" classname="cart.spec.ts" time="23.406">
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S3-003: Nhập vượt cận trên phải bị chặn" classname="cart.spec.ts" time="24.018">
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S3-004: Nhập biên dưới không hợp lệ và giá trị rỗng" classname="cart.spec.ts" time="28.391">
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S3-005: Paste ký tự bẩn không làm vỡ state" classname="cart.spec.ts" time="31.184">
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S4-001: Dưới ngưỡng freeship — hiển thị số tiền cần thêm" classname="cart.spec.ts" time="40.11">
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S4-002: Đạt ngưỡng freeship (subtotal &gt;= 500.000đ)" classname="cart.spec.ts" time="50.993">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\video.webm]]
+
+[[ATTACHMENT|test-results\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\error-context.md]]
+
+[[ATTACHMENT|test-results\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\trace.zip]]
 ]]>
 </system-out>
 <failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
-<![CDATA[  [chromium] › search.spec.ts:273:7 › Tính năng Tìm kiếm (Search) › TC-SEARCH-S5-001: Nhận diện dung sai lỗi chính tả (Typo Tolerance) › [Thiếu ký tự] Nhập "hry potter", kỳ vọng ra "harry potter" 
+<![CDATA[  [chromium] › cart.spec.ts:272:7 › Tính năng Giỏ hàng (Cart) › TC-CART-S4-002: Đạt ngưỡng freeship (subtotal >= 500.000đ) 
 
     Error: expect(locator).toBeVisible() failed
 
-    Locator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()
+    Locator:  locator('#block-totals, .fhs_checkout_event_promotion').first()
     Expected: visible
-    Timeout: 15000ms
-    Error: element(s) not found
+    Received: hidden
+    Timeout:  10000ms
 
     Call log:
-      - Expect "toBeVisible" with timeout 15000ms
-      - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('#block-totals, .fhs_checkout_event_promotion').first()
+        23 × locator resolved to <div class="fhs_checkout_event_promotion">…</div>
+           - unexpected value "hidden"
 
 
-       at ..\pages\SearchPage.ts:120
-
-      118 |
-      119 |   async expectProductListVisible() {
-    > 120 |     await expect(this.productTitleLinks.first()).toBeVisible({
-          |                                                  ^
-      121 |       timeout: 15000,
-      122 |     });
-      123 |   }
-        at SearchPage.expectProductListVisible (C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\pages\SearchPage.ts:120:50)
-        at SearchPage.getTopProductTitles (C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\pages\SearchPage.ts:126:16)
-        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\search.spec.ts:279:44
-        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\search.spec.ts:276:7
+      283 |     expect(subtotal).toBeGreaterThanOrEqual(data.FREESHIP_THRESHOLD);
+      284 |
+    > 285 |     await expect(cartPage.promoBlock.first()).toBeVisible({ timeout: 10000 });
+          |                                               ^
+      286 |   });
+      287 |
+      288 |   test("TC-CART-S4-003: Sát ngưỡng voucher 70k nhưng chưa đủ", async () => {
+        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\cart.spec.ts:285:47
 
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--11ee3-ỗi-chính-tả-Typo-Tolerance--chromium\test-failed-1.png
+    ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\test-failed-1.png
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
     attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--11ee3-ỗi-chính-tả-Typo-Tolerance--chromium\video.webm
+    ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\video.webm
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
-    Error Context: ..\test-results\search-Tính-năng-Tìm-kiếm--11ee3-ỗi-chính-tả-Typo-Tolerance--chromium\error-context.md
+    Error Context: ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\error-context.md
 
     attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--11ee3-ỗi-chính-tả-Typo-Tolerance--chromium\trace.zip
+    ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\trace.zip
     Usage:
 
-        npx playwright show-trace ..\test-results\search-Tính-năng-Tìm-kiếm--11ee3-ỗi-chính-tả-Typo-Tolerance--chromium\trace.zip
+        npx playwright show-trace ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\trace.zip
 
     ────────────────────────────────────────────────────────────────────────────────────────────────
 ]]>
 </failure>
 </testcase>
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S5-003: Kiểm tra hiệu năng phản hồi cơ bản (Search Performance)" classname="search.spec.ts" time="29.371">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--6698d--cơ-bản-Search-Performance--chromium\test-failed-1.png]]
-
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--6698d--cơ-bản-Search-Performance--chromium\video.webm]]
-
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--6698d--cơ-bản-Search-Performance--chromium\error-context.md]]
-
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--6698d--cơ-bản-Search-Performance--chromium\trace.zip]]
-]]>
-</system-out>
-<failure message="Lỗi Hiệu năng: Tìm kiếm &quot;harry potter&quot; tốn 8856ms (Vượt quá 5000ms)" type="expect.toBeLessThanOrEqual">
-<![CDATA[  [chromium] › search.spec.ts:308:7 › Tính năng Tìm kiếm (Search) › TC-SEARCH-S5-003: Kiểm tra hiệu năng phản hồi cơ bản (Search Performance) 
-
-    Error: Lỗi Hiệu năng: Tìm kiếm "harry potter" tốn 8856ms (Vượt quá 5000ms)
-
-    expect(received).toBeLessThanOrEqual(expected)
-
-    Expected: <= 5000
-    Received:    8856
-
-      324 |       loadTime,
-      325 |       `Lỗi Hiệu năng: Tìm kiếm "${keyword}" tốn ${loadTime}ms (Vượt quá ${maxAcceptableTimeMs}ms)`,
-    > 326 |     ).toBeLessThanOrEqual(maxAcceptableTimeMs);
-          |       ^
-      327 |   });
-      328 | });
-      329 |
-        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\search.spec.ts:326:7
-
-    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--6698d--cơ-bản-Search-Performance--chromium\test-failed-1.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--6698d--cơ-bản-Search-Performance--chromium\video.webm
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ..\test-results\search-Tính-năng-Tìm-kiếm--6698d--cơ-bản-Search-Performance--chromium\error-context.md
-
-    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--6698d--cơ-bản-Search-Performance--chromium\trace.zip
-    Usage:
-
-        npx playwright show-trace ..\test-results\search-Tính-năng-Tìm-kiếm--6698d--cơ-bản-Search-Performance--chromium\trace.zip
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-]]>
-</failure>
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S4-003: Sát ngưỡng voucher 70k nhưng chưa đủ" classname="cart.spec.ts">
+<properties>
+<property name="skip" value="Cần dựng giỏ chính xác 998.999đ — khó đạt chính xác trên dữ liệu SP hiện tại">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S4-004: Giảm subtotal phải recalculation voucher" classname="cart.spec.ts">
+<properties>
+<property name="skip" value="Bật RUN_CART_PROMO=1 để chạy test voucher phức tạp (cần đăng nhập / mã KM)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S5-001: Xóa item đang tick nhưng giỏ vẫn còn item khác" classname="cart.spec.ts" time="44.712">
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S5-002: Xóa item cuối cùng phải chuyển sang empty state" classname="cart.spec.ts" time="23.635">
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S6-001: Merge giỏ khi login với cùng SKU phải cộng dồn đúng quy tắc" classname="cart.spec.ts">
+<properties>
+<property name="skip" value="Bật RUN_CART_LOGIN=1 — test cần đăng nhập (có thể gặp reCAPTCHA)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S6-002: Merge giỏ khi login với SKU khác nhau phải giữ đủ cả hai" classname="cart.spec.ts">
+<properties>
+<property name="skip" value="Bật RUN_CART_LOGIN=1 — test cần đăng nhập (có thể gặp reCAPTCHA)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S6-003: Session stale không được làm mất guest cart" classname="cart.spec.ts">
+<properties>
+<property name="skip" value="Bật RUN_CART_LOGIN=1 — test cần mô phỏng session expire">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S7-001: Thêm vượt quá giới hạn dòng sản phẩm tối đa" classname="cart.spec.ts">
+<properties>
+<property name="skip" value="Cần 100+ SKU khác nhau — không khả thi trong phạm vi kiểm thử tự động thường">
+</property>
+</properties>
+<skipped>
+</skipped>
 </testcase>
 </testsuite>
 </testsuites>
