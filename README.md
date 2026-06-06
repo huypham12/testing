@@ -6,7 +6,7 @@ npm run test:cart -- -g "TC-CART-S4-001"
 
 npm run test:cart -- -g "TC-CART-S6-001|TC-CART-S6-002"
 
-
+npm run test:checkout -- -g "TC-CHECKOUT-S1-003"
 
 
 

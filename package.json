@@ -7,6 +7,7 @@
     "test": "playwright test",
     "test:search": "playwright test tests/search.spec.ts --project=chromium",
     "test:cart": "playwright test tests/cart.spec.ts --project=chromium",
+    "test:checkout": "playwright test tests/checkout.spec.ts --project=chromium",
     "report": "playwright show-report"
   },
   "keywords": [],
