@@ -1,197 +1,129 @@
-<testsuites id="" name="" tests="21" failures="2" skipped="8" errors="0" time="144.64064100000002">
-<testsuite name="cart.spec.ts" timestamp="2026-06-04T09:09:32.145Z" hostname="chromium" tests="21" failures="2" skipped="8" time="536.562" errors="0">
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S1-001: Thêm mới một sản phẩm hợp lệ vào giỏ rỗng" classname="cart.spec.ts" time="46.346">
+<testsuites id="" name="" tests="19" failures="1" skipped="0" errors="0" time="276.81735">
+<testsuite name="cart.spec.ts" timestamp="2026-06-06T07:22:15.820Z" hostname="chromium" tests="19" failures="1" skipped="0" time="885.983" errors="0">
+<testcase name="Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản › TC-CART-S1-001: Thêm mới một sản phẩm hợp lệ vào giỏ rỗng" classname="cart.spec.ts" time="54.195">
 </testcase>
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S1-002: Add trùng SKU phải tăng số lượng, không tạo dòng mới" classname="cart.spec.ts" time="33.519">
+<testcase name="Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản › TC-CART-S1-002: Add trùng SKU phải tăng số lượng" classname="cart.spec.ts" time="37.787">
 </testcase>
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S1-003: Thêm sản phẩm hết hàng phải bị chặn ở UI" classname="cart.spec.ts">
-<properties>
-<property name="skip" value="Chưa có SP hết hàng trong cart.data.ts — cần bổ sung URL sản phẩm out-of-stock">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S1-004: Spam click khi mạng chậm không nhân đôi dòng sản phẩm" classname="cart.spec.ts">
-<properties>
-<property name="skip" value="Bật RUN_CART_NETWORK=1 để chạy test mô phỏng mạng chậm">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S2-001: Chọn / bỏ chọn item phải cập nhật subtotal chính xác" classname="cart.spec.ts" time="88.678">
-</testcase>
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S2-002: Reload trang phải giữ trạng thái chọn / bỏ chọn" classname="cart.spec.ts" time="73.812">
-</testcase>
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S3-001: Nhập đúng cận dưới hợp lệ (qty = 1)" classname="cart.spec.ts" time="25.711">
+<testcase name="Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản › TC-CART-S1-003: Xử lý nút Add to Cart khi vượt tồn kho và khi sản phẩm hết hàng" classname="cart.spec.ts" time="49.02">
 <system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\test-failed-1.png]]
-
-[[ATTACHMENT|test-results\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\video.webm]]
-
-[[ATTACHMENT|test-results\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\error-context.md]]
-
-[[ATTACHMENT|test-results\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\trace.zip]]
+<![CDATA[Nội dung Alert bắt được: Số lượng yêu cầu cho 8 không có sẵn.
 ]]>
 </system-out>
-<failure message="expect(received).toBe(expected) // Object.is equality" type="expect.toBe">
-<![CDATA[  [chromium] › cart.spec.ts:162:7 › Tính năng Giỏ hàng (Cart) › TC-CART-S3-001: Nhập đúng cận dưới hợp lệ (qty = 1) 
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản › TC-CART-S1-004: [BUG UI] Icon giỏ hàng phải cập nhật số lượng ngay lập tức trên Header" classname="cart.spec.ts" time="53.841">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\cart-Tính-năng-Giỏ-hàng-Ca-92d3d-ng-ngay-lập-tức-trên-Header-chromium\test-failed-1.png]]
 
-    Error: expect(received).toBe(expected) // Object.is equality
+[[ATTACHMENT|test-results\cart-Tính-năng-Giỏ-hàng-Ca-92d3d-ng-ngay-lập-tức-trên-Header-chromium\video.webm]]
 
-    Expected: true
-    Received: false
+[[ATTACHMENT|test-results\cart-Tính-năng-Giỏ-hàng-Ca-92d3d-ng-ngay-lập-tức-trên-Header-chromium\error-context.md]]
 
-      170 |
-      171 |     expect(await cartPage.getQuantity(product.name)).toBe(1);
-    > 172 |     expect(await cartPage.isDecreaseQtyDisabled(product.name)).toBe(true);
-          |                                                                ^
-      173 |     expect(await cartPage.getLineTotal(product.name)).toBe(product.price);
-      174 |   });
-      175 |
-        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\cart.spec.ts:172:64
+[[ATTACHMENT|test-results\cart-Tính-năng-Giỏ-hàng-Ca-92d3d-ng-ngay-lập-tức-trên-Header-chromium\trace.zip]]
+]]>
+</system-out>
+<failure message="Lỗi UX/UI: Icon giỏ hàng (badge) không hiển thị hoặc không tăng số lượng ngay sau khi Add To Cart thành công." type="expect.toBe">
+<![CDATA[  [chromium] › cart.spec.ts:115:7 › Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản › TC-CART-S1-004: [BUG UI] Icon giỏ hàng phải cập nhật số lượng ngay lập tức trên Header 
+
+    Error: Lỗi UX/UI: Icon giỏ hàng (badge) không hiển thị hoặc không tăng số lượng ngay sau khi Add To Cart thành công.
+
+    Lỗi UX/UI: Icon giỏ hàng (badge) không hiển thị hoặc không tăng số lượng ngay sau khi Add To Cart thành công.
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      135 |         timeout: 5000,
+      136 |       })
+    > 137 |       .toBe(badgeBefore + 1);
+          |        ^
+      138 |   });
+      139 |
+      140 |   // ==================== SCENARIO 2: CHỌN/BỎ CHỌN ====================
+        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\cart.spec.ts:137:8
 
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\test-failed-1.png
+    ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-92d3d-ng-ngay-lập-tức-trên-Header-chromium\test-failed-1.png
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
     attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\video.webm
+    ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-92d3d-ng-ngay-lập-tức-trên-Header-chromium\video.webm
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
-    Error Context: ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\error-context.md
+    Error Context: ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-92d3d-ng-ngay-lập-tức-trên-Header-chromium\error-context.md
 
     attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
-    ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\trace.zip
+    ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-92d3d-ng-ngay-lập-tức-trên-Header-chromium\trace.zip
     Usage:
 
-        npx playwright show-trace ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\trace.zip
+        npx playwright show-trace ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-92d3d-ng-ngay-lập-tức-trên-Header-chromium\trace.zip
 
     ────────────────────────────────────────────────────────────────────────────────────────────────
 ]]>
 </failure>
 </testcase>
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S3-002: Nhập đúng cận trên hợp lệ (qty = stock max)" classname="cart.spec.ts" time="23.406">
+<testcase name="Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản › TC-CART-S2-001: Chọn/bỏ chọn item cập nhật subtotal chính xác" classname="cart.spec.ts" time="47.795">
 </testcase>
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S3-003: Nhập vượt cận trên phải bị chặn" classname="cart.spec.ts" time="24.018">
+<testcase name="Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản › TC-CART-S2-002: Reload trang giữ trạng thái chọn/bỏ chọn" classname="cart.spec.ts" time="21.867">
 </testcase>
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S3-004: Nhập biên dưới không hợp lệ và giá trị rỗng" classname="cart.spec.ts" time="28.391">
+<testcase name="Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản › TC-CART-S3-001: Nhập đúng cận dưới hợp lệ (qty = 1)" classname="cart.spec.ts" time="17.541">
 </testcase>
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S3-005: Paste ký tự bẩn không làm vỡ state" classname="cart.spec.ts" time="31.184">
+<testcase name="Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản › TC-CART-S3-002: Nhập đúng cận trên hợp lệ (qty = stock max)" classname="cart.spec.ts" time="18.094">
 </testcase>
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S4-001: Dưới ngưỡng freeship — hiển thị số tiền cần thêm" classname="cart.spec.ts" time="40.11">
+<testcase name="Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản › TC-CART-S3-003: Nhập vượt cận trên hoặc ấn dấu + phải báo lỗi item-msg và tự sửa số lượng" classname="cart.spec.ts" time="32.561">
 </testcase>
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S4-002: Đạt ngưỡng freeship (subtotal &gt;= 500.000đ)" classname="cart.spec.ts" time="50.993">
+<testcase name="Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản › TC-CART-S3-004: Nhập biên dưới không hợp lệ tự động sửa" classname="cart.spec.ts" time="41.041">
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản › TC-CART-S3-005: Paste ký tự bẩn (Dirty Data) không vỡ state" classname="cart.spec.ts" time="59.885">
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản › TC-CART-S4-001: Dưới ngưỡng Freeship hiển thị Mua Thêm" classname="cart.spec.ts" time="29.487">
 <system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\test-failed-1.png]]
-
-[[ATTACHMENT|test-results\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\video.webm]]
-
-[[ATTACHMENT|test-results\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\error-context.md]]
-
-[[ATTACHMENT|test-results\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\trace.zip]]
+<![CDATA[Cảnh báo: Không thể bấm nút mở popup bằng các selector thông thường, thử click ép (force).
 ]]>
 </system-out>
-<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
-<![CDATA[  [chromium] › cart.spec.ts:272:7 › Tính năng Giỏ hàng (Cart) › TC-CART-S4-002: Đạt ngưỡng freeship (subtotal >= 500.000đ) 
-
-    Error: expect(locator).toBeVisible() failed
-
-    Locator:  locator('#block-totals, .fhs_checkout_event_promotion').first()
-    Expected: visible
-    Received: hidden
-    Timeout:  10000ms
-
-    Call log:
-      - Expect "toBeVisible" with timeout 10000ms
-      - waiting for locator('#block-totals, .fhs_checkout_event_promotion').first()
-        23 × locator resolved to <div class="fhs_checkout_event_promotion">…</div>
-           - unexpected value "hidden"
-
-
-      283 |     expect(subtotal).toBeGreaterThanOrEqual(data.FREESHIP_THRESHOLD);
-      284 |
-    > 285 |     await expect(cartPage.promoBlock.first()).toBeVisible({ timeout: 10000 });
-          |                                               ^
-      286 |   });
-      287 |
-      288 |   test("TC-CART-S4-003: Sát ngưỡng voucher 70k nhưng chưa đủ", async () => {
-        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\cart.spec.ts:285:47
-
-    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\test-failed-1.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\video.webm
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\error-context.md
-
-    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
-    ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\trace.zip
-    Usage:
-
-        npx playwright show-trace ..\test-results\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\trace.zip
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────
+</testcase>
+<testcase name="Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản › TC-CART-S4-002: Đạt ngưỡng Khuyến mãi, mã ở trạng thái Matched" classname="cart.spec.ts" time="43.808">
+<system-out>
+<![CDATA[Cảnh báo: Không thể bấm nút mở popup bằng các selector thông thường, thử click ép (force).
 ]]>
-</failure>
+</system-out>
 </testcase>
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S4-003: Sát ngưỡng voucher 70k nhưng chưa đủ" classname="cart.spec.ts">
-<properties>
-<property name="skip" value="Cần dựng giỏ chính xác 998.999đ — khó đạt chính xác trên dữ liệu SP hiện tại">
-</property>
-</properties>
-<skipped>
-</skipped>
+<testcase name="Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản › TC-CART-S4-003: Sát ngưỡng voucher 70K nhưng chưa đủ" classname="cart.spec.ts" time="54.648">
+<system-out>
+<![CDATA[Cảnh báo: Không thể bấm nút mở popup bằng các selector thông thường, thử click ép (force).
+Toàn bộ Text bắt được trong thẻ Voucher: Mã giảmĐơn hàng từ 999KKhông bao gồm giá trị của các sản phẩm sau Manga, Ngoại Văn, Phiếu Quà Tặng, Sách Giáo Khoa, Máy Tính và Giấy Photo và Một Số Loại Giấy và Bảng Khác
+  - Giảm 70K Toàn SànHSD: 30/06/2026Mua thêm 71.000 đMua thêm																
+]]>
+</system-out>
 </testcase>
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S4-004: Giảm subtotal phải recalculation voucher" classname="cart.spec.ts">
-<properties>
-<property name="skip" value="Bật RUN_CART_PROMO=1 để chạy test voucher phức tạp (cần đăng nhập / mã KM)">
-</property>
-</properties>
-<skipped>
-</skipped>
+<testcase name="Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản › TC-CART-S4-004: Áp mã thành công rồi giảm số lượng -&gt; Mã bị rớt" classname="cart.spec.ts" time="61.599">
+<system-out>
+<![CDATA[Cảnh báo: Không thể bấm nút mở popup bằng các selector thông thường, thử click ép (force).
+Cảnh báo: Không thể bấm nút mở popup bằng các selector thông thường, thử click ép (force).
+]]>
+</system-out>
 </testcase>
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S5-001: Xóa item đang tick nhưng giỏ vẫn còn item khác" classname="cart.spec.ts" time="44.712">
+<testcase name="Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản › TC-CART-S5-001: Xóa 1 item, các item khác giữ nguyên trạng thái" classname="cart.spec.ts" time="44.939">
 </testcase>
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S5-002: Xóa item cuối cùng phải chuyển sang empty state" classname="cart.spec.ts" time="23.635">
+<testcase name="Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản › TC-CART-S5-002: Xóa item cuối cùng đưa về Empty State" classname="cart.spec.ts" time="32.13">
 </testcase>
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S6-001: Merge giỏ khi login với cùng SKU phải cộng dồn đúng quy tắc" classname="cart.spec.ts">
-<properties>
-<property name="skip" value="Bật RUN_CART_LOGIN=1 — test cần đăng nhập (có thể gặp reCAPTCHA)">
-</property>
-</properties>
-<skipped>
-</skipped>
+<testcase name="Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản › TC-CART-S6-001: Merge giỏ login cùng SKU cộng dồn số lượng" classname="cart.spec.ts" time="100.906">
+<system-out>
+<![CDATA[[S6-001] Đang setup giỏ hàng tài khoản...
+[S6-001] Bắt đầu luồng Test chính (Guest)...
+]]>
+</system-out>
 </testcase>
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S6-002: Merge giỏ khi login với SKU khác nhau phải giữ đủ cả hai" classname="cart.spec.ts">
-<properties>
-<property name="skip" value="Bật RUN_CART_LOGIN=1 — test cần đăng nhập (có thể gặp reCAPTCHA)">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S6-003: Session stale không được làm mất guest cart" classname="cart.spec.ts">
-<properties>
-<property name="skip" value="Bật RUN_CART_LOGIN=1 — test cần mô phỏng session expire">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-<testcase name="Tính năng Giỏ hàng (Cart) › TC-CART-S7-001: Thêm vượt quá giới hạn dòng sản phẩm tối đa" classname="cart.spec.ts">
-<properties>
-<property name="skip" value="Cần 100+ SKU khác nhau — không khả thi trong phạm vi kiểm thử tự động thường">
-</property>
-</properties>
-<skipped>
-</skipped>
+<testcase name="Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản › TC-CART-S6-002: Merge giỏ login khác SKU giữ đủ 2 sản phẩm" classname="cart.spec.ts" time="84.839">
+<system-out>
+<![CDATA[[S6-002] Đang setup giỏ hàng tài khoản...
+[S6-002] Bắt đầu luồng Test chính (Guest)...
+]]>
+</system-out>
 </testcase>
 </testsuite>
 </testsuites>

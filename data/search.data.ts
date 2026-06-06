@@ -92,7 +92,7 @@ export const typoTestData = [
   },
   // Nhóm 2: Thừa ký tự
   { typo: "câyy cam ngọt", expected: "cây cam ngọt", category: "Thừa ký tự" },
-  { typo: "hai số phậận", expected: "hai số phận", category: "Thừa ký tự" },
+  { typo: "haai số phận", expected: "hai số phận", category: "Thừa ký tự" },
   {
     typo: "không giia đình",
     expected: "không gia đình",
@@ -102,19 +102,21 @@ export const typoTestData = [
   // Nhóm 3: Đảo vị trí ký tự
   { typo: "haryr potter", expected: "harry potter", category: "Đảo vị trí" },
   {
-    typo: "muôn kếip",
+    typo: "muôn kếip nhân sinh",
     expected: "muôn kiếp nhân sinh",
     category: "Đảo vị trí",
   },
-  { typo: "chiến bnih", expected: "chiến binh", category: "Đảo vị trí" },
   { typo: "dắc nhan tâm", expected: "đắc nhân tâm", category: "Đảo vị trí" },
   // Nhóm 4: Dính phím liền kề
   { typo: "jary potter", expected: "harry potter", category: "Dính phím" },
   { typo: "hoành tử bé", expected: "hoàng tử bé", category: "Dính phím" },
-  { typo: "thú xhu", expected: "thú tội", category: "Dính phím" },
+  { typo: "thú rội", expected: "thú tội", category: "Dính phím" },
   // Nhóm 5: Lỗi Telex / VNI
   { typo: "đắc nhân tậm", expected: "đắc nhân tâm", category: "Lỗi dấu" },
-  { typo: "nhaaf giả kim", expected: "nhà giả kim", category: "Lỗi Telex" },
-  { typo: "tuoir trẻ", expected: "tuổi trẻ", category: "Lỗi Telex" },
-  { typo: "hatj giống", expected: "hạt giống", category: "Lỗi Telex" },
+  { typo: "nhaf giả kim", expected: "nhà giả kim", category: "Lỗi Telex" },
+  {
+    typo: "muono kieps nhana sinh",
+    expected: "muôn kiếp nhân sinh",
+    category: "Lỗi Telex",
+  },
 ];

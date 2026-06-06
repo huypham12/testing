@@ -74,9 +74,9 @@
       "specs": [],
       "suites": [
         {
-          "title": "Tính năng Giỏ hàng (Cart)",
+          "title": "Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản",
           "file": "cart.spec.ts",
-          "line": 5,
+          "line": 6,
           "column": 6,
           "specs": [
             {
@@ -95,12 +95,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 46346,
+                      "duration": 54195,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-04T09:09:32.787Z",
+                      "startTime": "2026-06-06T07:22:17.087Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -108,13 +108,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "1981448f0b79506fb670-f59498f95d8df896e085",
+              "id": "1981448f0b79506fb670-b6573aebbd5df2d2740e",
               "file": "cart.spec.ts",
-              "line": 27,
+              "line": 32,
               "column": 7
             },
             {
-              "title": "TC-CART-S1-002: Add trùng SKU phải tăng số lượng, không tạo dòng mới",
+              "title": "TC-CART-S1-002: Add trùng SKU phải tăng số lượng",
               "ok": true,
               "tags": [],
               "tests": [
@@ -129,12 +129,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 33519,
+                      "duration": 37787,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-04T09:09:32.848Z",
+                      "startTime": "2026-06-06T07:22:17.097Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -142,121 +142,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "1981448f0b79506fb670-41fa8250777ac314d9f7",
+              "id": "1981448f0b79506fb670-fcfea1abde728e49b342",
               "file": "cart.spec.ts",
               "line": 45,
               "column": 7
             },
             {
-              "title": "TC-CART-S1-003: Thêm sản phẩm hết hàng phải bị chặn ở UI",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 180000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Chưa có SP hết hàng trong cart.data.ts — cần bổ sung URL sản phẩm out-of-stock",
-                      "location": {
-                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                        "line": 59,
-                        "column": 10
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 473,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-04T09:09:32.818Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Chưa có SP hết hàng trong cart.data.ts — cần bổ sung URL sản phẩm out-of-stock",
-                          "location": {
-                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                            "line": 59,
-                            "column": 10
-                          }
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "1981448f0b79506fb670-d19aa547976e8954993a",
-              "file": "cart.spec.ts",
-              "line": 57,
-              "column": 7
-            },
-            {
-              "title": "TC-CART-S1-004: Spam click khi mạng chậm không nhân đôi dòng sản phẩm",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 240000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Bật RUN_CART_NETWORK=1 để chạy test mô phỏng mạng chậm",
-                      "location": {
-                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                        "line": 76,
-                        "column": 10
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "skipped",
-                      "duration": 383,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-04T09:09:32.849Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Bật RUN_CART_NETWORK=1 để chạy test mô phỏng mạng chậm",
-                          "location": {
-                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                            "line": 76,
-                            "column": 10
-                          }
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "1981448f0b79506fb670-1f1568f184e498757504",
-              "file": "cart.spec.ts",
-              "line": 74,
-              "column": 7
-            },
-            {
-              "title": "TC-CART-S2-001: Chọn / bỏ chọn item phải cập nhật subtotal chính xác",
+              "title": "TC-CART-S1-003: Xử lý nút Add to Cart khi vượt tồn kho và khi sản phẩm hết hàng",
               "ok": true,
               "tags": [],
               "tests": [
@@ -268,49 +160,19 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 88678,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-04T09:09:33.450Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "1981448f0b79506fb670-0166a4bb75715f45e19b",
-              "file": "cart.spec.ts",
-              "line": 102,
-              "column": 7
-            },
-            {
-              "title": "TC-CART-S2-002: Reload trang phải giữ trạng thái chọn / bỏ chọn",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 180000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 73812,
+                      "duration": 49020,
                       "errors": [],
-                      "stdout": [],
+                      "stdout": [
+                        {
+                          "text": "Nội dung Alert bắt được: Số lượng yêu cầu cho 8 không có sẵn.\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-04T09:09:33.471Z",
+                      "startTime": "2026-06-06T07:22:16.987Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -318,13 +180,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "1981448f0b79506fb670-850458bd63e6ed58c868",
+              "id": "1981448f0b79506fb670-71409719daf97e887015",
               "file": "cart.spec.ts",
-              "line": 134,
+              "line": 54,
               "column": 7
             },
             {
-              "title": "TC-CART-S3-001: Nhập đúng cận dưới hợp lệ (qty = 1)",
+              "title": "TC-CART-S1-004: [BUG UI] Icon giỏ hàng phải cập nhật số lượng ngay lập tức trên Header",
               "ok": false,
               "tags": [],
               "tests": [
@@ -336,70 +198,172 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "failed",
-                      "duration": 25711,
+                      "duration": 53841,
                       "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts:172:64",
+                        "message": "Error: Lỗi UX/UI: Icon giỏ hàng (badge) không hiển thị hoặc không tăng số lượng ngay sau khi Add To Cart thành công.\n\nLỗi UX/UI: Icon giỏ hàng (badge) không hiển thị hoặc không tăng số lượng ngay sau khi Add To Cart thành công.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+                        "stack": "Error: Lỗi UX/UI: Icon giỏ hàng (badge) không hiển thị hoặc không tăng số lượng ngay sau khi Add To Cart thành công.\n\nLỗi UX/UI: Icon giỏ hàng (badge) không hiển thị hoặc không tăng số lượng ngay sau khi Add To Cart thành công.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts:137:8",
                         "location": {
                           "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                          "column": 64,
-                          "line": 172
+                          "column": 8,
+                          "line": 137
                         },
-                        "snippet": "\u001b[0m \u001b[90m 170 |\u001b[39m\n \u001b[90m 171 |\u001b[39m     expect(\u001b[36mawait\u001b[39m cartPage\u001b[33m.\u001b[39mgetQuantity(product\u001b[33m.\u001b[39mname))\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 172 |\u001b[39m     expect(\u001b[36mawait\u001b[39m cartPage\u001b[33m.\u001b[39misDecreaseQtyDisabled(product\u001b[33m.\u001b[39mname))\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 173 |\u001b[39m     expect(\u001b[36mawait\u001b[39m cartPage\u001b[33m.\u001b[39mgetLineTotal(product\u001b[33m.\u001b[39mname))\u001b[33m.\u001b[39mtoBe(product\u001b[33m.\u001b[39mprice)\u001b[33m;\u001b[39m\n \u001b[90m 174 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 175 |\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 135 |\u001b[39m         timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 136 |\u001b[39m       })\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 137 |\u001b[39m       \u001b[33m.\u001b[39mtoBe(badgeBefore \u001b[33m+\u001b[39m \u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 138 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 139 |\u001b[39m\n \u001b[90m 140 |\u001b[39m   \u001b[90m// ==================== SCENARIO 2: CHỌN/BỎ CHỌN ====================\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                            "column": 64,
-                            "line": 172
+                            "column": 8,
+                            "line": 137
                           },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 170 |\u001b[39m\n \u001b[90m 171 |\u001b[39m     expect(\u001b[36mawait\u001b[39m cartPage\u001b[33m.\u001b[39mgetQuantity(product\u001b[33m.\u001b[39mname))\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 172 |\u001b[39m     expect(\u001b[36mawait\u001b[39m cartPage\u001b[33m.\u001b[39misDecreaseQtyDisabled(product\u001b[33m.\u001b[39mname))\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 173 |\u001b[39m     expect(\u001b[36mawait\u001b[39m cartPage\u001b[33m.\u001b[39mgetLineTotal(product\u001b[33m.\u001b[39mname))\u001b[33m.\u001b[39mtoBe(product\u001b[33m.\u001b[39mprice)\u001b[33m;\u001b[39m\n \u001b[90m 174 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 175 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts:172:64\u001b[22m"
+                          "message": "Error: Lỗi UX/UI: Icon giỏ hàng (badge) không hiển thị hoặc không tăng số lượng ngay sau khi Add To Cart thành công.\n\nLỗi UX/UI: Icon giỏ hàng (badge) không hiển thị hoặc không tăng số lượng ngay sau khi Add To Cart thành công.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n\u001b[0m \u001b[90m 135 |\u001b[39m         timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 136 |\u001b[39m       })\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 137 |\u001b[39m       \u001b[33m.\u001b[39mtoBe(badgeBefore \u001b[33m+\u001b[39m \u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 138 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 139 |\u001b[39m\n \u001b[90m 140 |\u001b[39m   \u001b[90m// ==================== SCENARIO 2: CHỌN/BỎ CHỌN ====================\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts:137:8\u001b[22m"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-04T09:10:06.655Z",
+                      "startTime": "2026-06-06T07:22:17.061Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\\test-failed-1.png"
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\cart-Tính-năng-Giỏ-hàng-Ca-92d3d-ng-ngay-lập-tức-trên-Header-chromium\\test-failed-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\\video.webm"
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\cart-Tính-năng-Giỏ-hàng-Ca-92d3d-ng-ngay-lập-tức-trên-Header-chromium\\video.webm"
                         },
                         {
                           "name": "error-context",
                           "contentType": "text/markdown",
-                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\\error-context.md"
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\cart-Tính-năng-Giỏ-hàng-Ca-92d3d-ng-ngay-lập-tức-trên-Header-chromium\\error-context.md"
                         },
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\cart-Tính-năng-Giỏ-hàng-Ca-d881d-đúng-cận-dưới-hợp-lệ-qty-1--chromium\\trace.zip"
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\cart-Tính-năng-Giỏ-hàng-Ca-92d3d-ng-ngay-lập-tức-trên-Header-chromium\\trace.zip"
                         }
                       ],
                       "errorLocation": {
                         "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                        "column": 64,
-                        "line": 172
+                        "column": 8,
+                        "line": 137
                       }
                     }
                   ],
                   "status": "unexpected"
                 }
               ],
-              "id": "1981448f0b79506fb670-5615b62d3eefcc29fd8f",
+              "id": "1981448f0b79506fb670-e78f063146db7cb8c6cb",
               "file": "cart.spec.ts",
-              "line": 162,
+              "line": 115,
+              "column": 7
+            },
+            {
+              "title": "TC-CART-S2-001: Chọn/bỏ chọn item cập nhật subtotal chính xác",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 47795,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-06T07:22:55.250Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1981448f0b79506fb670-57423c8fb3c5aa3adc7f",
+              "file": "cart.spec.ts",
+              "line": 142,
+              "column": 7
+            },
+            {
+              "title": "TC-CART-S2-002: Reload trang giữ trạng thái chọn/bỏ chọn",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 21867,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-06T07:23:06.374Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1981448f0b79506fb670-ba7f73526a1cd43c1bfe",
+              "file": "cart.spec.ts",
+              "line": 157,
+              "column": 7
+            },
+            {
+              "title": "TC-CART-S3-001: Nhập đúng cận dưới hợp lệ (qty = 1)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 17541,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-06T07:23:11.810Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1981448f0b79506fb670-ce0875892cec84a2f497",
+              "file": "cart.spec.ts",
+              "line": 171,
               "column": 7
             },
             {
@@ -415,15 +379,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 23406,
+                      "duration": 18094,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-04T09:10:19.319Z",
+                      "startTime": "2026-06-06T07:23:28.337Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -431,13 +395,47 @@
                   "status": "expected"
                 }
               ],
-              "id": "1981448f0b79506fb670-0c61d52d41c300dadbcc",
+              "id": "1981448f0b79506fb670-901f754b752221f7857d",
               "file": "cart.spec.ts",
-              "line": 176,
+              "line": 180,
               "column": 7
             },
             {
-              "title": "TC-CART-S3-003: Nhập vượt cận trên phải bị chặn",
+              "title": "TC-CART-S3-003: Nhập vượt cận trên hoặc ấn dấu + phải báo lỗi item-msg và tự sửa số lượng",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 32561,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-06T07:23:29.407Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1981448f0b79506fb670-ddee7f83d1e7bc0cc51c",
+              "file": "cart.spec.ts",
+              "line": 190,
+              "column": 7
+            },
+            {
+              "title": "TC-CART-S3-004: Nhập biên dưới không hợp lệ tự động sửa",
               "ok": true,
               "tags": [],
               "tests": [
@@ -450,14 +448,14 @@
                   "results": [
                     {
                       "workerIndex": 4,
-                      "parallelIndex": 1,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 24018,
+                      "duration": 41041,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-04T09:10:33.608Z",
+                      "startTime": "2026-06-06T07:23:42.834Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -465,47 +463,33 @@
                   "status": "expected"
                 }
               ],
-              "id": "1981448f0b79506fb670-923e1861602de2db56b6",
+              "id": "1981448f0b79506fb670-5bf9e06bf882a1cf92c9",
               "file": "cart.spec.ts",
-              "line": 191,
+              "line": 231,
               "column": 7
             },
             {
-              "title": "TC-CART-S3-004: Nhập biên dưới không hợp lệ và giá trị rỗng",
+              "title": "TC-CART-S3-005: Paste ký tự bẩn (Dirty Data) không vỡ state",
               "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 240000,
+                  "timeout": 180000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 28391,
+                      "duration": 59885,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "steps": [
-                        {
-                          "title": "Thử qty invalid: Số lượng bằng 0",
-                          "duration": 1978
-                        },
-                        {
-                          "title": "Thử qty invalid: Ô rỗng",
-                          "duration": 1900
-                        },
-                        {
-                          "title": "Thử qty invalid: Số âm",
-                          "duration": 1744
-                        }
-                      ],
-                      "startTime": "2026-06-04T09:10:42.748Z",
+                      "startTime": "2026-06-06T07:23:43.102Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -513,18 +497,18 @@
                   "status": "expected"
                 }
               ],
-              "id": "1981448f0b79506fb670-1a82ea863242b18c413c",
+              "id": "1981448f0b79506fb670-33161b03276fcd50884d",
               "file": "cart.spec.ts",
-              "line": 211,
+              "line": 247,
               "column": 7
             },
             {
-              "title": "TC-CART-S3-005: Paste ký tự bẩn không làm vỡ state",
+              "title": "TC-CART-S4-001: Dưới ngưỡng Freeship hiển thị Mua Thêm",
               "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 240000,
+                  "timeout": 180000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
@@ -534,34 +518,16 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 31184,
+                      "duration": 29487,
                       "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
+                      "stdout": [
                         {
-                          "title": "Paste dữ liệu bẩn: Chữ cái",
-                          "duration": 1412
-                        },
-                        {
-                          "title": "Paste dữ liệu bẩn: Ký tự đặc biệt",
-                          "duration": 1395
-                        },
-                        {
-                          "title": "Paste dữ liệu bẩn: Ký hiệu khoa học",
-                          "duration": 1395
-                        },
-                        {
-                          "title": "Paste dữ liệu bẩn: Số thập phân",
-                          "duration": 1647
-                        },
-                        {
-                          "title": "Paste dữ liệu bẩn: Khoảng trắng đầu/cuối",
-                          "duration": 1700
+                          "text": "Cảnh báo: Không thể bấm nút mở popup bằng các selector thông thường, thử click ép (force).\n"
                         }
                       ],
-                      "startTime": "2026-06-04T09:10:47.305Z",
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-06T07:23:46.475Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -569,13 +535,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "1981448f0b79506fb670-ead3d584ca3559c352f9",
+              "id": "1981448f0b79506fb670-ec295b281fb2bdc5105c",
               "file": "cart.spec.ts",
-              "line": 229,
+              "line": 268,
               "column": 7
             },
             {
-              "title": "TC-CART-S4-001: Dưới ngưỡng freeship — hiển thị số tiền cần thêm",
+              "title": "TC-CART-S4-002: Đạt ngưỡng Khuyến mãi, mã ở trạng thái Matched",
               "ok": true,
               "tags": [],
               "tests": [
@@ -587,15 +553,19 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 4,
-                      "parallelIndex": 1,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 40110,
+                      "duration": 43808,
                       "errors": [],
-                      "stdout": [],
+                      "stdout": [
+                        {
+                          "text": "Cảnh báo: Không thể bấm nút mở popup bằng các selector thông thường, thử click ép (force).\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-04T09:10:57.743Z",
+                      "startTime": "2026-06-06T07:24:02.121Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -603,234 +573,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "1981448f0b79506fb670-d854cef46f5bbfc80e27",
-              "file": "cart.spec.ts",
-              "line": 253,
-              "column": 7
-            },
-            {
-              "title": "TC-CART-S4-002: Đạt ngưỡng freeship (subtotal >= 500.000đ)",
-              "ok": false,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 300000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "failed",
-                      "duration": 50993,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#block-totals, .fhs_checkout_event_promotion').first()\nExpected: visible\nReceived: hidden\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('#block-totals, .fhs_checkout_event_promotion').first()\u001b[22m\n\u001b[2m    23 × locator resolved to <div class=\"fhs_checkout_event_promotion\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#block-totals, .fhs_checkout_event_promotion').first()\nExpected: visible\nReceived: hidden\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('#block-totals, .fhs_checkout_event_promotion').first()\u001b[22m\n\u001b[2m    23 × locator resolved to <div class=\"fhs_checkout_event_promotion\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts:285:47",
-                        "location": {
-                          "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                          "column": 47,
-                          "line": 285
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 283 |\u001b[39m     expect(subtotal)\u001b[33m.\u001b[39mtoBeGreaterThanOrEqual(data\u001b[33m.\u001b[39m\u001b[33mFREESHIP_THRESHOLD\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 284 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 285 |\u001b[39m     \u001b[36mawait\u001b[39m expect(cartPage\u001b[33m.\u001b[39mpromoBlock\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 286 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 287 |\u001b[39m\n \u001b[90m 288 |\u001b[39m   test(\u001b[32m\"TC-CART-S4-003: Sát ngưỡng voucher 70k nhưng chưa đủ\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                            "column": 47,
-                            "line": 285
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#block-totals, .fhs_checkout_event_promotion').first()\nExpected: visible\nReceived: hidden\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('#block-totals, .fhs_checkout_event_promotion').first()\u001b[22m\n\u001b[2m    23 × locator resolved to <div class=\"fhs_checkout_event_promotion\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 283 |\u001b[39m     expect(subtotal)\u001b[33m.\u001b[39mtoBeGreaterThanOrEqual(data\u001b[33m.\u001b[39m\u001b[33mFREESHIP_THRESHOLD\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 284 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 285 |\u001b[39m     \u001b[36mawait\u001b[39m expect(cartPage\u001b[33m.\u001b[39mpromoBlock\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 286 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 287 |\u001b[39m\n \u001b[90m 288 |\u001b[39m   test(\u001b[32m\"TC-CART-S4-003: Sát ngưỡng voucher 70k nhưng chưa đủ\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts:285:47\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-04T09:11:02.145Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\\test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\\video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\\error-context.md"
-                        },
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\cart-Tính-năng-Giỏ-hàng-Ca-f8f63-freeship-subtotal-500-000đ--chromium\\trace.zip"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                        "column": 47,
-                        "line": 285
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "1981448f0b79506fb670-04f707ca5b87a07aaf58",
-              "file": "cart.spec.ts",
-              "line": 272,
-              "column": 7
-            },
-            {
-              "title": "TC-CART-S4-003: Sát ngưỡng voucher 70k nhưng chưa đủ",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 300000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Cần dựng giỏ chính xác 998.999đ — khó đạt chính xác trên dữ liệu SP hiện tại",
-                      "location": {
-                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                        "line": 290,
-                        "column": 10
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "skipped",
-                      "duration": 263,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-04T09:11:11.158Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Cần dựng giỏ chính xác 998.999đ — khó đạt chính xác trên dữ liệu SP hiện tại",
-                          "location": {
-                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                            "line": 290,
-                            "column": 10
-                          }
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "1981448f0b79506fb670-4cebd2c6d670aea14cf8",
+              "id": "1981448f0b79506fb670-fb83b644dbb46fce717d",
               "file": "cart.spec.ts",
               "line": 288,
               "column": 7
             },
             {
-              "title": "TC-CART-S4-004: Giảm subtotal phải recalculation voucher",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 300000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Bật RUN_CART_PROMO=1 để chạy test voucher phức tạp (cần đăng nhập / mã KM)",
-                      "location": {
-                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                        "line": 298,
-                        "column": 10
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "skipped",
-                      "duration": 161,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-04T09:11:11.453Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Bật RUN_CART_PROMO=1 để chạy test voucher phức tạp (cần đăng nhập / mã KM)",
-                          "location": {
-                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                            "line": 298,
-                            "column": 10
-                          }
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "1981448f0b79506fb670-067d8928e7850cb9a565",
-              "file": "cart.spec.ts",
-              "line": 296,
-              "column": 7
-            },
-            {
-              "title": "TC-CART-S5-001: Xóa item đang tick nhưng giỏ vẫn còn item khác",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 180000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 44712,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-04T09:11:11.625Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "1981448f0b79506fb670-df207fa7150a60ae7081",
-              "file": "cart.spec.ts",
-              "line": 308,
-              "column": 7
-            },
-            {
-              "title": "TC-CART-S5-002: Xóa item cuối cùng phải chuyển sang empty state",
+              "title": "TC-CART-S4-003: Sát ngưỡng voucher 70K nhưng chưa đủ",
               "ok": true,
               "tags": [],
               "tests": [
@@ -845,12 +594,19 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 23635,
+                      "duration": 54648,
                       "errors": [],
-                      "stdout": [],
+                      "stdout": [
+                        {
+                          "text": "Cảnh báo: Không thể bấm nút mở popup bằng các selector thông thường, thử click ép (force).\n"
+                        },
+                        {
+                          "text": "Toàn bộ Text bắt được trong thẻ Voucher: Mã giảmĐơn hàng từ 999KKhông bao gồm giá trị của các sản phẩm sau Manga, Ngoại Văn, Phiếu Quà Tặng, Sách Giáo Khoa, Máy Tính và Giấy Photo và Một Số Loại Giấy và Bảng Khác\n  - Giảm 70K Toàn SànHSD: 30/06/2026Mua thêm 71.000 đMua thêm\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-04T09:11:18.507Z",
+                      "startTime": "2026-06-06T07:24:16.010Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -858,225 +614,200 @@
                   "status": "expected"
                 }
               ],
-              "id": "1981448f0b79506fb670-9987891dc387ce982b45",
+              "id": "1981448f0b79506fb670-b63fe91b79c016eaadc5",
               "file": "cart.spec.ts",
-              "line": 327,
+              "line": 304,
               "column": 7
             },
             {
-              "title": "TC-CART-S6-001: Merge giỏ khi login với cùng SKU phải cộng dồn đúng quy tắc",
+              "title": "TC-CART-S4-004: Áp mã thành công rồi giảm số lượng -> Mã bị rớt",
               "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 300000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Bật RUN_CART_LOGIN=1 — test cần đăng nhập (có thể gặp reCAPTCHA)",
-                      "location": {
-                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                        "line": 348,
-                        "column": 10
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 4,
-                      "parallelIndex": 1,
-                      "status": "skipped",
-                      "duration": 205,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 61599,
                       "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-04T09:11:37.867Z",
-                      "annotations": [
+                      "stdout": [
                         {
-                          "type": "skip",
-                          "description": "Bật RUN_CART_LOGIN=1 — test cần đăng nhập (có thể gặp reCAPTCHA)",
-                          "location": {
-                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                            "line": 348,
-                            "column": 10
-                          }
+                          "text": "Cảnh báo: Không thể bấm nút mở popup bằng các selector thông thường, thử click ép (force).\n"
+                        },
+                        {
+                          "text": "Cảnh báo: Không thể bấm nút mở popup bằng các selector thông thường, thử click ép (force).\n"
                         }
                       ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-06T07:24:24.568Z",
+                      "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
-              "id": "1981448f0b79506fb670-93ec36bbb60250c9aca3",
+              "id": "1981448f0b79506fb670-51f4ff5c42635a7e7f00",
               "file": "cart.spec.ts",
-              "line": 346,
+              "line": 325,
               "column": 7
             },
             {
-              "title": "TC-CART-S6-002: Merge giỏ khi login với SKU khác nhau phải giữ đủ cả hai",
+              "title": "TC-CART-S5-001: Xóa 1 item, các item khác giữ nguyên trạng thái",
               "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 300000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Bật RUN_CART_LOGIN=1 — test cần đăng nhập (có thể gặp reCAPTCHA)",
-                      "location": {
-                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                        "line": 371,
-                        "column": 10
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "skipped",
-                      "duration": 162,
+                      "status": "passed",
+                      "duration": 44939,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-04T09:11:38.082Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Bật RUN_CART_LOGIN=1 — test cần đăng nhập (có thể gặp reCAPTCHA)",
-                          "location": {
-                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                            "line": 371,
-                            "column": 10
-                          }
-                        }
-                      ],
+                      "startTime": "2026-06-06T07:24:43.179Z",
+                      "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
-              "id": "1981448f0b79506fb670-f4baa6db844da32615f0",
+              "id": "1981448f0b79506fb670-3916487e1cecaff3d175",
               "file": "cart.spec.ts",
-              "line": 369,
+              "line": 354,
               "column": 7
             },
             {
-              "title": "TC-CART-S6-003: Session stale không được làm mất guest cart",
+              "title": "TC-CART-S5-002: Xóa item cuối cùng đưa về Empty State",
               "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 300000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Bật RUN_CART_LOGIN=1 — test cần mô phỏng session expire",
-                      "location": {
-                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                        "line": 379,
-                        "column": 10
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 4,
-                      "parallelIndex": 1,
-                      "status": "skipped",
-                      "duration": 200,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 32130,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-04T09:11:38.256Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Bật RUN_CART_LOGIN=1 — test cần mô phỏng session expire",
-                          "location": {
-                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                            "line": 379,
-                            "column": 10
-                          }
-                        }
-                      ],
+                      "startTime": "2026-06-06T07:24:46.050Z",
+                      "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
-              "id": "1981448f0b79506fb670-73ee68a30270cede68e9",
+              "id": "1981448f0b79506fb670-74372c3f54b76e872b05",
               "file": "cart.spec.ts",
-              "line": 377,
+              "line": 367,
               "column": 7
             },
             {
-              "title": "TC-CART-S7-001: Thêm vượt quá giới hạn dòng sản phẩm tối đa",
+              "title": "TC-CART-S6-001: Merge giỏ login cùng SKU cộng dồn số lượng",
               "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 600000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Cần 100+ SKU khác nhau — không khả thi trong phạm vi kiểm thử tự động thường",
-                      "location": {
-                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                        "line": 391,
-                        "column": 10
-                      }
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "timeout": 360000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 4,
-                      "parallelIndex": 1,
-                      "status": "skipped",
-                      "duration": 200,
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 100906,
                       "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-04T09:11:38.466Z",
-                      "annotations": [
+                      "stdout": [
                         {
-                          "type": "skip",
-                          "description": "Cần 100+ SKU khác nhau — không khả thi trong phạm vi kiểm thử tự động thường",
-                          "location": {
-                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\cart.spec.ts",
-                            "line": 391,
-                            "column": 10
-                          }
+                          "text": "[S6-001] Đang setup giỏ hàng tài khoản...\n"
+                        },
+                        {
+                          "text": "[S6-001] Bắt đầu luồng Test chính (Guest)...\n"
                         }
                       ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-06T07:25:10.792Z",
+                      "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
-              "id": "1981448f0b79506fb670-36a88d0b1d9187c3204d",
+              "id": "1981448f0b79506fb670-d4d1fae67c2b53aac657",
               "file": "cart.spec.ts",
-              "line": 389,
+              "line": 379,
+              "column": 7
+            },
+            {
+              "title": "TC-CART-S6-002: Merge giỏ login khác SKU giữ đủ 2 sản phẩm",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 360000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 84839,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[S6-002] Đang setup giỏ hàng tài khoản...\n"
+                        },
+                        {
+                          "text": "[S6-002] Bắt đầu luồng Test chính (Guest)...\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-06T07:25:18.404Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1981448f0b79506fb670-3799877f63ed34caae56",
+              "file": "cart.spec.ts",
+              "line": 432,
               "column": 7
             }
           ]
@@ -1086,11 +817,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-04T09:09:31.899Z",
-    "duration": 144640.641,
-    "expected": 11,
-    "skipped": 8,
-    "unexpected": 2,
+    "startTime": "2026-06-06T07:22:15.767Z",
+    "duration": 276817.35,
+    "expected": 18,
+    "skipped": 0,
+    "unexpected": 1,
     "flaky": 0
   }
 }

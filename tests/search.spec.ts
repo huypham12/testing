@@ -270,25 +270,7 @@ test.describe("Tính năng Tìm kiếm (Search)", () => {
   // NHÓM 5: LỖI CHÍNH TẢ & NÂNG CAO (TYPO & ADVANCED)
   // =====================================================================
 
-  test("TC-SEARCH-S5-001: Nhận diện dung sai lỗi chính tả (Typo Tolerance)", async () => {
-    test.setTimeout(5 * 60 * 1000);
-    for (const item of data.typoTestData) {
-      await test.step(`[${item.category}] Nhập "${item.typo}", kỳ vọng ra "${item.expected}"`, async () => {
-        await searchPage.submitSearch(item.typo!, "enter");
-
-        const topTitles = await searchPage.getTopProductTitles(3);
-        const isMatch = topTitles.some((title) =>
-          safeNormalize(title).includes(safeNormalize(item.expected)),
-        );
-        expect(
-          isMatch,
-          `Lỗi [${item.category}]: Không nhận diện được "${item.typo}"`,
-        ).toBe(true);
-      });
-    }
-  });
-
-  test("TC-SEARCH-S5-002: Kết hợp Tìm kiếm từ khóa và click Bộ lọc cùng lúc", async () => {
+  test("TC-SEARCH-S5-001: Kết hợp Tìm kiếm từ khóa và click Bộ lọc cùng lúc", async () => {
     const filter = data.filterPublisherData[0];
 
     await test.step(`Tìm kiếm "${filter.kw}" và lọc NXB "${filter.publisher}"`, async () => {
@@ -305,7 +287,7 @@ test.describe("Tính năng Tìm kiếm (Search)", () => {
     });
   });
 
-  test("TC-SEARCH-S5-003: Kiểm tra hiệu năng phản hồi cơ bản (Search Performance)", async ({
+  test("TC-SEARCH-S5-002: Kiểm tra hiệu năng phản hồi cơ bản (Search Performance)", async ({
     page,
   }) => {
     const keyword = "harry potter";
@@ -324,5 +306,116 @@ test.describe("Tính năng Tìm kiếm (Search)", () => {
       loadTime,
       `Lỗi Hiệu năng: Tìm kiếm "${keyword}" tốn ${loadTime}ms (Vượt quá ${maxAcceptableTimeMs}ms)`,
     ).toBeLessThanOrEqual(maxAcceptableTimeMs);
+  });
+
+  test("TC-SEARCH-S5-003: Nhận diện dung sai lỗi chính tả (Thiếu ký tự)", async () => {
+    test.setTimeout(5 * 60 * 1000);
+    const testData = data.typoTestData.filter(
+      (item) => item.category === "Thiếu ký tự",
+    );
+
+    for (const item of testData) {
+      await test.step(`[${item.category}] Nhập "${item.typo}", kỳ vọng ra "${item.expected}"`, async () => {
+        await searchPage.submitSearch(item.typo!, "enter");
+
+        const topTitles = await searchPage.getTopProductTitles(3);
+        const isMatch = topTitles.some((title) =>
+          safeNormalize(title).includes(safeNormalize(item.expected)),
+        );
+        expect(
+          isMatch,
+          `Lỗi [${item.category}]: Không nhận diện được "${item.typo}"`,
+        ).toBe(true);
+      });
+    }
+  });
+
+  test("TC-SEARCH-S5-004: Nhận diện dung sai lỗi chính tả (Thừa ký tự)", async () => {
+    test.setTimeout(5 * 60 * 1000);
+    const testData = data.typoTestData.filter(
+      (item) => item.category === "Thừa ký tự",
+    );
+
+    for (const item of testData) {
+      await test.step(`[${item.category}] Nhập "${item.typo}", kỳ vọng ra "${item.expected}"`, async () => {
+        await searchPage.submitSearch(item.typo!, "enter");
+
+        const topTitles = await searchPage.getTopProductTitles(3);
+        const isMatch = topTitles.some((title) =>
+          safeNormalize(title).includes(safeNormalize(item.expected)),
+        );
+        expect(
+          isMatch,
+          `Lỗi [${item.category}]: Không nhận diện được "${item.typo}"`,
+        ).toBe(true);
+      });
+    }
+  });
+
+  test("TC-SEARCH-S5-005: Nhận diện dung sai lỗi chính tả (Đảo vị trí ký tự)", async () => {
+    test.setTimeout(5 * 60 * 1000);
+    const testData = data.typoTestData.filter(
+      (item) => item.category === "Đảo vị trí",
+    );
+
+    for (const item of testData) {
+      await test.step(`[${item.category}] Nhập "${item.typo}", kỳ vọng ra "${item.expected}"`, async () => {
+        await searchPage.submitSearch(item.typo!, "enter");
+
+        const topTitles = await searchPage.getTopProductTitles(3);
+        const isMatch = topTitles.some((title) =>
+          safeNormalize(title).includes(safeNormalize(item.expected)),
+        );
+        expect(
+          isMatch,
+          `Lỗi [${item.category}]: Không nhận diện được "${item.typo}"`,
+        ).toBe(true);
+      });
+    }
+  });
+
+  test("TC-SEARCH-S5-006: Nhận diện dung sai lỗi chính tả (Dính phím liền kề)", async () => {
+    test.setTimeout(5 * 60 * 1000);
+    const testData = data.typoTestData.filter(
+      (item) => item.category === "Dính phím",
+    );
+
+    for (const item of testData) {
+      await test.step(`[${item.category}] Nhập "${item.typo}", kỳ vọng ra "${item.expected}"`, async () => {
+        await searchPage.submitSearch(item.typo!, "enter");
+
+        const topTitles = await searchPage.getTopProductTitles(3);
+        const isMatch = topTitles.some((title) =>
+          safeNormalize(title).includes(safeNormalize(item.expected)),
+        );
+        expect(
+          isMatch,
+          `Lỗi [${item.category}]: Không nhận diện được "${item.typo}"`,
+        ).toBe(true);
+      });
+    }
+  });
+
+  test("TC-SEARCH-S5-007: Nhận diện dung sai lỗi chính tả (Lỗi gõ Telex/VNI)", async () => {
+    test.setTimeout(5 * 60 * 1000);
+    // Gộp cả "Lỗi dấu" và "Lỗi Telex" vì trong data file của bạn đang có 2 category này cho nhóm lỗi gõ
+    const testData = data.typoTestData.filter(
+      (item) => item.category === "Lỗi Telex" || item.category === "Lỗi dấu",
+    );
+
+    for (const item of testData) {
+      await test.step(`[${item.category}] Nhập "${item.typo}", kỳ vọng ra "${item.expected}"`, async () => {
+        await searchPage.submitSearch(item.typo!, "enter");
+
+        const topTitles = await searchPage.getTopProductTitles(3);
+        const isMatch = topTitles.some((title) =>
+          safeNormalize(title).includes(safeNormalize(item.expected)),
+        );
+        expect(
+          isMatch,
+          `Lỗi [${item.category}]: Không nhận diện được "${item.typo}"`,
+        ).toBe(true);
+      });
+    }
   });
 });
