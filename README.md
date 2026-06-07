@@ -1,234 +1,86 @@
-```text
+# Hướng dẫn Kiểm thử tự động với Playwright
 
-npm run test:cart -- -g "TC-CART-S4-001|TC-CART-S4-002|TC-CART-S4-003|TC-CART-S4-004"
+Dự án này sử dụng [Playwright](https://playwright.dev/) để thực hiện kiểm thử tự động (E2E Testing).
 
-npm run test:cart -- -g "TC-CART-S4-001"
+## 1. Cài đặt môi trường
 
-npm run test:cart -- -g "TC-CART-S6-001|TC-CART-S6-002"
-
-npm run test:checkout -- -g "TC-CHECKOUT-S1-003"
-
-
-
-
-
-
-```
-
-# Dự án kiểm thử tự động Fahasa (Playwright)
-
-Dự án dùng [Playwright](https://playwright.dev/) để kiểm thử tự động các chức năng trên [Fahasa.com](https://www.fahasa.com/). Test chạy trên trình duyệt **Chromium** (cấu hình trong `playwright.config.ts`).
-
-## Cấu trúc thư mục chính
-
-| Thư mục / file           | Mô tả                                                     |
-| ------------------------ | --------------------------------------------------------- |
-| `tests/search.spec.ts`   | Test chức năng **Tìm kiếm**                               |
-| `tests/cart.spec.ts`     | Test chức năng **Giỏ hàng**                               |
-| `tests/checkout.spec.ts` | Test chức năng **Thanh toán** (đang phát triển)           |
-| `data/search.data.ts`    | Dữ liệu test Search (import trong spec, không chạy riêng) |
-| `data/cart.data.ts`      | Dữ liệu test Cart                                         |
-| `pages/`                 | Page Object (SearchPage, CartPage, …)                     |
-| `playwright.config.ts`   | Cấu hình chung: base URL, reporter, timeout, browser      |
-
-**Lưu ý:** File `*.data.ts` chỉ cung cấp dữ liệu. Muốn chạy Search/Cart thì chạy file `tests/*.spec.ts` tương ứng.
-
----
-
-## Yêu cầu hệ thống
-
-- **Node.js** (tương thích `@types/node` v25+)
-- **npm** (hoặc yarn / pnpm)
-
-## Cài đặt
+Lần đầu tiên clone dự án về, bạn cần chạy các lệnh sau để cài đặt các thư viện cần thiết và trình duyệt:
 
 ```bash
+# Cài đặt các thư viện (bao gồm cả cross-env vừa được thêm)
 npm install
-npx playwright install --with-deps
+
+# Cài đặt các trình duyệt của Playwright
+npx playwright install
 ```
 
----
+## 2. Các lệnh chạy Test
 
-## Lệnh npm (khuyên dùng)
+Kết quả kiểm thử (Report) đã được cấu hình tự động phân tách tùy theo kịch bản chạy.
 
-Các script được định nghĩa trong `package.json`:
-
-| Lệnh                  | Mô tả                                                        |
-| --------------------- | ------------------------------------------------------------ |
-| `npm run test`        | Chạy **toàn bộ** test trong thư mục `tests/`                 |
-| `npm run test:search` | Chỉ `tests/search.spec.ts` trên Chromium                     |
-| `npm run test:cart`   | Chỉ `tests/cart.spec.ts` trên Chromium                       |
-| `npm run report`      | Mở báo cáo HTML sau khi chạy test (`playwright show-report`) |
-
-Ví dụ chạy riêng từng chức năng:
-
+**Chạy toàn bộ các Test:**
 ```bash
+# Sẽ chạy toàn bộ test và lưu kết quả vào thư mục `report/`
+npm run test
+```
+
+**Chạy riêng từng tính năng:**
+```bash
+# Chạy test tìm kiếm, lưu kết quả vào `report/search-report/`
 npm run test:search
+
+# Chạy test giỏ hàng, lưu kết quả vào `report/cart-report/`
 npm run test:cart
+
+# Chạy test thanh toán, lưu kết quả vào `report/checkout-report/`
+npm run test:checkout
+```
+
+## 3. Các tùy chọn chạy mở rộng (Kết hợp linh hoạt)
+
+Để tránh việc phải chạy toàn bộ test gây mất thời gian, bạn có thể truyền thêm các cờ (flags) vào sau lệnh `npm run` (bằng cách thêm phần `--` ở giữa) để chỉ quan sát một module hoặc một test cụ thể.
+
+**Chạy có giao diện trình duyệt (Headed Mode):**
+```bash
+# Chỉ mở Chrome quan sát test của tính năng Search
+npm run test:search -- --headed
+
+# Chỉ mở Chrome quan sát riêng một test ID cụ thể (ví dụ: TC_SEARCH_01)
+npm run test:search -- -g "TC_SEARCH_01" --headed
+```
+
+**Chạy UI Mode (Công cụ Debug tương tác trực quan tốt nhất của Playwright):**
+```bash
+# Mở giao diện UI Mode để debug riêng tính năng Giỏ hàng
+npm run test:cart -- --ui
+```
+
+**Chạy một Test cụ thể (theo ID hoặc tên Test) chế độ chạy ngầm (Headless):**
+```bash
+# Chỉ chạy ngầm 1 test cụ thể trong tính năng Thanh toán
+npm run test:checkout -- -g "TC_CHECKOUT_01"
+```
+
+**Chạy lại (Retry) các test vừa bị Fail ở lần chạy trước:**
+```bash
+npm run test -- --last-failed
+# Hoặc chạy lại các test fail nhưng mở thêm giao diện:
+npm run test -- --last-failed --headed
+```
+
+## 4. Xem Báo cáo kết quả (Report)
+
+Sau khi chạy test xong, nếu bạn muốn xem lại báo cáo HTML chi tiết:
+
+```bash
+# Xem report tổng hợp (nếu dùng npm run test)
+npm run report
+
+# Xem report từng tính năng riêng (nếu dùng các lệnh test lẻ)
+npm run report:search
+npm run report:cart
+npm run report:checkout
 ```
 
 ---
-
-## Lệnh Playwright chi tiết (`npx`)
-
-Playwright mặc định chạy **headless**. Thêm `--project=chromium` để khớp cấu hình dự án.
-
-### 1. Chạy theo chức năng (file spec)
-
-```bash
-npx playwright test tests/search.spec.ts --project=chromium
-npx playwright test tests/cart.spec.ts --project=chromium
-npx playwright test tests/checkout.spec.ts --project=chromium
-```
-
-### 2. Chạy một test case hoặc một nhóm
-
-Dùng `-g` (grep) theo **tiêu đề test** hoặc **mô tả nhóm**:
-
-```bash
-# Một TC cụ thể (theo mã TC trong tên test)
-npx playwright test tests/search.spec.ts -g "TC-SEARCH-S1-001" --project=chromium
-npx playwright test tests/cart.spec.ts -g "TC-CART-S1-001" --project=chromium
-
-# Cả nhóm describe
-npx playwright test tests/search.spec.ts -g "Tính năng Tìm kiếm" --project=chromium
-npx playwright test tests/cart.spec.ts -g "Tính năng Giỏ hàng" --project=chromium
-```
-
-### 3. Chạy lại test thất bại lần trước
-
-```bash
-npx playwright test tests/search.spec.ts --last-failed --project=chromium
-npx playwright test --last-failed
-npx playwright test tests/checkout.spec.ts --last-failed --project=chromium
-```
-
-### 4. Giao diện trình duyệt / UI / Debug
-
-```bash
-# Hiện cửa sổ trình duyệt
-npx playwright test tests/search.spec.ts --headed --project=chromium
-
-# Playwright UI — chọn và chạy từng test, xem trace/timeline
-npx playwright test --ui
-
-# Inspector — dừng từng bước, kiểm tra locator
-npx playwright test tests/search.spec.ts --debug --project=chromium
-```
-
-Có thể kết hợp file + chế độ, ví dụ:
-
-```bash
-npx playwright test tests/cart.spec.ts -g "TC-CART-S2-001" --headed --project=chromium
-```
-
-### 5. Điều khiển song song (tùy chọn)
-
-```bash
-# Chạy tuần tự (1 worker) — ổn định hơn khi debug
-npx playwright test tests/cart.spec.ts --workers=1 --project=chromium
-```
-
-Trên CI, `playwright.config.ts` đã đặt `workers: 1` khi có biến `CI`.
-
----
-
-## Báo cáo kết quả
-
-Sau mỗi lần chạy, config tự xuất:
-
-| Đầu ra | File / thư mục                                  |
-| ------ | ----------------------------------------------- |
-| HTML   | `playwright-report/` (mở bằng `npm run report`) |
-| JSON   | `test-results.json`                             |
-| JUnit  | `results.xml`                                   |
-
-Khi test **fail**, Playwright lưu screenshot, video và trace (theo `playwright.config.ts`).
-
-### Báo cáo HTML riêng cho từng chức năng
-
-Đặt thư mục report trước khi chạy:
-
-**PowerShell (Windows):**
-
-```powershell
-$env:PLAYWRIGHT_HTML_REPORT="report/search-report"
-npx playwright test tests/search.spec.ts --reporter=html --project=chromium
-
-$env:PLAYWRIGHT_HTML_REPORT="report/cart-report"
-npx playwright test tests/cart.spec.ts --reporter=html --project=chromium
-```
-
-**Linux / macOS:**
-
-```bash
-PLAYWRIGHT_HTML_REPORT=report/search-report npx playwright test tests/search.spec.ts --reporter=html --project=chromium
-```
-
----
-
-## Biến môi trường (test Cart bị skip mặc định)
-
-Một số kịch bản trong `tests/cart.spec.ts` **không chạy** trừ khi bật biến môi trường:
-
-| Biến                                               | Mục đích                                                               |
-| -------------------------------------------------- | ---------------------------------------------------------------------- |
-| `RUN_CART_PROMO=1`                                 | TC-CART-S4-004 (áp dụng / gỡ voucher trong popup KM)                   |
-| `RUN_CART_LOGIN=1`                                 | TC-CART-S6-001, S6-002 (merge giỏ khi đăng nhập; có thể gặp reCAPTCHA) |
-| `FAHASA_ACCOUNT_PHONE` / `FAHASA_ACCOUNT_PASSWORD` | Tài khoản test (mặc định trong `cart.data.ts`)                         |
-
-**PowerShell:**
-
-```powershell
-$env:RUN_CART_PROMO="1"; npm run test:cart
-$env:RUN_CART_LOGIN="1"; npm run test:cart
-```
-
-**CMD:**
-
-```cmd
-set RUN_CART_PROMO=1 && npm run test:cart
-```
-
-**Linux / macOS:**
-
-```bash
-RUN_CART_LOGIN=1 npm run test:cart
-```
-
-Các test Cart bị `skip` khi thiếu dữ liệu trong `cart.data.ts` (xem message skip trong báo cáo HTML):
-
-| Test                  | Cần bổ sung trong `data/cart.data.ts`                                                                            |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| **S6-001**            | `mergeScenarioS6001` (guestQty, accountQty trên account X, expectedQty sau merge)                                |
-| **S4-004** (phần A/B) | Tổ hợp SP/qty đạt đúng **999.000đ** (`VOUCHER_70K_EXACT_PLAN` — với catalog hiện tại thường **không ghép được**) |
-| **S4-004** (phần C)   | Mã Freeship/Discount trên Fahasa khớp regex `/300K/`, `/500K/` khi `RUN_CART_PROMO=1`                            |
-| **S6-002**            | Account X phải **có sẵn** `mergeScenarioS6002.accountProductId` trên server trước khi guest login                |
-
-Plan subtotal dưới ngưỡng (S4-001, S4-003) dùng `planMaxBelow()` từ **giá thật** trong `cartData` (vd. 498.000đ thay vì 499.999đ nếu không ghép được).
-
----
-
-## Cấu hình Playwright — cần sửa khi chạy riêng từng chức năng?
-
-**Không bắt buộc.** Chạy theo file hoặc `-g` qua CLI là đủ; `playwright.config.ts` dùng chung cho mọi spec (`testDir: ./tests`, `baseURL`, reporter, Chromium).
-
-Chỉ cần chỉnh config khi bạn muốn thêm (tùy chọn): script npm mới, tag `@cart`, hoặc project riêng cho CI.
-
----
-
-## CI (GitHub Actions)
-
-Workflow `.github/workflows/playwright.yml` chạy:
-
-```bash
-npx playwright test
-```
-
-Artifact `playwright-report` được upload sau mỗi lần chạy trên `main` / `master`.
-
----
-
-## Tài liệu đặc tả test
-
-Chi tiết testcase và component: thư mục `docs/` (`search_spec.md`, `cart_spec.md`, `checkout_spec.md`, …).
+*Ghi chú: Cấu trúc thư mục báo cáo (report) được tổ chức theo cấp bậc giúp dễ dàng theo dõi tổng thể hoặc đi sâu vào từng module mà không bị ghi đè, lộn xộn các file kết quả với nhau.*

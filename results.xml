@@ -1,443 +1,80 @@
-<testsuites id="" name="" tests="18" failures="11" skipped="0" errors="2" time="376.77585000000005">
-<testsuite name="search.spec.ts" timestamp="2026-06-07T07:40:01.386Z" hostname="chromium" tests="18" failures="11" skipped="0" time="1276.95" errors="2">
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S1-001: Tìm kiếm chính xác tuyệt đối (Exact Match)" classname="search.spec.ts" time="89.061">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--e4273--xác-tuyệt-đối-Exact-Match--chromium\test-failed-1.png]]
-
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--e4273--xác-tuyệt-đối-Exact-Match--chromium\video.webm]]
-
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--e4273--xác-tuyệt-đối-Exact-Match--chromium\error-context.md]]
-
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--e4273--xác-tuyệt-đối-Exact-Match--chromium\trace.zip]]
-]]>
-</system-out>
-<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
-<![CDATA[  [chromium] › search.spec.ts:31:7 › Tính năng Tìm kiếm (Search) › TC-SEARCH-S1-001: Tìm kiếm chính xác tuyệt đối (Exact Match) › Thực thi với: "hai số phận" 
-
-    Error: expect(locator).toBeVisible() failed
-
-    Locator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()
-    Expected: visible
-    Timeout: 15000ms
-    Error: element(s) not found
-
-    Call log:
-      - Expect "toBeVisible" with timeout 15000ms
-      - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()
-
-
-       at ..\pages\SearchPage.ts:120
-
-      118 |
-      119 |   async expectProductListVisible() {
-    > 120 |     await expect(this.productTitleLinks.first()).toBeVisible({
-          |                                                  ^
-      121 |       timeout: 15000,
-      122 |     });
-      123 |   }
-        at SearchPage.expectProductListVisible (C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\pages\SearchPage.ts:120:50)
-        at SearchPage.getTopProductTitles (C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\pages\SearchPage.ts:126:16)
-        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\search.spec.ts:38:44
-        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\search.spec.ts:34:7
-
-    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--e4273--xác-tuyệt-đối-Exact-Match--chromium\test-failed-1.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--e4273--xác-tuyệt-đối-Exact-Match--chromium\video.webm
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ..\test-results\search-Tính-năng-Tìm-kiếm--e4273--xác-tuyệt-đối-Exact-Match--chromium\error-context.md
-
-    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--e4273--xác-tuyệt-đối-Exact-Match--chromium\trace.zip
-    Usage:
-
-        npx playwright show-trace ..\test-results\search-Tính-năng-Tìm-kiếm--e4273--xác-tuyệt-đối-Exact-Match--chromium\trace.zip
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-]]>
-</failure>
+<testsuites id="" name="" tests="18" failures="5" skipped="0" errors="2" time="326.12274699999995">
+<testsuite name="search.spec.ts" timestamp="2026-06-07T07:47:53.887Z" hostname="chromium" tests="18" failures="5" skipped="0" time="1118.646" errors="2">
+<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S1-001: Tìm kiếm chính xác tuyệt đối (Exact Match)" classname="search.spec.ts" time="58.009">
 </testcase>
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S1-002: Tìm kiếm mập mờ, một phần từ khóa (Partial Match)" classname="search.spec.ts" time="91.2">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--f9ce4-phần-từ-khóa-Partial-Match--chromium\test-failed-1.png]]
-
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--f9ce4-phần-từ-khóa-Partial-Match--chromium\video.webm]]
-
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--f9ce4-phần-từ-khóa-Partial-Match--chromium\error-context.md]]
-
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--f9ce4-phần-từ-khóa-Partial-Match--chromium\trace.zip]]
-]]>
-</system-out>
-<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
-<![CDATA[  [chromium] › search.spec.ts:47:7 › Tính năng Tìm kiếm (Search) › TC-SEARCH-S1-002: Tìm kiếm mập mờ, một phần từ khóa (Partial Match) › Thực thi với: "so phan kane" 
-
-    Error: expect(locator).toBeVisible() failed
-
-    Locator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()
-    Expected: visible
-    Timeout: 15000ms
-    Error: element(s) not found
-
-    Call log:
-      - Expect "toBeVisible" with timeout 15000ms
-      - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()
-
-
-       at ..\pages\SearchPage.ts:120
-
-      118 |
-      119 |   async expectProductListVisible() {
-    > 120 |     await expect(this.productTitleLinks.first()).toBeVisible({
-          |                                                  ^
-      121 |       timeout: 15000,
-      122 |     });
-      123 |   }
-        at SearchPage.expectProductListVisible (C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\pages\SearchPage.ts:120:50)
-        at SearchPage.getTopProductTitles (C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\pages\SearchPage.ts:126:16)
-        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\search.spec.ts:57:44
-        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\search.spec.ts:54:7
-
-    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--f9ce4-phần-từ-khóa-Partial-Match--chromium\test-failed-1.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--f9ce4-phần-từ-khóa-Partial-Match--chromium\video.webm
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ..\test-results\search-Tính-năng-Tìm-kiếm--f9ce4-phần-từ-khóa-Partial-Match--chromium\error-context.md
-
-    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--f9ce4-phần-từ-khóa-Partial-Match--chromium\trace.zip
-    Usage:
-
-        npx playwright show-trace ..\test-results\search-Tính-năng-Tìm-kiếm--f9ce4-phần-từ-khóa-Partial-Match--chromium\trace.zip
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-]]>
-</failure>
+<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S1-002: Tìm kiếm mập mờ, một phần từ khóa (Partial Match)" classname="search.spec.ts" time="68.895">
 </testcase>
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S1-003: Tìm kiếm tiếng Việt không dấu (Accent Insensitive)" classname="search.spec.ts" time="89.597">
+<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S1-003: Tìm kiếm tiếng Việt không dấu (Accent Insensitive)" classname="search.spec.ts" time="56.205">
+</testcase>
+<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S1-004: Tìm kiếm bằng mã định danh sản phẩm (SKU / ISBN)" classname="search.spec.ts" time="58.495">
+</testcase>
+<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S2-001: Tìm kiếm với khoảng trống (Empty Input)" classname="search.spec.ts" time="61.95">
+</testcase>
+<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S2-002: Tìm kiếm chứa ký tự đặc biệt" classname="search.spec.ts" time="53.806">
+</testcase>
+<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S2-003: Tìm kiếm từ khóa vô nghĩa (Not Found)" classname="search.spec.ts" time="52.93">
+</testcase>
+<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S2-004: Tự động cắt khoảng trắng thừa (Input Trimming)" classname="search.spec.ts" time="45.908">
+</testcase>
+<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S3-001: Kiểm tra giới hạn độ dài từ khóa (Boundary Length)" classname="search.spec.ts" time="99.818">
+</testcase>
+<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S4-001: Lọc kết quả tìm kiếm theo khoảng giá (Price Filter)" classname="search.spec.ts" time="109.862">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--18b18-ông-dấu-Accent-Insensitive--chromium\video.webm]]
+[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--5a6e2-eo-khoảng-giá-Price-Filter--chromium\video.webm]]
 
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--18b18-ông-dấu-Accent-Insensitive--chromium\error-context.md]]
+[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--5a6e2-eo-khoảng-giá-Price-Filter--chromium\error-context.md]]
 
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--18b18-ông-dấu-Accent-Insensitive--chromium\trace.zip]]
+[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--5a6e2-eo-khoảng-giá-Price-Filter--chromium\trace.zip]]
 ]]>
 </system-out>
-<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
-<![CDATA[  [chromium] › search.spec.ts:66:7 › Tính năng Tìm kiếm (Search) › TC-SEARCH-S1-003: Tìm kiếm tiếng Việt không dấu (Accent Insensitive) › So sánh: Có dấu "hai số phận" vs Không dấu "hai so phan" 
+<error message="locator.waitFor: Timeout 15000ms exceeded." type="TimeoutError">
+<![CDATA[  [chromium] › search.spec.ts:177:7 › Tính năng Tìm kiếm (Search) › TC-SEARCH-S4-001: Lọc kết quả tìm kiếm theo khoảng giá (Price Filter) › Từ khóa "tâm lý học" lọc khoảng: Giá cao (200k - 500k) 
 
-    Error: expect(locator).toBeVisible() failed
-
-    Locator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()
-    Expected: visible
-    Timeout: 15000ms
-    Error: element(s) not found
-
+    TimeoutError: locator.waitFor: Timeout 15000ms exceeded.
     Call log:
-      - Expect "toBeVisible" with timeout 15000ms
-      - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()
+      - waiting for locator('input[name="min"].min-input') to be visible
 
 
-       at ..\pages\SearchPage.ts:120
+       at ..\pages\SearchPage.ts:174
 
-      118 |
-      119 |   async expectProductListVisible() {
-    > 120 |     await expect(this.productTitleLinks.first()).toBeVisible({
-          |                                                  ^
-      121 |       timeout: 15000,
-      122 |     });
-      123 |   }
-        at SearchPage.expectProductListVisible (C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\pages\SearchPage.ts:120:50)
-        at SearchPage.getTopProductTitles (C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\pages\SearchPage.ts:126:16)
-        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\search.spec.ts:78:53
-        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\search.spec.ts:76:7
+      172 |
+      173 |   async applyCustomPriceFilter(min: number, max: number) {
+    > 174 |     await this.priceMinInput.waitFor({ state: "visible" });
+          |                              ^
+      175 |     await this.priceMinInput.fill(min.toString());
+      176 |     await this.priceMaxInput.fill(max.toString());
+      177 |
+        at SearchPage.applyCustomPriceFilter (C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\pages\SearchPage.ts:174:30)
+        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\search.spec.ts:183:26
+        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\search.spec.ts:180:7
 
     attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--18b18-ông-dấu-Accent-Insensitive--chromium\video.webm
+    ..\test-results\search-Tính-năng-Tìm-kiếm--5a6e2-eo-khoảng-giá-Price-Filter--chromium\video.webm
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
-    Error Context: ..\test-results\search-Tính-năng-Tìm-kiếm--18b18-ông-dấu-Accent-Insensitive--chromium\error-context.md
+    Error Context: ..\test-results\search-Tính-năng-Tìm-kiếm--5a6e2-eo-khoảng-giá-Price-Filter--chromium\error-context.md
 
     attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--18b18-ông-dấu-Accent-Insensitive--chromium\trace.zip
+    ..\test-results\search-Tính-năng-Tìm-kiếm--5a6e2-eo-khoảng-giá-Price-Filter--chromium\trace.zip
     Usage:
 
-        npx playwright show-trace ..\test-results\search-Tính-năng-Tìm-kiếm--18b18-ông-dấu-Accent-Insensitive--chromium\trace.zip
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-]]>
-</failure>
-</testcase>
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S1-004: Tìm kiếm bằng mã định danh sản phẩm (SKU / ISBN)" classname="search.spec.ts" time="89.908">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--ed469-ịnh-danh-sản-phẩm-SKU-ISBN--chromium\video.webm]]
-
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--ed469-ịnh-danh-sản-phẩm-SKU-ISBN--chromium\error-context.md]]
-
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--ed469-ịnh-danh-sản-phẩm-SKU-ISBN--chromium\trace.zip]]
-]]>
-</system-out>
-<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
-<![CDATA[  [chromium] › search.spec.ts:95:7 › Tính năng Tìm kiếm (Search) › TC-SEARCH-S1-004: Tìm kiếm bằng mã định danh sản phẩm (SKU / ISBN) › Tìm mã SKU: 8935095635047 
-
-    Error: expect(locator).toBeVisible() failed
-
-    Locator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()
-    Expected: visible
-    Timeout: 15000ms
-    Error: element(s) not found
-
-    Call log:
-      - Expect "toBeVisible" with timeout 15000ms
-      - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()
-
-
-       at ..\pages\SearchPage.ts:120
-
-      118 |
-      119 |   async expectProductListVisible() {
-    > 120 |     await expect(this.productTitleLinks.first()).toBeVisible({
-          |                                                  ^
-      121 |       timeout: 15000,
-      122 |     });
-      123 |   }
-        at SearchPage.expectProductListVisible (C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\pages\SearchPage.ts:120:50)
-        at SearchPage.openFirstResult (C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\pages\SearchPage.ts:145:16)
-        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\search.spec.ts:100:26
-        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\search.spec.ts:98:7
-
-    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--ed469-ịnh-danh-sản-phẩm-SKU-ISBN--chromium\video.webm
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ..\test-results\search-Tính-năng-Tìm-kiếm--ed469-ịnh-danh-sản-phẩm-SKU-ISBN--chromium\error-context.md
-
-    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--ed469-ịnh-danh-sản-phẩm-SKU-ISBN--chromium\trace.zip
-    Usage:
-
-        npx playwright show-trace ..\test-results\search-Tính-năng-Tìm-kiếm--ed469-ịnh-danh-sản-phẩm-SKU-ISBN--chromium\trace.zip
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-]]>
-</failure>
-</testcase>
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S2-001: Tìm kiếm với khoảng trống (Empty Input)" classname="search.spec.ts" time="71.842">
-</testcase>
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S2-002: Tìm kiếm chứa ký tự đặc biệt" classname="search.spec.ts" time="69.786">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--68994-ìm-kiếm-chứa-ký-tự-đặc-biệt-chromium\test-failed-1.png]]
-
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--68994-ìm-kiếm-chứa-ký-tự-đặc-biệt-chromium\video.webm]]
-
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--68994-ìm-kiếm-chứa-ký-tự-đặc-biệt-chromium\error-context.md]]
-
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--68994-ìm-kiếm-chứa-ký-tự-đặc-biệt-chromium\trace.zip]]
-]]>
-</system-out>
-<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
-<![CDATA[  [chromium] › search.spec.ts:125:7 › Tính năng Tìm kiếm (Search) › TC-SEARCH-S2-002: Tìm kiếm chứa ký tự đặc biệt › Thử nghiệm XSS: [Ký tự đặc biệt thuần] 
-
-    Error: expect(locator).toBeVisible() failed
-
-    Locator: locator('input#search_desktop, input.input-search, input[name="q"]').first()
-    Expected: visible
-    Timeout: 5000ms
-    Error: element(s) not found
-
-    Call log:
-      - Expect "toBeVisible" with timeout 5000ms
-      - waiting for locator('input#search_desktop, input.input-search, input[name="q"]').first()
-
-
-      131 |       await test.step(`Thử nghiệm XSS: [${item.desc}]`, async () => {
-      132 |         await searchPage.submitSearch(item.kw, "enter");
-    > 133 |         await expect(searchPage.searchInput).toBeVisible();
-          |                                              ^
-      134 |       });
-      135 |     }
-      136 |   });
-        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\search.spec.ts:133:46
-        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\search.spec.ts:131:7
-
-    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--68994-ìm-kiếm-chứa-ký-tự-đặc-biệt-chromium\test-failed-1.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--68994-ìm-kiếm-chứa-ký-tự-đặc-biệt-chromium\video.webm
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ..\test-results\search-Tính-năng-Tìm-kiếm--68994-ìm-kiếm-chứa-ký-tự-đặc-biệt-chromium\error-context.md
-
-    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--68994-ìm-kiếm-chứa-ký-tự-đặc-biệt-chromium\trace.zip
-    Usage:
-
-        npx playwright show-trace ..\test-results\search-Tính-năng-Tìm-kiếm--68994-ìm-kiếm-chứa-ký-tự-đặc-biệt-chromium\trace.zip
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-]]>
-</failure>
-</testcase>
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S2-003: Tìm kiếm từ khóa vô nghĩa (Not Found)" classname="search.spec.ts" time="52.556">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--8b9ce-từ-khóa-vô-nghĩa-Not-Found--chromium\test-failed-1.png]]
-
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--8b9ce-từ-khóa-vô-nghĩa-Not-Found--chromium\error-context.md]]
-
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--8b9ce-từ-khóa-vô-nghĩa-Not-Found--chromium\trace.zip]]
-]]>
-</system-out>
-<error message="Tearing down &quot;context&quot; exceeded the test timeout of 30000ms." type="Error">
-<![CDATA[  [chromium] › search.spec.ts:138:7 › Tính năng Tìm kiếm (Search) › TC-SEARCH-S2-003: Tìm kiếm từ khóa vô nghĩa (Not Found) 
-
-    Tearing down "context" exceeded the test timeout of 30000ms.
-
-    Error: browserContext.close: Test ended.
-    Browser logs:
-
-    <launching> C:\Users\ThinkPad T14s\AppData\Local\ms-playwright\chromium_headless_shell-1223\chrome-headless-shell-win64\chrome-headless-shell.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=C:\Users\THINKP~1\AppData\Local\Temp\playwright_chromiumdev_profile-FRRSx4 --remote-debugging-pipe --no-startup-window
-    <launched> pid=21768
-    [pid=21768][err] [0607/144139.360:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144139.820:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144139.822:INFO:CONSOLE:2] "using own message listener", source: https://webchat.caresoft.vn/widget/widget.min.js?v=1.0 (2)
-    [pid=21768][err] [0607/144139.850:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144140.340:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144140.685:INFO:CONSOLE:2] "chat_state = null", source: https://webchatstatic.caresoft.vn/static/js/main.8f7ca747.js (2)
-    [pid=21768][err] [0607/144140.688:INFO:CONSOLE:2] "use websocket", source: https://webchatstatic.caresoft.vn/static/js/main.8f7ca747.js (2)
-    [pid=21768][err] [0607/144143.709:INFO:CONSOLE:2] "[Meta Pixel] - Duplicate Pixel ID: 3677985902470137.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=21768][err] [0607/144143.752:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'conversion'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=21768][err] [0607/144147.690:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'form_start'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=21768][err] [0607/144147.913:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144147.939:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144148.087:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'form_submit'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=21768][err] [0607/144148.114:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144148.139:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144148.161:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144148.192:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144148.223:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144148.245:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144148.266:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144148.292:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144148.318:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144148.338:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144148.359:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144148.388:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144148.415:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144148.437:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144148.461:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144148.488:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144148.755:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144151.896:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144151.898:INFO:CONSOLE:2] "using own message listener", source: https://webchat.caresoft.vn/widget/widget.min.js?v=1.0 (2)
-    [pid=21768][err] [0607/144152.412:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144152.644:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144157.066:INFO:CONSOLE:2] "use websocket", source: https://webchatstatic.caresoft.vn/static/js/main.8f7ca747.js (2)
-    [pid=21768][err] [0607/144201.067:INFO:CONSOLE:2] "[Meta Pixel] - Duplicate Pixel ID: 3677985902470137.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=21768][err] [0607/144201.086:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'view_search_results'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=21768][err] [0607/144201.134:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'conversion'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=21768][err] [0607/144201.215:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'scroll'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=21768][err] [0607/144201.311:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144201.364:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144201.417:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144201.474:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768][err] [0607/144201.533:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=21768] <gracefully close start>
-
-    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--8b9ce-từ-khóa-vô-nghĩa-Not-Found--chromium\test-failed-1.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ..\test-results\search-Tính-năng-Tìm-kiếm--8b9ce-từ-khóa-vô-nghĩa-Not-Found--chromium\error-context.md
-
-    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--8b9ce-từ-khóa-vô-nghĩa-Not-Found--chromium\trace.zip
-    Usage:
-
-        npx playwright show-trace ..\test-results\search-Tính-năng-Tìm-kiếm--8b9ce-từ-khóa-vô-nghĩa-Not-Found--chromium\trace.zip
+        npx playwright show-trace ..\test-results\search-Tính-năng-Tìm-kiếm--5a6e2-eo-khoảng-giá-Price-Filter--chromium\trace.zip
 
     ────────────────────────────────────────────────────────────────────────────────────────────────
 ]]>
 </error>
 </testcase>
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S2-004: Tự động cắt khoảng trắng thừa (Input Trimming)" classname="search.spec.ts" time="52.21">
+<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S4-002: Lọc kết quả tìm kiếm theo Nhà xuất bản (Publisher Filter)" classname="search.spec.ts" time="108.946">
+</testcase>
+<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S5-001: Kết hợp Tìm kiếm từ khóa và click Bộ lọc cùng lúc" classname="search.spec.ts" time="60.067">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--4948c--trắng-thừa-Input-Trimming--chromium\test-failed-1.png]]
+[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--891bc-óa-và-click-Bộ-lọc-cùng-lúc-chromium\test-failed-1.png]]
 
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--4948c--trắng-thừa-Input-Trimming--chromium\error-context.md]]
-
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--4948c--trắng-thừa-Input-Trimming--chromium\trace.zip]]
-]]>
-</system-out>
-<failure message="expect(locator).toHaveValue(expected) failed" type="expect.toHaveValue">
-<![CDATA[  [chromium] › search.spec.ts:148:7 › Tính năng Tìm kiếm (Search) › TC-SEARCH-S2-004: Tự động cắt khoảng trắng thừa (Input Trimming) 
-
-    Error: expect(locator).toHaveValue(expected) failed
-
-    Locator: locator('input#search_desktop, input.input-search, input[name="q"]').first()
-    Expected: "hai số phận"
-    Timeout: 5000ms
-    Error: element(s) not found
-
-    Call log:
-      - Expect "toHaveValue" with timeout 5000ms
-      - waiting for locator('input#search_desktop, input.input-search, input[name="q"]').first()
-
-
-      150 |       await test.step(`Thử nghiệm Trim: [${item.desc}]`, async () => {
-      151 |         await searchPage.submitSearch(item.kw, "enter");
-    > 152 |         await expect(searchPage.searchInput).toHaveValue(item.expected, {
-          |                                              ^
-      153 |           timeout: 5000,
-      154 |         });
-      155 |       });
-        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\search.spec.ts:152:46
-        at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\search.spec.ts:150:7
-
-    Tearing down "context" exceeded the test timeout of 30000ms.
-
-    Error: browserContext.close: Target page, context or browser has been closed
-
-    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--4948c--trắng-thừa-Input-Trimming--chromium\test-failed-1.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ..\test-results\search-Tính-năng-Tìm-kiếm--4948c--trắng-thừa-Input-Trimming--chromium\error-context.md
-
-    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--4948c--trắng-thừa-Input-Trimming--chromium\trace.zip
-    Usage:
-
-        npx playwright show-trace ..\test-results\search-Tính-năng-Tìm-kiếm--4948c--trắng-thừa-Input-Trimming--chromium\trace.zip
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-]]>
-</failure>
-</testcase>
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S3-001: Kiểm tra giới hạn độ dài từ khóa (Boundary Length)" classname="search.spec.ts" time="75.032">
-</testcase>
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S4-001: Lọc kết quả tìm kiếm theo khoảng giá (Price Filter)" classname="search.spec.ts" time="122.012">
-</testcase>
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S4-002: Lọc kết quả tìm kiếm theo Nhà xuất bản (Publisher Filter)" classname="search.spec.ts" time="120.292">
-</testcase>
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S5-001: Kết hợp Tìm kiếm từ khóa và click Bộ lọc cùng lúc" classname="search.spec.ts" time="60.272">
-<system-out>
-<![CDATA[
 [[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--891bc-óa-và-click-Bộ-lọc-cùng-lúc-chromium\error-context.md]]
+
+[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--891bc-óa-và-click-Bộ-lọc-cùng-lúc-chromium\trace.zip]]
 ]]>
 </system-out>
 <error message="Test timeout of 30000ms exceeded." type="Error">
@@ -474,31 +111,45 @@
 
     Tearing down "context" exceeded the test timeout of 30000ms.
 
-    Error: End of central directory record signature not found. Either not a zip file, or file is truncated.
+    Error: browserContext.close: Target page, context or browser has been closed
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\search-Tính-năng-Tìm-kiếm--891bc-óa-và-click-Bộ-lọc-cùng-lúc-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
 
     Error Context: ..\test-results\search-Tính-năng-Tìm-kiếm--891bc-óa-và-click-Bộ-lọc-cùng-lúc-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\search-Tính-năng-Tìm-kiếm--891bc-óa-và-click-Bộ-lọc-cùng-lúc-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\search-Tính-năng-Tìm-kiếm--891bc-óa-và-click-Bộ-lọc-cùng-lúc-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
 ]]>
 </error>
 </testcase>
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S5-002: Kiểm tra hiệu năng phản hồi cơ bản (Search Performance)" classname="search.spec.ts" time="54.025">
+<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S5-002: Kiểm tra hiệu năng phản hồi cơ bản (Search Performance)" classname="search.spec.ts" time="46.913">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--371d7--cơ-bản-Search-Performance--chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--371d7--cơ-bản-Search-Performance--chromium\video.webm]]
 
 [[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--371d7--cơ-bản-Search-Performance--chromium\error-context.md]]
 
 [[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--371d7--cơ-bản-Search-Performance--chromium\trace.zip]]
 ]]>
 </system-out>
-<failure message="Lỗi Hiệu năng: Tìm kiếm &quot;harry potter&quot; tốn 16414ms (Vượt quá 5000ms)" type="expect.toBeLessThanOrEqual">
+<failure message="Lỗi Hiệu năng: Tìm kiếm &quot;harry potter&quot; tốn 15616ms (Vượt quá 5000ms)" type="expect.toBeLessThanOrEqual">
 <![CDATA[  [chromium] › search.spec.ts:277:7 › Tính năng Tìm kiếm (Search) › TC-SEARCH-S5-002: Kiểm tra hiệu năng phản hồi cơ bản (Search Performance) 
 
-    Error: Lỗi Hiệu năng: Tìm kiếm "harry potter" tốn 16414ms (Vượt quá 5000ms)
+    Error: Lỗi Hiệu năng: Tìm kiếm "harry potter" tốn 15616ms (Vượt quá 5000ms)
 
     expect(received).toBeLessThanOrEqual(expected)
 
     Expected: <= 5000
-    Received:    16414
+    Received:    15616
 
       293 |       loadTime,
       294 |       `Lỗi Hiệu năng: Tìm kiếm "${keyword}" tốn ${loadTime}ms (Vượt quá ${maxAcceptableTimeMs}ms)`,
@@ -509,169 +160,17 @@
       298 |   test("TC-SEARCH-S5-003: Nhận diện dung sai lỗi chính tả (Thiếu ký tự)", async () => {
         at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\search.spec.ts:295:7
 
-    Tearing down "context" exceeded the test timeout of 30000ms.
-
-    Error: browserContext.close: Test ended.
-    Browser logs:
-
-    [pid=11328][err] [0607/144255.494:INFO:CONSOLE:2] "use websocket", source: https://webchatstatic.caresoft.vn/static/js/main.8f7ca747.js (2)
-    [pid=11328][err] [0607/144255.768:INFO:CONSOLE:2] "[Meta Pixel] - Duplicate Pixel ID: 3677985902470137.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144258.156:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'form_start'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144258.407:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144258.436:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144258.577:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'form_submit'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144258.600:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144258.622:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144258.651:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144258.680:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144258.710:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144258.731:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144258.752:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144258.786:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144258.814:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144258.835:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144258.860:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144258.895:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144258.937:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144258.966:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144258.990:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144259.022:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144259.745:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144303.553:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144303.555:INFO:CONSOLE:2] "using own message listener", source: https://webchat.caresoft.vn/widget/widget.min.js?v=1.0 (2)
-    [pid=11328][err] [0607/144303.648:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144304.410:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144307.028:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'view_search_results'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144307.087:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'conversion'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144307.553:INFO:CONSOLE:2] "use websocket", source: https://webchatstatic.caresoft.vn/static/js/main.8f7ca747.js (2)
-    [pid=11328][err] [0607/144308.421:INFO:CONSOLE:2] "[Meta Pixel] - Duplicate Pixel ID: 3677985902470137.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144314.049:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'form_start'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144314.475:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'form_submit'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144315.640:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144319.294:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144319.297:INFO:CONSOLE:2] "using own message listener", source: https://webchat.caresoft.vn/widget/widget.min.js?v=1.0 (2)
-    [pid=11328][err] [0607/144319.310:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144320.031:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144324.156:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'view_search_results'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144324.191:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'conversion'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144324.250:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144324.274:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144324.891:INFO:CONSOLE:2] "use websocket", source: https://webchatstatic.caresoft.vn/static/js/main.8f7ca747.js (2)
-    [pid=11328][err] [0607/144325.347:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144325.474:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144325.880:INFO:CONSOLE:2] "[Meta Pixel] - Duplicate Pixel ID: 3677985902470137.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144329.117:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'form_start'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144329.283:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144329.309:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144329.335:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144329.355:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144329.384:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144329.542:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'form_submit'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144329.565:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144329.585:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144329.606:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144329.650:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144329.674:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144329.696:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144329.720:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144329.746:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144329.770:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144329.794:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144329.813:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144329.845:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144329.877:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144329.898:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144329.924:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144329.977:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144330.736:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144334.735:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144334.737:INFO:CONSOLE:2] "using own message listener", source: https://webchat.caresoft.vn/widget/widget.min.js?v=1.0 (2)
-    [pid=11328][err] [0607/144335.024:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144335.084:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144347.329:INFO:CONSOLE:1] "Uncaught (in promise) #<Object>", source: https://cdn1.fahasa.com/media/js/32a44da5d2065b5c746a7fcfe7e6904b.js?q=11905 (1)
-    [pid=11328][err] [0607/144406.104:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144410.041:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144410.044:INFO:CONSOLE:2] "using own message listener", source: https://webchat.caresoft.vn/widget/widget.min.js?v=1.0 (2)
-    [pid=11328][err] [0607/144410.660:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144410.763:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144413.428:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'conversion'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144415.552:INFO:CONSOLE:2] "chat_state = null", source: https://webchatstatic.caresoft.vn/static/js/main.8f7ca747.js (2)
-    [pid=11328][err] [0607/144415.556:INFO:CONSOLE:2] "use websocket", source: https://webchatstatic.caresoft.vn/static/js/main.8f7ca747.js (2)
-    [pid=11328][err] [0607/144416.490:INFO:CONSOLE:2] "[Meta Pixel] - Duplicate Pixel ID: 3677985902470137.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144416.527:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144416.533:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'scroll'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144416.555:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144416.582:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144416.606:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144416.648:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144416.670:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144416.694:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144416.717:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144416.748:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144416.775:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144416.796:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144416.815:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144416.841:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144416.867:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144416.889:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144416.909:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144416.949:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144417.466:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144417.542:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144417.548:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144417.554:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144417.873:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144417.916:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144418.038:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144418.045:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144418.052:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144418.106:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144418.111:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144418.113:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144418.119:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144418.126:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144418.140:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144418.147:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144418.163:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144420.071:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'form_start'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144420.303:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144420.334:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144420.508:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'form_submit'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144420.526:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144420.548:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144420.569:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144420.595:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144420.620:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144420.641:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144420.662:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144420.688:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144420.737:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144420.758:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144420.779:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144420.804:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144420.832:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144420.855:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144420.881:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144420.907:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144421.438:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144423.216:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144423.219:INFO:CONSOLE:2] "using own message listener", source: https://webchat.caresoft.vn/widget/widget.min.js?v=1.0 (2)
-    [pid=11328][err] [0607/144423.450:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144423.491:INFO:CONSOLE:17] "Uncaught TypeError: Cannot read properties of null (reading 'appendChild')", source:  (17)
-    [pid=11328][err] [0607/144425.688:INFO:CONSOLE:2] "use websocket", source: https://webchatstatic.caresoft.vn/static/js/main.8f7ca747.js (2)
-    [pid=11328][err] [0607/144427.853:INFO:CONSOLE:2] "[Meta Pixel] - Duplicate Pixel ID: 3677985902470137.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144427.872:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'view_search_results'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144427.919:INFO:CONSOLE:2] "[Meta Pixel] - You are sending a non-standard event 'conversion'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328][err] [0607/144444.699:INFO:CONSOLE:2] "[Elastic APM] Failed sending events! [object DOMException]", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)
-    [pid=11328] <gracefully close start>
-
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
     ..\test-results\search-Tính-năng-Tìm-kiếm--371d7--cơ-bản-Search-Performance--chromium\test-failed-1.png
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\search-Tính-năng-Tìm-kiếm--371d7--cơ-bản-Search-Performance--chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
     Error Context: ..\test-results\search-Tính-năng-Tìm-kiếm--371d7--cơ-bản-Search-Performance--chromium\error-context.md
 
-    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
     ..\test-results\search-Tính-năng-Tìm-kiếm--371d7--cơ-bản-Search-Performance--chromium\trace.zip
     Usage:
 
@@ -681,7 +180,7 @@
 ]]>
 </failure>
 </testcase>
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S5-003: Nhận diện dung sai lỗi chính tả (Thiếu ký tự)" classname="search.spec.ts" time="69.022">
+<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S5-003: Nhận diện dung sai lỗi chính tả (Thiếu ký tự)" classname="search.spec.ts" time="47.792">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--ffcfb-i-lỗi-chính-tả-Thiếu-ký-tự--chromium\test-failed-1.png]]
@@ -742,7 +241,7 @@
 ]]>
 </failure>
 </testcase>
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S5-004: Nhận diện dung sai lỗi chính tả (Thừa ký tự)" classname="search.spec.ts" time="63.622">
+<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S5-004: Nhận diện dung sai lỗi chính tả (Thừa ký tự)" classname="search.spec.ts" time="44.397">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--4551e-ai-lỗi-chính-tả-Thừa-ký-tự--chromium\test-failed-1.png]]
@@ -750,8 +249,6 @@
 [[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--4551e-ai-lỗi-chính-tả-Thừa-ký-tự--chromium\video.webm]]
 
 [[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--4551e-ai-lỗi-chính-tả-Thừa-ký-tự--chromium\error-context.md]]
-
-[[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--4551e-ai-lỗi-chính-tả-Thừa-ký-tự--chromium\trace.zip]]
 ]]>
 </system-out>
 <failure message="Lỗi [Thừa ký tự]: Không nhận diện được &quot;không giia đình&quot;" type="expect.toBe">
@@ -774,6 +271,8 @@
         at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\search.spec.ts:337:11
         at C:\Users\ThinkPad T14s\Downloads\nam4\ki2\dot2\kiemthu\giuaky\code\tests\search.spec.ts:327:7
 
+    Test timeout of 30000ms exceeded.
+
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
     ..\test-results\search-Tính-năng-Tìm-kiếm--4551e-ai-lỗi-chính-tả-Thừa-ký-tự--chromium\test-failed-1.png
     ────────────────────────────────────────────────────────────────────────────────────────────────
@@ -783,20 +282,12 @@
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
     Error Context: ..\test-results\search-Tính-năng-Tìm-kiếm--4551e-ai-lỗi-chính-tả-Thừa-ký-tự--chromium\error-context.md
-
-    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
-    ..\test-results\search-Tính-năng-Tìm-kiếm--4551e-ai-lỗi-chính-tả-Thừa-ký-tự--chromium\trace.zip
-    Usage:
-
-        npx playwright show-trace ..\test-results\search-Tính-năng-Tìm-kiếm--4551e-ai-lỗi-chính-tả-Thừa-ký-tự--chromium\trace.zip
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────
 ]]>
 </failure>
 </testcase>
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S5-005: Nhận diện dung sai lỗi chính tả (Đảo vị trí ký tự)" classname="search.spec.ts" time="41.269">
+<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S5-005: Nhận diện dung sai lỗi chính tả (Đảo vị trí ký tự)" classname="search.spec.ts" time="45.82">
 </testcase>
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S5-006: Nhận diện dung sai lỗi chính tả (Dính phím liền kề)" classname="search.spec.ts" time="30.022">
+<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S5-006: Nhận diện dung sai lỗi chính tả (Dính phím liền kề)" classname="search.spec.ts" time="47.664">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--686d4-chính-tả-Dính-phím-liền-kề--chromium\test-failed-1.png]]
@@ -857,7 +348,7 @@
 ]]>
 </failure>
 </testcase>
-<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S5-007: Nhận diện dung sai lỗi chính tả (Lỗi gõ Telex/VNI)" classname="search.spec.ts" time="35.222">
+<testcase name="Tính năng Tìm kiếm (Search) › TC-SEARCH-S5-007: Nhận diện dung sai lỗi chính tả (Lỗi gõ Telex/VNI)" classname="search.spec.ts" time="51.169">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\search-Tính-năng-Tìm-kiếm--1220e--chính-tả-Lỗi-gõ-Telex-VNI--chromium\test-failed-1.png]]

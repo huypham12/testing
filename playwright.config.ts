@@ -24,9 +24,9 @@ export default defineConfig({
   /* ===== REPORTING (RẤT QUAN TRỌNG CHO ĐỒ ÁN) ===== */
 
   reporter: [
-    ["html", { open: "never" }], // report chính để nộp
-    ["json", { outputFile: "test-results.json" }], // phục vụ export / thống kê
-    ["junit", { outputFile: "results.xml" }], // CI-style (nếu giảng viên thích)
+    ["html", { outputFolder: process.env.REPORT_DIR || "report", open: "never" }], // report chính để nộp
+    ["json", { outputFile: `${process.env.REPORT_DIR || "report"}/test-results.json` }], // phục vụ export / thống kê
+    ["junit", { outputFile: `${process.env.REPORT_DIR || "report"}/results.xml` }], // CI-style (nếu giảng viên thích)
   ],
 
   /* ===== GLOBAL TEST SETTINGS ===== */
