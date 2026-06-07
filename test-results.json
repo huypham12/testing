@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 2
+      "actualWorkers": 4
     },
     "preserveOutput": "always",
     "projects": [
@@ -20,7 +20,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 2
+          "actualWorkers": 4
         },
         "id": "chromium",
         "name": "chromium",
@@ -67,25 +67,25 @@
   },
   "suites": [
     {
-      "title": "checkout.spec.ts",
-      "file": "checkout.spec.ts",
+      "title": "search.spec.ts",
+      "file": "search.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Tính năng Checkout — 28 Test Cases",
-          "file": "checkout.spec.ts",
-          "line": 6,
+          "title": "Tính năng Tìm kiếm (Search)",
+          "file": "search.spec.ts",
+          "line": 5,
           "column": 6,
           "specs": [
             {
-              "title": "TC-CHECKOUT-S4-003: Chọn phương thức thanh toán online — kiểm tra UI",
-              "ok": true,
+              "title": "TC-SEARCH-S1-001: Tìm kiếm chính xác tuyệt đối (Exact Match)",
+              "ok": false,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 300000,
+                  "timeout": 180000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
@@ -94,13 +94,397 @@
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 89061,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\n    at SearchPage.getTopProductTitles (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:126:16)\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:38:44\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:34:7",
+                        "location": {
+                          "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                          "column": 50,
+                          "line": 120
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                            "column": 50,
+                            "line": 120
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m\n\u001b[2m    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\u001b[22m\n\u001b[2m    at SearchPage.getTopProductTitles (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:126:16)\u001b[22m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:38:44\u001b[22m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:34:7\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Thực thi với: \"hai số phận\"",
+                          "duration": 28649,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\n    at SearchPage.getTopProductTitles (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:126:16)\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:38:44\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:34:7",
+                            "location": {
+                              "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                              "column": 50,
+                              "line": 120
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-06-07T07:40:02.346Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--e4273--xác-tuyệt-đối-Exact-Match--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--e4273--xác-tuyệt-đối-Exact-Match--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--e4273--xác-tuyệt-đối-Exact-Match--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--e4273--xác-tuyệt-đối-Exact-Match--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                        "column": 50,
+                        "line": 120
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-2cecc40a81a270a23ac9",
+              "file": "search.spec.ts",
+              "line": 31,
+              "column": 7
+            },
+            {
+              "title": "TC-SEARCH-S1-002: Tìm kiếm mập mờ, một phần từ khóa (Partial Match)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 91200,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\n    at SearchPage.getTopProductTitles (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:126:16)\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:57:44\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:54:7",
+                        "location": {
+                          "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                          "column": 50,
+                          "line": 120
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                            "column": 50,
+                            "line": 120
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m\n\u001b[2m    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\u001b[22m\n\u001b[2m    at SearchPage.getTopProductTitles (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:126:16)\u001b[22m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:57:44\u001b[22m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:54:7\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Thực thi với: \"so phan kane\"",
+                          "duration": 27240,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\n    at SearchPage.getTopProductTitles (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:126:16)\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:57:44\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:54:7",
+                            "location": {
+                              "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                              "column": 50,
+                              "line": 120
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-06-07T07:40:02.276Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--f9ce4-phần-từ-khóa-Partial-Match--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--f9ce4-phần-từ-khóa-Partial-Match--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--f9ce4-phần-từ-khóa-Partial-Match--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--f9ce4-phần-từ-khóa-Partial-Match--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                        "column": 50,
+                        "line": 120
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-eea3a86887de11ac8f65",
+              "file": "search.spec.ts",
+              "line": 47,
+              "column": 7
+            },
+            {
+              "title": "TC-SEARCH-S1-003: Tìm kiếm tiếng Việt không dấu (Accent Insensitive)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 89597,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\n    at SearchPage.getTopProductTitles (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:126:16)\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:78:53\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:76:7",
+                        "location": {
+                          "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                          "column": 50,
+                          "line": 120
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                            "column": 50,
+                            "line": 120
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m\n\u001b[2m    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\u001b[22m\n\u001b[2m    at SearchPage.getTopProductTitles (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:126:16)\u001b[22m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:78:53\u001b[22m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:76:7\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "So sánh: Có dấu \"hai số phận\" vs Không dấu \"hai so phan\"",
+                          "duration": 27526,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\n    at SearchPage.getTopProductTitles (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:126:16)\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:78:53\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:76:7",
+                            "location": {
+                              "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                              "column": 50,
+                              "line": 120
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-06-07T07:40:02.273Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--18b18-ông-dấu-Accent-Insensitive--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--18b18-ông-dấu-Accent-Insensitive--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--18b18-ông-dấu-Accent-Insensitive--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                        "column": 50,
+                        "line": 120
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-eb4dec9c2b026988eec9",
+              "file": "search.spec.ts",
+              "line": 66,
+              "column": 7
+            },
+            {
+              "title": "TC-SEARCH-S1-004: Tìm kiếm bằng mã định danh sản phẩm (SKU / ISBN)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 89908,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\n    at SearchPage.openFirstResult (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:145:16)\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:100:26\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:98:7",
+                        "location": {
+                          "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                          "column": 50,
+                          "line": 120
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                            "column": 50,
+                            "line": 120
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m\n\u001b[2m    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\u001b[22m\n\u001b[2m    at SearchPage.openFirstResult (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:145:16)\u001b[22m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:100:26\u001b[22m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:98:7\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Tìm mã SKU: 8935095635047",
+                          "duration": 27318,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\n    at SearchPage.openFirstResult (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:145:16)\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:100:26\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:98:7",
+                            "location": {
+                              "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                              "column": 50,
+                              "line": 120
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-06-07T07:40:02.311Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--ed469-ịnh-danh-sản-phẩm-SKU-ISBN--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--ed469-ịnh-danh-sản-phẩm-SKU-ISBN--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--ed469-ịnh-danh-sản-phẩm-SKU-ISBN--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                        "column": 50,
+                        "line": 120
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-46029ca24fe1ff310240",
+              "file": "search.spec.ts",
+              "line": 95,
+              "column": 7
+            },
+            {
+              "title": "TC-SEARCH-S2-001: Tìm kiếm với khoảng trống (Empty Input)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 29419,
+                      "duration": 71842,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-06T20:00:30.682Z",
+                      "steps": [
+                        {
+                          "title": "Thử nghiệm: [Bỏ trống hoàn toàn]",
+                          "duration": 19610
+                        },
+                        {
+                          "title": "Thử nghiệm: [1 khoảng trắng]",
+                          "duration": 10544
+                        },
+                        {
+                          "title": "Thử nghiệm: [Khoảng trắng và phím Tab]",
+                          "duration": 8928
+                        }
+                      ],
+                      "startTime": "2026-06-07T07:41:37.812Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -108,13 +492,775 @@
                   "status": "expected"
                 }
               ],
-              "id": "25ab1bfc84c57e3e3a45-0606a2f24bef587e1600",
-              "file": "checkout.spec.ts",
-              "line": 575,
+              "id": "a088064de9fe351eef5f-3fbd6e2d7bb5433350aa",
+              "file": "search.spec.ts",
+              "line": 112,
               "column": 7
             },
             {
-              "title": "TC-CHECKOUT-S4-004: Chuyển đổi qua lại giữa các phương thức thanh toán",
+              "title": "TC-SEARCH-S2-002: Tìm kiếm chứa ký tự đặc biệt",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 69786,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('input#search_desktop, input.input-search, input[name=\"q\"]').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('input#search_desktop, input.input-search, input[name=\"q\"]').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('input#search_desktop, input.input-search, input[name=\"q\"]').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('input#search_desktop, input.input-search, input[name=\"q\"]').first()\u001b[22m\n\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:133:46\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:131:7",
+                        "location": {
+                          "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                          "column": 46,
+                          "line": 133
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 131 |\u001b[39m       \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m`Thử nghiệm XSS: [${item.desc}]`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 132 |\u001b[39m         \u001b[36mawait\u001b[39m searchPage\u001b[33m.\u001b[39msubmitSearch(item\u001b[33m.\u001b[39mkw\u001b[33m,\u001b[39m \u001b[32m\"enter\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 133 |\u001b[39m         \u001b[36mawait\u001b[39m expect(searchPage\u001b[33m.\u001b[39msearchInput)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 134 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 135 |\u001b[39m     }\n \u001b[90m 136 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "column": 46,
+                            "line": 133
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('input#search_desktop, input.input-search, input[name=\"q\"]').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('input#search_desktop, input.input-search, input[name=\"q\"]').first()\u001b[22m\n\n\n\u001b[0m \u001b[90m 131 |\u001b[39m       \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m`Thử nghiệm XSS: [${item.desc}]`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 132 |\u001b[39m         \u001b[36mawait\u001b[39m searchPage\u001b[33m.\u001b[39msubmitSearch(item\u001b[33m.\u001b[39mkw\u001b[33m,\u001b[39m \u001b[32m\"enter\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 133 |\u001b[39m         \u001b[36mawait\u001b[39m expect(searchPage\u001b[33m.\u001b[39msearchInput)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 134 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 135 |\u001b[39m     }\n \u001b[90m 136 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:133:46\u001b[22m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:131:7\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Thử nghiệm XSS: [Ký tự đặc biệt thuần]",
+                          "duration": 23874,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('input#search_desktop, input.input-search, input[name=\"q\"]').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('input#search_desktop, input.input-search, input[name=\"q\"]').first()\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('input#search_desktop, input.input-search, input[name=\"q\"]').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('input#search_desktop, input.input-search, input[name=\"q\"]').first()\u001b[22m\n\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:133:46\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:131:7",
+                            "location": {
+                              "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                              "column": 46,
+                              "line": 133
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 131 |\u001b[39m       \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m`Thử nghiệm XSS: [${item.desc}]`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 132 |\u001b[39m         \u001b[36mawait\u001b[39m searchPage\u001b[33m.\u001b[39msubmitSearch(item\u001b[33m.\u001b[39mkw\u001b[33m,\u001b[39m \u001b[32m\"enter\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 133 |\u001b[39m         \u001b[36mawait\u001b[39m expect(searchPage\u001b[33m.\u001b[39msearchInput)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 134 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 135 |\u001b[39m     }\n \u001b[90m 136 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-06-07T07:41:37.974Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--68994-ìm-kiếm-chứa-ký-tự-đặc-biệt-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--68994-ìm-kiếm-chứa-ký-tự-đặc-biệt-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--68994-ìm-kiếm-chứa-ký-tự-đặc-biệt-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--68994-ìm-kiếm-chứa-ký-tự-đặc-biệt-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "column": 46,
+                        "line": 133
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-365ae688016bcb92cf66",
+              "file": "search.spec.ts",
+              "line": 125,
+              "column": 7
+            },
+            {
+              "title": "TC-SEARCH-S2-003: Tìm kiếm từ khóa vô nghĩa (Not Found)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 3,
+                      "status": "timedOut",
+                      "duration": 52556,
+                      "error": {
+                        "message": "\u001b[31mTearing down \"context\" exceeded the test timeout of 30000ms.\u001b[39m",
+                        "stack": "\u001b[31mTearing down \"context\" exceeded the test timeout of 30000ms.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTearing down \"context\" exceeded the test timeout of 30000ms.\u001b[39m"
+                        },
+                        {
+                          "message": "Error: browserContext.close: Test ended.\nBrowser logs:\n\n<launching> C:\\Users\\ThinkPad T14s\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1223\\chrome-headless-shell-win64\\chrome-headless-shell.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=C:\\Users\\THINKP~1\\AppData\\Local\\Temp\\playwright_chromiumdev_profile-FRRSx4 --remote-debugging-pipe --no-startup-window\n<launched> pid=21768\n[pid=21768][err] [0607/144139.360:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144139.820:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144139.822:INFO:CONSOLE:2] \"using own message listener\", source: https://webchat.caresoft.vn/widget/widget.min.js?v=1.0 (2)\n[pid=21768][err] [0607/144139.850:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144140.340:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144140.685:INFO:CONSOLE:2] \"chat_state = null\", source: https://webchatstatic.caresoft.vn/static/js/main.8f7ca747.js (2)\n[pid=21768][err] [0607/144140.688:INFO:CONSOLE:2] \"use websocket\", source: https://webchatstatic.caresoft.vn/static/js/main.8f7ca747.js (2)\n[pid=21768][err] [0607/144143.709:INFO:CONSOLE:2] \"[Meta Pixel] - Duplicate Pixel ID: 3677985902470137.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=21768][err] [0607/144143.752:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'conversion'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=21768][err] [0607/144147.690:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'form_start'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=21768][err] [0607/144147.913:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144147.939:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144148.087:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'form_submit'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=21768][err] [0607/144148.114:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144148.139:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144148.161:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144148.192:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144148.223:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144148.245:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144148.266:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144148.292:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144148.318:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144148.338:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144148.359:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144148.388:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144148.415:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144148.437:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144148.461:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144148.488:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144148.755:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144151.896:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144151.898:INFO:CONSOLE:2] \"using own message listener\", source: https://webchat.caresoft.vn/widget/widget.min.js?v=1.0 (2)\n[pid=21768][err] [0607/144152.412:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144152.644:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144157.066:INFO:CONSOLE:2] \"use websocket\", source: https://webchatstatic.caresoft.vn/static/js/main.8f7ca747.js (2)\n[pid=21768][err] [0607/144201.067:INFO:CONSOLE:2] \"[Meta Pixel] - Duplicate Pixel ID: 3677985902470137.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=21768][err] [0607/144201.086:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'view_search_results'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=21768][err] [0607/144201.134:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'conversion'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=21768][err] [0607/144201.215:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'scroll'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=21768][err] [0607/144201.311:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144201.364:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144201.417:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144201.474:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768][err] [0607/144201.533:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=21768] <gracefully close start>"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Tìm chuỗi vô nghĩa: [Chuỗi ký tự gõ bừa]",
+                          "duration": 19702
+                        }
+                      ],
+                      "startTime": "2026-06-07T07:41:38.495Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--8b9ce-từ-khóa-vô-nghĩa-Not-Found--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--8b9ce-từ-khóa-vô-nghĩa-Not-Found--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--8b9ce-từ-khóa-vô-nghĩa-Not-Found--chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-e6143d5d573ceb74b4b5",
+              "file": "search.spec.ts",
+              "line": 138,
+              "column": 7
+            },
+            {
+              "title": "TC-SEARCH-S2-004: Tự động cắt khoảng trắng thừa (Input Trimming)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 52210,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('input#search_desktop, input.input-search, input[name=\"q\"]').first()\nExpected: \u001b[32m\"hai số phận\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('input#search_desktop, input.input-search, input[name=\"q\"]').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('input#search_desktop, input.input-search, input[name=\"q\"]').first()\nExpected: \u001b[32m\"hai số phận\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('input#search_desktop, input.input-search, input[name=\"q\"]').first()\u001b[22m\n\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:152:46\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:150:7",
+                        "location": {
+                          "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                          "column": 46,
+                          "line": 152
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 150 |\u001b[39m       \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m`Thử nghiệm Trim: [${item.desc}]`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 151 |\u001b[39m         \u001b[36mawait\u001b[39m searchPage\u001b[33m.\u001b[39msubmitSearch(item\u001b[33m.\u001b[39mkw\u001b[33m,\u001b[39m \u001b[32m\"enter\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 152 |\u001b[39m         \u001b[36mawait\u001b[39m expect(searchPage\u001b[33m.\u001b[39msearchInput)\u001b[33m.\u001b[39mtoHaveValue(item\u001b[33m.\u001b[39mexpected\u001b[33m,\u001b[39m {\n \u001b[90m     |\u001b[39m                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 153 |\u001b[39m           timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 154 |\u001b[39m         })\u001b[33m;\u001b[39m\n \u001b[90m 155 |\u001b[39m       })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "column": 46,
+                            "line": 152
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('input#search_desktop, input.input-search, input[name=\"q\"]').first()\nExpected: \u001b[32m\"hai số phận\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('input#search_desktop, input.input-search, input[name=\"q\"]').first()\u001b[22m\n\n\n\u001b[0m \u001b[90m 150 |\u001b[39m       \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m`Thử nghiệm Trim: [${item.desc}]`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 151 |\u001b[39m         \u001b[36mawait\u001b[39m searchPage\u001b[33m.\u001b[39msubmitSearch(item\u001b[33m.\u001b[39mkw\u001b[33m,\u001b[39m \u001b[32m\"enter\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 152 |\u001b[39m         \u001b[36mawait\u001b[39m expect(searchPage\u001b[33m.\u001b[39msearchInput)\u001b[33m.\u001b[39mtoHaveValue(item\u001b[33m.\u001b[39mexpected\u001b[33m,\u001b[39m {\n \u001b[90m     |\u001b[39m                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 153 |\u001b[39m           timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 154 |\u001b[39m         })\u001b[33m;\u001b[39m\n \u001b[90m 155 |\u001b[39m       })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:152:46\u001b[22m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:150:7\u001b[22m"
+                        },
+                        {
+                          "message": "\u001b[31mTearing down \"context\" exceeded the test timeout of 30000ms.\u001b[39m"
+                        },
+                        {
+                          "message": "Error: browserContext.close: Target page, context or browser has been closed"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Thử nghiệm Trim: [Khoảng trắng 2 đầu]",
+                          "duration": 15486,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('input#search_desktop, input.input-search, input[name=\"q\"]').first()\nExpected: \u001b[32m\"hai số phận\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('input#search_desktop, input.input-search, input[name=\"q\"]').first()\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('input#search_desktop, input.input-search, input[name=\"q\"]').first()\nExpected: \u001b[32m\"hai số phận\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('input#search_desktop, input.input-search, input[name=\"q\"]').first()\u001b[22m\n\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:152:46\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:150:7",
+                            "location": {
+                              "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                              "column": 46,
+                              "line": 152
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 150 |\u001b[39m       \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m`Thử nghiệm Trim: [${item.desc}]`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 151 |\u001b[39m         \u001b[36mawait\u001b[39m searchPage\u001b[33m.\u001b[39msubmitSearch(item\u001b[33m.\u001b[39mkw\u001b[33m,\u001b[39m \u001b[32m\"enter\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 152 |\u001b[39m         \u001b[36mawait\u001b[39m expect(searchPage\u001b[33m.\u001b[39msearchInput)\u001b[33m.\u001b[39mtoHaveValue(item\u001b[33m.\u001b[39mexpected\u001b[33m,\u001b[39m {\n \u001b[90m     |\u001b[39m                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 153 |\u001b[39m           timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 154 |\u001b[39m         })\u001b[33m;\u001b[39m\n \u001b[90m 155 |\u001b[39m       })\u001b[33m;\u001b[39m\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-06-07T07:41:39.221Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--4948c--trắng-thừa-Input-Trimming--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--4948c--trắng-thừa-Input-Trimming--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--4948c--trắng-thừa-Input-Trimming--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "column": 46,
+                        "line": 152
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-0a0f8bda24014e98f9e2",
+              "file": "search.spec.ts",
+              "line": 148,
+              "column": 7
+            },
+            {
+              "title": "TC-SEARCH-S3-001: Kiểm tra giới hạn độ dài từ khóa (Boundary Length)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 75032,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Kiểm tra biên: [Biên dưới (1 ký tự)]",
+                          "duration": 12406
+                        },
+                        {
+                          "title": "Kiểm tra biên: [Độ dài trung bình (100 ký tự)]",
+                          "duration": 16192
+                        },
+                        {
+                          "title": "Kiểm tra biên: [Biên trên / Vượt biên (400 ký tự)]",
+                          "duration": 15280
+                        }
+                      ],
+                      "startTime": "2026-06-07T07:42:50.070Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-502be8dfa517ccaa5131",
+              "file": "search.spec.ts",
+              "line": 163,
+              "column": 7
+            },
+            {
+              "title": "TC-SEARCH-S4-001: Lọc kết quả tìm kiếm theo khoảng giá (Price Filter)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 122012,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Từ khóa \"kinh tế\" lọc khoảng: Giá trung bình (50k - 150k)",
+                          "duration": 28008
+                        },
+                        {
+                          "title": "Từ khóa \"tâm lý học\" lọc khoảng: Giá cao (200k - 500k)",
+                          "duration": 29148
+                        },
+                        {
+                          "title": "Từ khóa \"tiểu thuyết\" lọc khoảng: Min bằng Max (100k)",
+                          "duration": 19651
+                        },
+                        {
+                          "title": "Từ khóa \"lịch sử\" lọc khoảng: Min lớn hơn Max (Báo lỗi khoảng giá)",
+                          "duration": 21899
+                        }
+                      ],
+                      "startTime": "2026-06-07T07:42:53.143Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-1634b9460fa560bab567",
+              "file": "search.spec.ts",
+              "line": 177,
+              "column": 7
+            },
+            {
+              "title": "TC-SEARCH-S4-002: Lọc kết quả tìm kiếm theo Nhà xuất bản (Publisher Filter)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 120292,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Lọc NXB \"NXB Dân Trí\" cho từ khóa \"tâm lý\"",
+                          "duration": 24245
+                        },
+                        {
+                          "title": "Lọc NXB \"NXB Trẻ\" cho từ khóa \"kinh tế\"",
+                          "duration": 28795
+                        },
+                        {
+                          "title": "Lọc NXB \"Văn Học\" cho từ khóa \"tiểu thuyết\"",
+                          "duration": 18780
+                        }
+                      ],
+                      "startTime": "2026-06-07T07:42:56.973Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-284cd9c4cc7c719c8a79",
+              "file": "search.spec.ts",
+              "line": 238,
+              "column": 7
+            },
+            {
+              "title": "TC-SEARCH-S5-001: Kết hợp Tìm kiếm từ khóa và click Bộ lọc cùng lúc",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 2,
+                      "status": "timedOut",
+                      "duration": 60272,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                            "column": 32,
+                            "line": 167
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.block-content.catalog-list').locator('a[key=\"publisher\"][value=\"NXB Dân Trí\"]').first()\nExpected pattern: \u001b[32m/m-checkbox-checked/\u001b[39m\nReceived string:  \u001b[31m\"cursor-pointer m-checkbox-unchecked\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('.block-content.catalog-list').locator('a[key=\"publisher\"][value=\"NXB Dân Trí\"]').first()\u001b[22m\n\u001b[2m    29 × locator resolved to <a key=\"publisher\" value=\"NXB Dân Trí\" title=\"NXB Dân Trí\" onclick=\"addFilterActionDom(this, 'any')\" class=\"cursor-pointer m-checkbox-unchecked\">NXB Dân Trí</a>\u001b[22m\n\u001b[2m       - unexpected value \"cursor-pointer m-checkbox-unchecked\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:167\n\n\u001b[0m \u001b[90m 165 |\u001b[39m\n \u001b[90m 166 |\u001b[39m     \u001b[90m// Chờ UI cập nhật trạng thái đã tick thay vì chờ bắt request\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 167 |\u001b[39m     \u001b[36mawait\u001b[39m expect(filterOption)\u001b[33m.\u001b[39mtoHaveClass(\u001b[35m/m-checkbox-checked/\u001b[39m\u001b[33m,\u001b[39m {\n \u001b[90m     |\u001b[39m                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 168 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 169 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 170 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m1000\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// Đợi 1 nhịp cho DOM lưới sản phẩm render lại\u001b[39m\u001b[0m\n\u001b[2m    at SearchPage.applyFilterByValue (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:167:32)\u001b[22m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:267:7\u001b[22m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:263:5\u001b[22m"
+                        },
+                        {
+                          "message": "\u001b[31mTearing down \"context\" exceeded the test timeout of 30000ms.\u001b[39m"
+                        },
+                        {
+                          "message": "Error: End of central directory record signature not found. Either not a zip file, or file is truncated."
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Tìm kiếm \"tâm lý\" và lọc NXB \"NXB Dân Trí\"",
+                          "duration": 44622,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.block-content.catalog-list').locator('a[key=\"publisher\"][value=\"NXB Dân Trí\"]').first()\nExpected pattern: \u001b[32m/m-checkbox-checked/\u001b[39m\nReceived string:  \u001b[31m\"cursor-pointer m-checkbox-unchecked\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('.block-content.catalog-list').locator('a[key=\"publisher\"][value=\"NXB Dân Trí\"]').first()\u001b[22m\n\u001b[2m    29 × locator resolved to <a key=\"publisher\" value=\"NXB Dân Trí\" title=\"NXB Dân Trí\" onclick=\"addFilterActionDom(this, 'any')\" class=\"cursor-pointer m-checkbox-unchecked\">NXB Dân Trí</a>\u001b[22m\n\u001b[2m       - unexpected value \"cursor-pointer m-checkbox-unchecked\"\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.block-content.catalog-list').locator('a[key=\"publisher\"][value=\"NXB Dân Trí\"]').first()\nExpected pattern: \u001b[32m/m-checkbox-checked/\u001b[39m\nReceived string:  \u001b[31m\"cursor-pointer m-checkbox-unchecked\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('.block-content.catalog-list').locator('a[key=\"publisher\"][value=\"NXB Dân Trí\"]').first()\u001b[22m\n\u001b[2m    29 × locator resolved to <a key=\"publisher\" value=\"NXB Dân Trí\" title=\"NXB Dân Trí\" onclick=\"addFilterActionDom(this, 'any')\" class=\"cursor-pointer m-checkbox-unchecked\">NXB Dân Trí</a>\u001b[22m\n\u001b[2m       - unexpected value \"cursor-pointer m-checkbox-unchecked\"\u001b[22m\n\n    at SearchPage.applyFilterByValue (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:167:32)\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:267:7\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:263:5",
+                            "location": {
+                              "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                              "column": 32,
+                              "line": 167
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:167\n\n\u001b[0m \u001b[90m 165 |\u001b[39m\n \u001b[90m 166 |\u001b[39m     \u001b[90m// Chờ UI cập nhật trạng thái đã tick thay vì chờ bắt request\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 167 |\u001b[39m     \u001b[36mawait\u001b[39m expect(filterOption)\u001b[33m.\u001b[39mtoHaveClass(\u001b[35m/m-checkbox-checked/\u001b[39m\u001b[33m,\u001b[39m {\n \u001b[90m     |\u001b[39m                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 168 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 169 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 170 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m1000\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// Đợi 1 nhịp cho DOM lưới sản phẩm render lại\u001b[39m\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-06-07T07:43:05.425Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--891bc-óa-và-click-Bộ-lọc-cùng-lúc-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-358a77804afb06260af5",
+              "file": "search.spec.ts",
+              "line": 260,
+              "column": 7
+            },
+            {
+              "title": "TC-SEARCH-S5-002: Kiểm tra hiệu năng phản hồi cơ bản (Search Performance)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 54025,
+                      "error": {
+                        "message": "Error: Lỗi Hiệu năng: Tìm kiếm \"harry potter\" tốn 16414ms (Vượt quá 5000ms)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m5000\u001b[39m\nReceived:    \u001b[31m16414\u001b[39m",
+                        "stack": "Error: Lỗi Hiệu năng: Tìm kiếm \"harry potter\" tốn 16414ms (Vượt quá 5000ms)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m5000\u001b[39m\nReceived:    \u001b[31m16414\u001b[39m\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:295:7",
+                        "location": {
+                          "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                          "column": 7,
+                          "line": 295
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 293 |\u001b[39m       loadTime\u001b[33m,\u001b[39m\n \u001b[90m 294 |\u001b[39m       \u001b[32m`Lỗi Hiệu năng: Tìm kiếm \"${keyword}\" tốn ${loadTime}ms (Vượt quá ${maxAcceptableTimeMs}ms)`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 295 |\u001b[39m     )\u001b[33m.\u001b[39mtoBeLessThanOrEqual(maxAcceptableTimeMs)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 296 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 297 |\u001b[39m\n \u001b[90m 298 |\u001b[39m   test(\u001b[32m\"TC-SEARCH-S5-003: Nhận diện dung sai lỗi chính tả (Thiếu ký tự)\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "column": 7,
+                            "line": 295
+                          },
+                          "message": "Error: Lỗi Hiệu năng: Tìm kiếm \"harry potter\" tốn 16414ms (Vượt quá 5000ms)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m5000\u001b[39m\nReceived:    \u001b[31m16414\u001b[39m\n\n\u001b[0m \u001b[90m 293 |\u001b[39m       loadTime\u001b[33m,\u001b[39m\n \u001b[90m 294 |\u001b[39m       \u001b[32m`Lỗi Hiệu năng: Tìm kiếm \"${keyword}\" tốn ${loadTime}ms (Vượt quá ${maxAcceptableTimeMs}ms)`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 295 |\u001b[39m     )\u001b[33m.\u001b[39mtoBeLessThanOrEqual(maxAcceptableTimeMs)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 296 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 297 |\u001b[39m\n \u001b[90m 298 |\u001b[39m   test(\u001b[32m\"TC-SEARCH-S5-003: Nhận diện dung sai lỗi chính tả (Thiếu ký tự)\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:295:7\u001b[22m"
+                        },
+                        {
+                          "message": "\u001b[31mTearing down \"context\" exceeded the test timeout of 30000ms.\u001b[39m"
+                        },
+                        {
+                          "message": "Error: browserContext.close: Test ended.\nBrowser logs:\n\n[pid=11328][err] [0607/144255.494:INFO:CONSOLE:2] \"use websocket\", source: https://webchatstatic.caresoft.vn/static/js/main.8f7ca747.js (2)\n[pid=11328][err] [0607/144255.768:INFO:CONSOLE:2] \"[Meta Pixel] - Duplicate Pixel ID: 3677985902470137.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144258.156:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'form_start'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144258.407:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144258.436:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144258.577:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'form_submit'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144258.600:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144258.622:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144258.651:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144258.680:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144258.710:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144258.731:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144258.752:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144258.786:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144258.814:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144258.835:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144258.860:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144258.895:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144258.937:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144258.966:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144258.990:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144259.022:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144259.745:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144303.553:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144303.555:INFO:CONSOLE:2] \"using own message listener\", source: https://webchat.caresoft.vn/widget/widget.min.js?v=1.0 (2)\n[pid=11328][err] [0607/144303.648:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144304.410:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144307.028:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'view_search_results'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144307.087:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'conversion'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144307.553:INFO:CONSOLE:2] \"use websocket\", source: https://webchatstatic.caresoft.vn/static/js/main.8f7ca747.js (2)\n[pid=11328][err] [0607/144308.421:INFO:CONSOLE:2] \"[Meta Pixel] - Duplicate Pixel ID: 3677985902470137.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144314.049:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'form_start'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144314.475:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'form_submit'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144315.640:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144319.294:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144319.297:INFO:CONSOLE:2] \"using own message listener\", source: https://webchat.caresoft.vn/widget/widget.min.js?v=1.0 (2)\n[pid=11328][err] [0607/144319.310:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144320.031:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144324.156:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'view_search_results'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144324.191:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'conversion'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144324.250:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144324.274:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144324.891:INFO:CONSOLE:2] \"use websocket\", source: https://webchatstatic.caresoft.vn/static/js/main.8f7ca747.js (2)\n[pid=11328][err] [0607/144325.347:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144325.474:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144325.880:INFO:CONSOLE:2] \"[Meta Pixel] - Duplicate Pixel ID: 3677985902470137.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144329.117:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'form_start'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144329.283:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144329.309:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144329.335:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144329.355:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144329.384:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144329.542:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'form_submit'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144329.565:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144329.585:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144329.606:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144329.650:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144329.674:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144329.696:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144329.720:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144329.746:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144329.770:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144329.794:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144329.813:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144329.845:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144329.877:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144329.898:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144329.924:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144329.977:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144330.736:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144334.735:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144334.737:INFO:CONSOLE:2] \"using own message listener\", source: https://webchat.caresoft.vn/widget/widget.min.js?v=1.0 (2)\n[pid=11328][err] [0607/144335.024:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144335.084:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144347.329:INFO:CONSOLE:1] \"Uncaught (in promise) #<Object>\", source: https://cdn1.fahasa.com/media/js/32a44da5d2065b5c746a7fcfe7e6904b.js?q=11905 (1)\n[pid=11328][err] [0607/144406.104:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144410.041:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144410.044:INFO:CONSOLE:2] \"using own message listener\", source: https://webchat.caresoft.vn/widget/widget.min.js?v=1.0 (2)\n[pid=11328][err] [0607/144410.660:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144410.763:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144413.428:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'conversion'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144415.552:INFO:CONSOLE:2] \"chat_state = null\", source: https://webchatstatic.caresoft.vn/static/js/main.8f7ca747.js (2)\n[pid=11328][err] [0607/144415.556:INFO:CONSOLE:2] \"use websocket\", source: https://webchatstatic.caresoft.vn/static/js/main.8f7ca747.js (2)\n[pid=11328][err] [0607/144416.490:INFO:CONSOLE:2] \"[Meta Pixel] - Duplicate Pixel ID: 3677985902470137.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144416.527:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144416.533:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'scroll'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144416.555:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144416.582:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144416.606:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144416.648:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144416.670:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144416.694:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144416.717:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144416.748:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144416.775:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144416.796:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144416.815:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144416.841:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144416.867:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144416.889:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144416.909:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144416.949:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144417.466:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144417.542:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144417.548:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144417.554:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144417.873:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144417.916:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144418.038:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144418.045:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144418.052:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144418.106:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144418.111:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144418.113:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144418.119:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144418.126:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144418.140:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144418.147:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144418.163:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144420.071:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'form_start'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144420.303:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144420.334:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144420.508:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'form_submit'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144420.526:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144420.548:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144420.569:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144420.595:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144420.620:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144420.641:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144420.662:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144420.688:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144420.737:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144420.758:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144420.779:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144420.804:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144420.832:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144420.855:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144420.881:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144420.907:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144421.438:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144423.216:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144423.219:INFO:CONSOLE:2] \"using own message listener\", source: https://webchat.caresoft.vn/widget/widget.min.js?v=1.0 (2)\n[pid=11328][err] [0607/144423.450:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144423.491:INFO:CONSOLE:17] \"Uncaught TypeError: Cannot read properties of null (reading 'appendChild')\", source:  (17)\n[pid=11328][err] [0607/144425.688:INFO:CONSOLE:2] \"use websocket\", source: https://webchatstatic.caresoft.vn/static/js/main.8f7ca747.js (2)\n[pid=11328][err] [0607/144427.853:INFO:CONSOLE:2] \"[Meta Pixel] - Duplicate Pixel ID: 3677985902470137.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144427.872:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'view_search_results'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144427.919:INFO:CONSOLE:2] \"[Meta Pixel] - You are sending a non-standard event 'conversion'. The preferred way to send these events is using trackCustom. See 'https://developers.facebook.com/docs/ads-for-websites/pixel-events/#events' for more information.\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328][err] [0607/144444.699:INFO:CONSOLE:2] \"[Elastic APM] Failed sending events! [object DOMException]\", source: https://browser.sentry-cdn.com/10.55.0/bundle.tracing.logs.metrics.min.js (2)\n[pid=11328] <gracefully close start>"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-07T07:44:05.163Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--371d7--cơ-bản-Search-Performance--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--371d7--cơ-bản-Search-Performance--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--371d7--cơ-bản-Search-Performance--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "column": 7,
+                        "line": 295
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-3920e125ad0f23b8ee75",
+              "file": "search.spec.ts",
+              "line": 277,
+              "column": 7
+            },
+            {
+              "title": "TC-SEARCH-S5-003: Nhận diện dung sai lỗi chính tả (Thiếu ký tự)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 300000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 69022,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\n    at SearchPage.getTopProductTitles (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:126:16)\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:308:44\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:305:7",
+                        "location": {
+                          "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                          "column": 50,
+                          "line": 120
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                            "column": 50,
+                            "line": 120
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m\n\u001b[2m    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\u001b[22m\n\u001b[2m    at SearchPage.getTopProductTitles (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:126:16)\u001b[22m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:308:44\u001b[22m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:305:7\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "[Thiếu ký tự] Nhập \"hry potter\", kỳ vọng ra \"harry potter\"",
+                          "duration": 24535,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\n    at SearchPage.getTopProductTitles (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:126:16)\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:308:44\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:305:7",
+                            "location": {
+                              "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                              "column": 50,
+                              "line": 120
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-06-07T07:44:21.345Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--ffcfb-i-lỗi-chính-tả-Thiếu-ký-tự--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--ffcfb-i-lỗi-chính-tả-Thiếu-ký-tự--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--ffcfb-i-lỗi-chính-tả-Thiếu-ký-tự--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--ffcfb-i-lỗi-chính-tả-Thiếu-ký-tự--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                        "column": 50,
+                        "line": 120
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-503137dcf4252a3f71e4",
+              "file": "search.spec.ts",
+              "line": 298,
+              "column": 7
+            },
+            {
+              "title": "TC-SEARCH-S5-004: Nhận diện dung sai lỗi chính tả (Thừa ký tự)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 300000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 63622,
+                      "error": {
+                        "message": "Error: Lỗi [Thừa ký tự]: Không nhận diện được \"không giia đình\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: Lỗi [Thừa ký tự]: Không nhận diện được \"không giia đình\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:337:11\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:327:7",
+                        "location": {
+                          "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                          "column": 11,
+                          "line": 337
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 335 |\u001b[39m           isMatch\u001b[33m,\u001b[39m\n \u001b[90m 336 |\u001b[39m           \u001b[32m`Lỗi [${item.category}]: Không nhận diện được \"${item.typo}\"`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 337 |\u001b[39m         )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 338 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 339 |\u001b[39m     }\n \u001b[90m 340 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "column": 11,
+                            "line": 337
+                          },
+                          "message": "Error: Lỗi [Thừa ký tự]: Không nhận diện được \"không giia đình\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 335 |\u001b[39m           isMatch\u001b[33m,\u001b[39m\n \u001b[90m 336 |\u001b[39m           \u001b[32m`Lỗi [${item.category}]: Không nhận diện được \"${item.typo}\"`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 337 |\u001b[39m         )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 338 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 339 |\u001b[39m     }\n \u001b[90m 340 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:337:11\u001b[22m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:327:7\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "[Thừa ký tự] Nhập \"câyy cam ngọt\", kỳ vọng ra \"cây cam ngọt\"",
+                          "duration": 13967
+                        },
+                        {
+                          "title": "[Thừa ký tự] Nhập \"haai số phận\", kỳ vọng ra \"hai số phận\"",
+                          "duration": 9376
+                        },
+                        {
+                          "title": "[Thừa ký tự] Nhập \"không giia đình\", kỳ vọng ra \"không gia đình\"",
+                          "duration": 11484,
+                          "error": {
+                            "message": "Error: Lỗi [Thừa ký tự]: Không nhận diện được \"không giia đình\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                            "stack": "Error: Lỗi [Thừa ký tự]: Không nhận diện được \"không giia đình\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:337:11\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:327:7",
+                            "location": {
+                              "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                              "column": 11,
+                              "line": 337
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 335 |\u001b[39m           isMatch\u001b[33m,\u001b[39m\n \u001b[90m 336 |\u001b[39m           \u001b[32m`Lỗi [${item.category}]: Không nhận diện được \"${item.typo}\"`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 337 |\u001b[39m         )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 338 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 339 |\u001b[39m     }\n \u001b[90m 340 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-06-07T07:44:55.726Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--4551e-ai-lỗi-chính-tả-Thừa-ký-tự--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--4551e-ai-lỗi-chính-tả-Thừa-ký-tự--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--4551e-ai-lỗi-chính-tả-Thừa-ký-tự--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--4551e-ai-lỗi-chính-tả-Thừa-ký-tự--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "column": 11,
+                        "line": 337
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-8303409bcae6eb624fdc",
+              "file": "search.spec.ts",
+              "line": 320,
+              "column": 7
+            },
+            {
+              "title": "TC-SEARCH-S5-005: Nhận diện dung sai lỗi chính tả (Đảo vị trí ký tự)",
               "ok": true,
               "tags": [],
               "tests": [
@@ -126,15 +1272,29 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 9,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 31940,
+                      "duration": 41269,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-06T20:00:30.700Z",
+                      "steps": [
+                        {
+                          "title": "[Đảo vị trí] Nhập \"haryr potter\", kỳ vọng ra \"harry potter\"",
+                          "duration": 11462
+                        },
+                        {
+                          "title": "[Đảo vị trí] Nhập \"muôn kếip nhân sinh\", kỳ vọng ra \"muôn kiếp nhân sinh\"",
+                          "duration": 11114
+                        },
+                        {
+                          "title": "[Đảo vị trí] Nhập \"dắc nhan tâm\", kỳ vọng ra \"đắc nhân tâm\"",
+                          "duration": 10487
+                        }
+                      ],
+                      "startTime": "2026-06-07T07:44:58.038Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -142,9 +1302,207 @@
                   "status": "expected"
                 }
               ],
-              "id": "25ab1bfc84c57e3e3a45-8ac64952d71039ac62be",
-              "file": "checkout.spec.ts",
-              "line": 608,
+              "id": "a088064de9fe351eef5f-527bff988114f9373b26",
+              "file": "search.spec.ts",
+              "line": 342,
+              "column": 7
+            },
+            {
+              "title": "TC-SEARCH-S5-006: Nhận diện dung sai lỗi chính tả (Dính phím liền kề)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 300000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 30022,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\n    at SearchPage.getTopProductTitles (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:126:16)\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:374:44\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:371:7",
+                        "location": {
+                          "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                          "column": 50,
+                          "line": 120
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                            "column": 50,
+                            "line": 120
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m\n\u001b[2m    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\u001b[22m\n\u001b[2m    at SearchPage.getTopProductTitles (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:126:16)\u001b[22m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:374:44\u001b[22m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:371:7\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "[Dính phím] Nhập \"jary potter\", kỳ vọng ra \"harry potter\"",
+                          "duration": 19914,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h2.product-name-no-ellipsis a, h2.p-name-list a, .products-grid .p-name-list a').first()\u001b[22m\n\n    at SearchPage.expectProductListVisible (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:120:50)\n    at SearchPage.getTopProductTitles (C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts:126:16)\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:374:44\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:371:7",
+                            "location": {
+                              "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                              "column": 50,
+                              "line": 120
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39m..\\pages\\SearchPage.ts:120\n\n\u001b[0m \u001b[90m 118 |\u001b[39m\n \u001b[90m 119 |\u001b[39m   \u001b[36masync\u001b[39m expectProductListVisible() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductTitleLinks\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible({\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m       timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 122 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m   }\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-06-07T07:45:41.837Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--686d4-chính-tả-Dính-phím-liền-kề--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--686d4-chính-tả-Dính-phím-liền-kề--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--686d4-chính-tả-Dính-phím-liền-kề--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--686d4-chính-tả-Dính-phím-liền-kề--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\pages\\SearchPage.ts",
+                        "column": 50,
+                        "line": 120
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-169ff2e6609bdf3f3e5f",
+              "file": "search.spec.ts",
+              "line": 364,
+              "column": 7
+            },
+            {
+              "title": "TC-SEARCH-S5-007: Nhận diện dung sai lỗi chính tả (Lỗi gõ Telex/VNI)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 300000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 35222,
+                      "error": {
+                        "message": "Error: Lỗi [Lỗi Telex]: Không nhận diện được \"muono kieps nhana sinh\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: Lỗi [Lỗi Telex]: Không nhận diện được \"muono kieps nhana sinh\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:404:11\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:394:7",
+                        "location": {
+                          "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                          "column": 11,
+                          "line": 404
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 402 |\u001b[39m           isMatch\u001b[33m,\u001b[39m\n \u001b[90m 403 |\u001b[39m           \u001b[32m`Lỗi [${item.category}]: Không nhận diện được \"${item.typo}\"`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 404 |\u001b[39m         )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 405 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 406 |\u001b[39m     }\n \u001b[90m 407 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                            "column": 11,
+                            "line": 404
+                          },
+                          "message": "Error: Lỗi [Lỗi Telex]: Không nhận diện được \"muono kieps nhana sinh\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 402 |\u001b[39m           isMatch\u001b[33m,\u001b[39m\n \u001b[90m 403 |\u001b[39m           \u001b[32m`Lỗi [${item.category}]: Không nhận diện được \"${item.typo}\"`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 404 |\u001b[39m         )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 405 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 406 |\u001b[39m     }\n \u001b[90m 407 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:404:11\u001b[22m\n\u001b[2m    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:394:7\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "[Lỗi dấu] Nhập \"đắc nhân tậm\", kỳ vọng ra \"đắc nhân tâm\"",
+                          "duration": 12972
+                        },
+                        {
+                          "title": "[Lỗi Telex] Nhập \"nhaf giả kim\", kỳ vọng ra \"nhà giả kim\"",
+                          "duration": 7394
+                        },
+                        {
+                          "title": "[Lỗi Telex] Nhập \"muono kieps nhana sinh\", kỳ vọng ra \"muôn kiếp nhân sinh\"",
+                          "duration": 8200,
+                          "error": {
+                            "message": "Error: Lỗi [Lỗi Telex]: Không nhận diện được \"muono kieps nhana sinh\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                            "stack": "Error: Lỗi [Lỗi Telex]: Không nhận diện được \"muono kieps nhana sinh\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:404:11\n    at C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts:394:7",
+                            "location": {
+                              "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                              "column": 11,
+                              "line": 404
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 402 |\u001b[39m           isMatch\u001b[33m,\u001b[39m\n \u001b[90m 403 |\u001b[39m           \u001b[32m`Lỗi [${item.category}]: Không nhận diện được \"${item.typo}\"`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 404 |\u001b[39m         )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 405 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 406 |\u001b[39m     }\n \u001b[90m 407 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-06-07T07:45:39.358Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--1220e--chính-tả-Lỗi-gõ-Telex-VNI--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--1220e--chính-tả-Lỗi-gõ-Telex-VNI--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--1220e--chính-tả-Lỗi-gõ-Telex-VNI--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\test-results\\search-Tính-năng-Tìm-kiếm--1220e--chính-tả-Lỗi-gõ-Telex-VNI--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\ThinkPad T14s\\Downloads\\nam4\\ki2\\dot2\\kiemthu\\giuaky\\code\\tests\\search.spec.ts",
+                        "column": 11,
+                        "line": 404
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a088064de9fe351eef5f-eeb3472e0d919bafcdab",
+              "file": "search.spec.ts",
+              "line": 386,
               "column": 7
             }
           ]
@@ -154,11 +1512,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-06T20:00:30.023Z",
-    "duration": 32902.013999999996,
-    "expected": 2,
+    "startTime": "2026-06-07T07:40:00.687Z",
+    "duration": 376775.85000000003,
+    "expected": 5,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 13,
     "flaky": 0
   }
 }

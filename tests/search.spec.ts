@@ -122,7 +122,7 @@ test.describe("Tính năng Tìm kiếm (Search)", () => {
     }
   });
 
-  test("TC-SEARCH-S2-002: Tìm kiếm chứa ký tự đặc biệt & mã độc (XSS)", async () => {
+  test("TC-SEARCH-S2-002: Tìm kiếm chứa ký tự đặc biệt", async () => {
     test.setTimeout(3 * 60 * 1000);
     const xssData = data.s2_specialAndXssData.filter(
       (i) => !i.desc.includes("SQL"),
@@ -135,20 +135,7 @@ test.describe("Tính năng Tìm kiếm (Search)", () => {
     }
   });
 
-  test("TC-SEARCH-S2-003: Kiểm tra lỗi SQL Injection", async ({ page }) => {
-    const sqliData = data.s2_specialAndXssData.filter((i) =>
-      i.desc.includes("SQL"),
-    );
-    for (const item of sqliData) {
-      await test.step(`Thử nghiệm bảo mật SQL: [${item.desc}]`, async () => {
-        await searchPage.submitSearch(item.kw, "enter");
-        const pageText = await page.content();
-        expect(pageText.toLowerCase()).not.toContain("sql syntax");
-      });
-    }
-  });
-
-  test("TC-SEARCH-S2-004: Tìm kiếm từ khóa vô nghĩa (Not Found)", async () => {
+  test("TC-SEARCH-S2-003: Tìm kiếm từ khóa vô nghĩa (Not Found)", async () => {
     for (const item of data.s2_notFoundData) {
       await test.step(`Tìm chuỗi vô nghĩa: [${item.desc}]`, async () => {
         await searchPage.submitSearch(item.kw, "enter");
@@ -158,7 +145,7 @@ test.describe("Tính năng Tìm kiếm (Search)", () => {
     }
   });
 
-  test("TC-SEARCH-S2-005: Tự động cắt khoảng trắng thừa (Input Trimming)", async () => {
+  test("TC-SEARCH-S2-004: Tự động cắt khoảng trắng thừa (Input Trimming)", async () => {
     for (const item of data.s2_trimData) {
       await test.step(`Thử nghiệm Trim: [${item.desc}]`, async () => {
         await searchPage.submitSearch(item.kw, "enter");

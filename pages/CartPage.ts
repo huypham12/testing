@@ -31,7 +31,7 @@ export class CartPage {
     this.cartItems = page.locator(".item-product-cart");
     this.selectAllCheckbox = page.locator("#checkbox-all-products");
     this.emptyCartMessage = page.locator(
-      "text=/giỏ hàng.*(trống|rỗng|chưa có|không có sản phẩm)/i",
+      "text=/(chưa có sản phẩm|giỏ hàng.*trống|giỏ hàng.*rỗng|không có sản phẩm)/i",
     );
     this.continueShoppingBtn = page.locator("a, button", {
       hasText: /tiếp tục mua sắm|mua sắm ngay/i,
@@ -432,8 +432,8 @@ export class CartPage {
       // Click nút xóa của sản phẩm đầu tiên
       await this.cartItems.first().locator(".btn-remove-desktop-cart").click();
 
-      // FIX LỖI: Chờ tổng số lượng phần tử giảm đi 1 thay vì chờ .first() bị ẩn
-      await expect(this.cartItems).toHaveCount(currentCount - 1, {
+      // FIX LỖI: Chờ tổng số lượng phần tử thay đổi thay vì chờ giảm đúng 1 (vì có thể có sản phẩm tặng kèm bị xóa theo)
+      await expect(this.cartItems).not.toHaveCount(currentCount, {
         timeout: 15000,
       });
 

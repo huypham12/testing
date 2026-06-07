@@ -183,3 +183,13 @@ export const PLAN_SINGLE_PRODUCT: CartLinePlan[] = [{ productId: "SP_C", qty: 1 
 /** Plan cho checkout cơ bản: đủ ngưỡng voucher 150K */
 export const PLAN_ABOVE_150K: CartLinePlan[] = [{ productId: "SP_B", qty: 3 }];
 // SP_B = 64K * 3 = 192K > 150K
+
+
+/** Plan "Đại gia" ~ 2 triệu VNĐ để test các case Decision Table / State Transition thoải mái */
+export const PLAN_HIGH_VALUE_2M: CartLinePlan[] = [{ productId: "SP_C", qty: 20 }];
+
+/** Plan cho TC-CHECKOUT-S2-003: Mua Manga (đủ điều kiện Freeship) + sách thường (đủ ngưỡng Voucher) */
+export const PLAN_VOUCHER_AND_FREESHIP: CartLinePlan[] = [
+  { productId: "SP_MANGA", qty: 1 },  // Solo Leveling Manga 442K → đủ điều kiện freeship Manga
+  { productId: "SP_C", qty: 5 },       // Cây Cam Ngọt 100K → tổng > 499K, đủ ngưỡng voucher 30K
+];

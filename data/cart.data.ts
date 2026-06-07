@@ -45,6 +45,15 @@ export const cartData = [
     inStock: true,
   },
   {
+    id: "SP_MANGA",
+    name: "Solo Leveling - Vol. 3 (Manga)",
+    url: "https://www.fahasa.com/solo-leveling-vol-3-manga.html?fhs_campaign=SEARCH",
+    sku: "9798400901348",
+    price: 442000,
+    stock: 10,
+    inStock: true,
+  },
+  {
     id: "SP_OOS",
     name: "Chặng Cuối",
     url: "https://www.fahasa.com/chang-cuoi.html",

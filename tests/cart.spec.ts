@@ -464,6 +464,7 @@ test.describe("Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản", ()
     await setupCartPage.login(account.phone, account.pass);
     await setupCartPage.clearCart();
     await setupCartPage.addProductByUrl(accountProduct.url);
+    await setupCartPage.gotoCart();
     await setupPage.waitForTimeout(2000);
     await setupContext.close();
 

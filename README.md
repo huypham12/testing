@@ -100,6 +100,7 @@ npx playwright test tests/cart.spec.ts -g "Tính năng Giỏ hàng" --project=ch
 ```bash
 npx playwright test tests/search.spec.ts --last-failed --project=chromium
 npx playwright test --last-failed
+npx playwright test tests/checkout.spec.ts --last-failed --project=chromium
 ```
 
 ### 4. Giao diện trình duyệt / UI / Debug

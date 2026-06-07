@@ -498,16 +498,17 @@ export class CheckoutPage {
 
   // ==================== HÓA ĐƠN GTGT ====================
 
-  async checkVatCheckbox() {
+async checkVatCheckbox() {
     if (!(await this.vatCheckbox.isChecked())) {
-      await this.vatCheckbox.click();
+      // Click trực tiếp vào thẻ label dựa theo DOM thực tế
+      await this.page.locator('label[for="fhs_checkout_vat_checkbox"]').click();
       await this.page.waitForTimeout(500);
     }
   }
 
   async uncheckVatCheckbox() {
     if (await this.vatCheckbox.isChecked()) {
-      await this.vatCheckbox.click();
+      await this.page.locator('label[for="fhs_checkout_vat_checkbox"]').click();
       await this.page.waitForTimeout(500);
     }
   }
@@ -637,78 +638,111 @@ export class CheckoutPage {
 
   // ==================== KHUYẾN MÃI (CHECKOUT PAGE) ====================
 
-  /** Nhập mã khuyến mãi / Gift Card và bấm Áp dụng */
-async applyCouponCode(code: string) {
-  await this.couponInput.waitFor({ state: "visible", timeout: 10000 });
-  await this.couponInput.clear();
-  await this.couponInput.pressSequentially(code, { delay: 50 });
-  
-  // Nhấn phím Enter ngay trên ô input thay vì click nút
-  await this.couponInput.press('Enter'); 
-  
-  await this.waitForCheckoutLoading();
-}
-
-  /** Mở popup chọn mã khuyến mãi */
-  async openPromoPopup() {
-    await this.promoPopupOpenBtn.click();
-    await this.page.waitForTimeout(1000);
-    // Chờ danh sách mã xuất hiện
-    await expect(
-      this.page.locator(".fhs-event-promo-list-item").first()
-    ).toBeVisible({ timeout: 15000 });
-  }
-
-  /** Đóng popup chọn mã khuyến mãi */
-  async closePromoPopup() {
-    const closeBtn = this.page.locator(".fhs_event_promo_btn_close").first();
-    if (await closeBtn.isVisible().catch(() => false)) {
-      await closeBtn.click();
-    } else {
-      await this.page.keyboard.press("Escape");
-    }
-    await this.page.waitForTimeout(500);
-  }
-
-  /** Áp dụng voucher trong popup bằng mã code */
-  async applyVoucherInPopup(code: string) {
-    // Mở rộng tất cả các panel ẩn
-    await this.page.evaluate(() => {
-      const panels = document.querySelectorAll(".panel-collapse");
-      panels.forEach((panel) => {
-        panel.classList.remove("collapse", "out", "collapsed");
-        panel.classList.add("in");
-        (panel as HTMLElement).style.display = "block";
-        (panel as HTMLElement).style.height = "auto";
-        (panel as HTMLElement).style.visibility = "visible";
-      });
-    });
-    await this.page.waitForTimeout(500);
-
-    const btn = this.page.locator(`button[coupon="${code}"]`);
-    try {
-      await btn.scrollIntoViewIfNeeded({ timeout: 2000 });
-      await btn.click({ force: true, timeout: 5000 });
-    } catch {
-      await btn.evaluate((node: HTMLElement) => node.click());
-    }
+/** Nhập mã khuyến mãi / Gift Card và bấm Áp dụng */
+  async applyCouponCode(code: string) {
+    // Thêm .first() phòng trường hợp couponInput bị trùng ID ở popup
+    const input = this.couponInput.first();
+    await input.waitFor({ state: "visible", timeout: 10000 });
+    await input.clear();
+    await input.pressSequentially(code, { delay: 50 });
+    
+    // SỬA LỖI STRICT MODE Ở ĐÂY: Tìm chính xác nút "Áp dụng" nằm trong form chính + gọi .first()
+    const applyBtn = this.page.locator('.fhs_coupon_block_container_checkout #fhs_checkout_btn_coupon').first();
+    await applyBtn.click();
+    
     await this.waitForCheckoutLoading();
   }
 
-  /** Bỏ chọn voucher đang áp dụng trong popup */
-  async removeVoucherInPopup(code: string) {
-    const btn = this.page.locator(`button[coupon="${code}"][apply="0"]`);
-    if (await btn.isVisible().catch(() => false)) {
-      await btn.click({ force: true });
-      await this.waitForCheckoutLoading();
+/** Mở popup chọn mã khuyến mãi */
+  async openPromoPopup() {
+    await this.promoPopupOpenBtn.click();
+
+    // Chờ nội dung popup thực sự render: Tìm ô nhập mã hoặc nút "Áp dụng"
+    const popupContent = this.page.locator(
+      'input[placeholder*="mã khuyến mãi"], button:has-text("Áp dụng"), button.fhs-btn-view-promo-coupon'
+    ).first();
+    await popupContent.waitFor({ state: 'visible', timeout: 15000 }).catch(() => {
+      console.log('⚠️ Nội dung popup voucher không xuất hiện sau 15s, tiếp tục...');
+    });
+
+    // LƯU Ý: Fahasa giữ class "loading" trên #popup-loading-event-cart-content-tabs
+    // vĩnh viễn (ngay cả sau khi nội dung đã render xong), nên KHÔNG chờ spinner.
+
+    // Cho UI thở thêm để các nút bên trong render hoàn tất
+    await this.page.waitForTimeout(1500);
+  }
+/** Đóng popup chọn mã khuyến mãi (An toàn: Chỉ đóng nếu đang thực sự mở) */
+  async closePromoPopup() {
+    const popupContainer = this.page.locator('.fhs_checkout_promo_popup_content, .popup-loading-event-cart-content').first();
+    const closeBtn = this.page.locator(".fhs_event_promo_btn_close").first();
+
+    if (await popupContainer.isVisible().catch(() => false)) {
+      if (await closeBtn.isVisible().catch(() => false)) {
+        await closeBtn.click();
+      } else {
+        await this.page.keyboard.press("Escape");
+      }
+      await this.page.waitForTimeout(500);
     }
   }
 
+  async applyVoucherInPopup(code: string) {
+      const btn = this.page.locator(`button[coupon="${code}"]`).first();
+      
+      // FIX XEM THÊM: Đợi 5s xem nút voucher có trong DOM không (dùng 'attached' thay vì 'visible' vì nút có thể nằm trong khối 'Xem thêm' bị che khuất)
+      const btnFound = await btn.waitFor({ state: 'attached', timeout: 5000 }).then(() => true).catch(() => false);
+
+      if (btnFound) {
+        // Dùng JS evaluate để click thẳng vào code, không sợ bị UI hay CSS che khuất
+        await this.page.evaluate((c) => {
+          const b = document.querySelector(`button[coupon="${c}"]`) as HTMLElement;
+          if (b) b.click();
+        }, code);
+        await this.waitForCheckoutLoading();
+      } else {
+        console.log(`⚠️ Voucher [${code}] không xuất hiện trong popup DOM, fallback nhập tay...`);
+        await this.closePromoPopup();
+        await this.applyCouponCode(code);
+      }
+    }
+
+  async removeVoucherInPopup(code: string) {
+      const btn = this.page.locator(`button[coupon="${code}"][apply="0"]`).first();
+      
+      try {
+        // Tương tự, dùng 'attached' để gỡ mã ngay cả khi nó bị giấu trong list 'Xem thêm'
+        await btn.waitFor({ state: "attached", timeout: 3000 });
+        await this.page.evaluate((c) => {
+          const b = document.querySelector(`button[coupon="${c}"][apply="0"]`) as HTMLElement;
+          if (b) b.click();
+        }, code);
+      } catch {
+        console.log(`⚠️ Không tìm thấy nút gỡ voucher [${code}]. Thử tìm nút Hủy/Bỏ chọn chung...`);
+        const cancelBtn = this.page.locator('button:has-text("Bỏ chọn"), button:has-text("Hủy")').first();
+        if (await cancelBtn.isVisible().catch(() => false)) {
+          await cancelBtn.click();
+        }
+      }
+      
+      await this.waitForCheckoutLoading();
+    }
+
   /** Kiểm tra voucher có đang ở trạng thái "Đã áp dụng" không */
   async isVoucherApplied(code: string): Promise<boolean> {
-    const btn = this.page.locator(`button[coupon="${code}"]`);
-    const applyAttr = await btn.getAttribute("apply");
-    return applyAttr === "0"; // apply="0" = Đã áp dụng, apply="1" = Chưa áp dụng
+    try {
+      const btn = this.page.locator(`button[coupon="${code}"]`);
+      // Nếu button không tồn tại (danh sách trống), kiểm tra qua block tổng tiền
+      if (!(await btn.isVisible().catch(() => false))) {
+        // Fallback: kiểm tra xem có dòng "Giảm giá (CODE)" trong block tổng tiền không
+        const discountLine = this.page.locator(`.fhs_checkout_total_discount:has-text("${code}")`);
+        return discountLine.isVisible().catch(() => false);
+      }
+      const applyAttr = await btn.getAttribute("apply", { timeout: 5000 });
+      return applyAttr === "0"; // apply="0" = Đã áp dụng, apply="1" = Chưa áp dụng
+    } catch {
+      console.log(`⚠️ Không thể kiểm tra trạng thái voucher [${code}]`);
+      return false;
+    }
   }
 
   /** Kiểm tra voucher có bị mờ/disable không (không đủ điều kiện) */
@@ -722,16 +756,34 @@ async applyCouponCode(code: string) {
 
   /** Lấy thông báo lỗi khi nhập mã khuyến mãi sai */
   async getCouponErrorMessage(): Promise<string> {
-    // Tìm thông báo lỗi gần ô input coupon
     const errorMsg = this.page.locator(
-      ".fhs_checkout_coupon_error:visible, " +
-      ".fhs-input-alert:visible:near(#fhs_checkout_coupon)"
+      ".fhs_checkout_coupon_error, .fhs-input-box:has(#fhs_checkout_coupon) .fhs-input-alert"
     ).first();
-    if (await errorMsg.isVisible().catch(() => false)) {
+    
+    try {
+      await errorMsg.waitFor({ state: "visible", timeout: 5000 });
       return (await errorMsg.innerText()).trim();
+    } catch {
+      return "";
     }
-    // Cũng check popup alert nếu có
-    return "";
+  }
+
+  async getDynamicValidCoupon(): Promise<string | null> {
+    await this.page.waitForSelector('.fhs-event-promo-list-item', { state: 'visible', timeout: 10000 }).catch(() => {});
+    
+    const validItems = this.page.locator('.fhs-event-promo-list-item.matched');
+    const count = await validItems.count();
+
+    if (count === 0) return null;
+
+    for (let i = 0; i < count; i++) {
+      const buttonWithCoupon = validItems.nth(i).locator('button[coupon]');
+      if (await buttonWithCoupon.isVisible().catch(() => false)) {
+        const couponCode = await buttonWithCoupon.getAttribute('coupon');
+        if (couponCode) return couponCode;
+      }
+    }
+    return null;
   }
 
   // ==================== BLOCK TỔNG TIỀN ====================
@@ -765,18 +817,16 @@ async getShippingFee(): Promise<number> {
 
   /** Lấy tổng số tiền cuối cùng */
   async getTotalAmount(): Promise<number> {
-    const totalLabel = this.page.locator("text=Tổng Số Tiền").first();
-    if (await totalLabel.isVisible().catch(() => false)) {
-      const container = totalLabel.locator("xpath=..");
-      const priceText = await container
-        .locator("span, .price")
-        .filter({ hasText: /đ/ })
-        .first()
-        .innerText()
-        .catch(() => "");
-      return this.parsePrice(priceText);
-    }
-    return 0;
+      // Thêm .filter({ visible: true }) để lấy đúng phần tử đang hiện trên màn hình
+      const totalLabel = this.page.locator("text=Tổng Số Tiền").filter({ visible: true }).first();
+      
+      if (await totalLabel.isVisible().catch(() => false)) {
+          const container = totalLabel.locator("xpath=..");
+          // Lấy toàn bộ text của khối thay vì tìm thẻ con (tránh lỗi cấu trúc HTML thay đổi)
+          const priceText = await container.innerText().catch(() => "");
+          return this.parsePrice(priceText);
+      }
+      return 0;
   }
 
   /** Lấy thành tiền hàng */
@@ -813,17 +863,18 @@ async getShippingFee(): Promise<number> {
 
   // ==================== GHI CHÚ ====================
 
-  async checkNoteCheckbox() {
-    if (!(await this.noteCheckbox.isChecked())) {
-      await this.noteCheckbox.click();
-      await this.page.waitForTimeout(500);
-    }
+async checkNoteCheckbox() {
+  if (!(await this.noteCheckbox.isChecked())) {
+    // Trỏ locator tới thẻ label có thuộc tính for tương ứng
+    await this.page.locator('label[for="fhs_checkout_note_checkbox"]').click();
+    await this.page.waitForTimeout(500);
   }
+}
 
-  async uncheckNoteCheckbox() {
-    if (await this.noteCheckbox.isChecked()) {
-      await this.noteCheckbox.click();
-      await this.page.waitForTimeout(500);
+async uncheckNoteCheckbox() {
+  if (await this.noteCheckbox.isChecked()) {
+    await this.page.locator('label[for="fhs_checkout_note_checkbox"]').click();
+    await this.page.waitForTimeout(500);
     }
   }
 
