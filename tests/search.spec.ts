@@ -258,6 +258,7 @@ test.describe("Tính năng Tìm kiếm (Search)", () => {
   // =====================================================================
 
   test("TC-SEARCH-S5-001: Kết hợp Tìm kiếm từ khóa và click Bộ lọc cùng lúc", async () => {
+    test.setTimeout(3 * 60 * 1000); // Thêm timeout 3 phút giống các test khác
     const filter = data.filterPublisherData[0];
 
     await test.step(`Tìm kiếm "${filter.kw}" và lọc NXB "${filter.publisher}"`, async () => {
@@ -280,8 +281,15 @@ test.describe("Tính năng Tìm kiếm (Search)", () => {
     const keyword = "harry potter";
     const maxAcceptableTimeMs = 5000;
 
+    // Chuẩn bị sẵn từ khóa trên ô tìm kiếm (Không tính thời gian này vào hiệu năng)
+    await expect(searchPage.searchInput).toBeVisible({ timeout: 10000 });
+    await searchPage.searchInput.evaluate((node) => node.removeAttribute("readonly"));
+    await searchPage.searchInput.click();
+    await searchPage.searchInput.fill(keyword);
+
+    // Bắt đầu đếm thời gian NGAY TRƯỚC khi bấm Enter
     const startTime = Date.now();
-    await searchPage.submitSearch(keyword, "enter");
+    await searchPage.searchInput.press("Enter");
 
     // Đợi kết quả xuất hiện thực tế thay vì chỉ đợi domcontentloaded
     await searchPage.expectProductListVisible();

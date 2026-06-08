@@ -3,7 +3,7 @@ import * as checkoutData from "../data/checkout.data";
 import { getProduct, type CartLinePlan } from "../data/cart.data";
 import { CheckoutPage } from "../pages/CheckoutPages";
 
-test.describe("Tính năng Checkout — 26 Test Cases", () => {
+test.describe("Tính năng Checkout", () => {
   let checkoutPage: CheckoutPage;
 
   test.beforeEach(async ({ page }) => {

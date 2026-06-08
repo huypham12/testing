@@ -58,7 +58,7 @@ npm run test:cart -- --ui
 **Chạy một Test cụ thể (theo ID hoặc tên Test) chế độ chạy ngầm (Headless):**
 ```bash
 # Chỉ chạy ngầm 1 test cụ thể trong tính năng Thanh toán
-npm run test:checkout -- -g "TC_CHECKOUT_01"
+npm run test:checkout -- -g "TC-CHECKOUT-01"
 ```
 
 **Chạy lại (Retry) các test vừa bị Fail ở lần chạy trước:**
@@ -84,3 +84,15 @@ npm run report:checkout
 
 ---
 *Ghi chú: Cấu trúc thư mục báo cáo (report) được tổ chức theo cấp bậc giúp dễ dàng theo dõi tổng thể hoặc đi sâu vào từng module mà không bị ghi đè, lộn xộn các file kết quả với nhau.*
+
+
+TC-SEARCH-S5-002
+TC-SEARCH-S5-003
+TC-SEARCH-S5-004
+TC-SEARCH-S5-006
+TC-SEARCH-S5-007
+TC-CHECKOUT-S1-005
+TC-CHECKOUT-S1-007
+TC-CART-S1-004
+
+npm run test -- -g "TC-SEARCH-S5-002|TC-SEARCH-S5-003|TC-SEARCH-S5-004|TC-SEARCH-S5-006|TC-SEARCH-S5-007|TC-CHECKOUT-S1-005|TC-CHECKOUT-S1-007|TC-CART-S1-004"

@@ -3,7 +3,7 @@ import * as data from "../data/cart.data";
 import type { CartLinePlan } from "../data/cart.data";
 import { CartPage } from "../pages/CartPage";
 
-test.describe("Tính năng Giỏ hàng (Cart) - 18 Test Cases Nguyên Bản", () => {
+test.describe("Tính năng Giỏ hàng (Cart)", () => {
   let cartPage: CartPage;
 
   test.beforeEach(async ({ page }) => {

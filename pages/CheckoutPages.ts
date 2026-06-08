@@ -757,7 +757,7 @@ async checkVatCheckbox() {
   /** Lấy thông báo lỗi khi nhập mã khuyến mãi sai */
   async getCouponErrorMessage(): Promise<string> {
     const errorMsg = this.page.locator(
-      ".fhs_checkout_coupon_error, .fhs-input-box:has(#fhs_checkout_coupon) .fhs-input-alert"
+      ".fhs_checkout_coupon_error, .fhs-input-box:has(#fhs_checkout_coupon) > .fhs-input-alert"
     ).first();
     
     try {

@@ -31,7 +31,7 @@ export class CartPage {
     this.cartItems = page.locator(".item-product-cart");
     this.selectAllCheckbox = page.locator("#checkbox-all-products");
     this.emptyCartMessage = page.locator(
-      "text=/(chưa có sản phẩm|giỏ hàng.*trống|giỏ hàng.*rỗng|không có sản phẩm)/i",
+      ".cart-empty, .cart-empty-page, .cart-empty-wrapper, text=/(chưa có sản phẩm|giỏ hàng.*trống|giỏ hàng.*rỗng|không có sản phẩm)/i",
     );
     this.continueShoppingBtn = page.locator("a, button", {
       hasText: /tiếp tục mua sắm|mua sắm ngay/i,
@@ -145,6 +145,11 @@ export class CartPage {
           }
           if (await this.selectAllCheckbox.isVisible().catch(() => false)) {
             return "header";
+          }
+          // Fallback: check text in body
+          const bodyText = await this.page.locator("body").innerText().catch(() => "");
+          if (bodyText.match(/chưa có sản phẩm|không có sản phẩm|giỏ hàng.*trống/i)) {
+            return "empty_text";
           }
           return "";
         },
